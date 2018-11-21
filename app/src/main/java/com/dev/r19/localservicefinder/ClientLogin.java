@@ -32,19 +32,12 @@ public class ClientLogin extends AppCompatActivity {
         setContentView(R.layout.activity_client_login);
 
         auth1 = FirebaseAuth.getInstance();
-        Button btn1 = (Button) findViewById(R.id.UlogIn);
+        //Button btn1 = (Button) findViewById(R.id.UlogIn);
         Button btn2 = (Button) findViewById(R.id.button4);
         Uemail1 = (EditText) findViewById(R.id.Uemail);
         Upassword1 = (EditText) findViewById(R.id.Upassword);
-        UlogIn1 = (Button) findViewById(R.id.UlogIn);
+        UlogIn1 = (Button)findViewById(R.id.userlogin);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ClientLogin.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
