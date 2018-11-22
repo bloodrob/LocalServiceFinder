@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ServiceRegister extends AppCompatActivity {
 
     FirebaseAuth auth;
@@ -35,6 +38,7 @@ public class ServiceRegister extends AppCompatActivity {
         pass = (EditText)findViewById(R.id.ServicePass);
         pass1 = (EditText)findViewById(R.id.ServiceConPass);
 
+        // Linking to the service login page
         Tologin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,14 +55,23 @@ public class ServiceRegister extends AppCompatActivity {
                 final String ServicePass = pass.getText().toString().trim();
                 String ServiceConPass = pass1.getText().toString().trim();
 
+                // validating the Credential
                 if (TextUtils.isEmpty(ServiceEmail)) {
                     Toast.makeText(ServiceRegister.this, "E-mail Required", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (TextUtils.isEmpty(ServicePass)) {
-                    Toast.makeText(ServiceRegister.this, "Password Required", Toast.LENGTH_LONG).show();
+                //validating password
+                Pattern pattern;
+                Matcher matcher;
+                final String expression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
+                pattern = Pattern.compile(expression);
+                matcher = pattern.matcher(ServicePass);
+
+                if (! matcher.matches()) {
+                    Toast.makeText(ServiceRegister.this, "Password must have atleast one upper case, one lower case, one number, one special character and minimu length of 8 ", Toast.LENGTH_LONG).show();
                     return;
                 }
+
                 if (ServicePass.length()<8) {
                     Toast.makeText(ServiceRegister.this, "Password Length can't be less than 8", Toast.LENGTH_LONG).show();
                     return;
@@ -71,7 +84,9 @@ public class ServiceRegister extends AppCompatActivity {
                     Toast.makeText(ServiceRegister.this, "Password Must Be Same", Toast.LENGTH_LONG).show();
                     return;
                 }
+                // End of validation
 
+                //creating user account using the method below to firebase authenticatio
                 auth.createUserWithEmailAndPassword(ServiceEmail, ServicePass)
                         .addOnCompleteListener(ServiceRegister.this, new OnCompleteListener<AuthResult>() {
                             @Override

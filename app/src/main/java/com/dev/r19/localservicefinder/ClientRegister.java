@@ -1,6 +1,7 @@
 package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
+import android.media.MediaCodec;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ClientRegister extends AppCompatActivity {
 
@@ -55,10 +59,17 @@ public class ClientRegister extends AppCompatActivity {
                     Toast.makeText(ClientRegister.this, "E-mail required", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if (TextUtils.isEmpty(ClientPassword)) {
-                    Toast.makeText(ClientRegister.this, "Password required", Toast.LENGTH_LONG).show();
+                Pattern pattern;
+                Matcher matcher;
+                final String expression =  "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{8,}$";
+                pattern = Pattern.compile(expression);
+                matcher = pattern.matcher(ClientPassword);
+                if(!matcher.matches()) {
+                    Toast.makeText(ClientRegister.this, "password must contain atleast one upper class, one lower class, one number and minimun 8", Toast.LENGTH_LONG).show();
                     return;
                 }
+
+
                 if (ClientPassword.length()<8) {
                     Toast.makeText(ClientRegister.this, "Password Can't be less than 8", Toast.LENGTH_LONG).show();
                     return;
