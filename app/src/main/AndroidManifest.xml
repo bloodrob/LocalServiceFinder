@@ -29,7 +29,8 @@
         <activity android:name=".ServiceEmailSend" />
         <activity android:name=".ServiceHomePage" />
         <activity android:name=".ClientHomePage" />
-        <activity android:name=".ServiceInfoInsert"></activity>
+        <activity android:name=".ServiceInfoInsert" />
+        <activity android:name=".ServiceEntry" />
     </application>
 
 </manifest>

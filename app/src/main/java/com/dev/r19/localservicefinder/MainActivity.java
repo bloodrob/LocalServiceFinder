@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button asClient,asServiceProvider;
+    private Button asClient,asServiceProvider,add1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         // get Two Buttons Continue as Client and as Service Provider and add action to it.
         asClient = (Button)findViewById(R.id.AsClient);
         asServiceProvider = (Button)findViewById(R.id.AsServiceProvider);
+        add1 = (Button)findViewById(R.id.add);
         asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceCredentials.class);
+                startActivity(intent);
+            }
+        });
+        add1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ServiceEntry.class);
                 startActivity(intent);
             }
         });
