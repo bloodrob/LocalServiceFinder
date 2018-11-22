@@ -16,13 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClientCredentials"></activity>
-        <activity android:name=".ClientLogin"></activity>
-        <activity android:name=".ClientRegister"></activity>
-        <activity android:name=".Home"></activity>
-        <activity android:name=".ServiceCredentials"></activity>
-        <activity android:name=".ServiceLogin"></activity>
-        <activity android:name=".ServiceRegister"></activity>
+        <activity android:name=".ClientCredentials" />
+        <activity android:name=".ClientLogin" />
+        <activity android:name=".ClientRegister" />
+        <activity android:name=".Home" />
+        <activity android:name=".ServiceCredentials" />
+        <activity android:name=".ServiceLogin" />
+        <activity android:name=".ServiceRegister" />
+        <activity android:name=".ClientForgotPassword" />
+        <activity android:name=".ClientEmailSend" />
+        <activity android:name=".ServiceForgotPassword" />
+        <activity android:name=".ServiceEmailSend"></activity>
     </application>
 
 </manifest>

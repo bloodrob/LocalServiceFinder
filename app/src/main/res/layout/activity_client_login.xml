@@ -60,19 +60,28 @@
         android:textColor="#EE0E67"
         android:textStyle="bold"
         android:background="#FAE1EB"
+        android:layout_marginTop="42dp"
         android:layout_below="@+id/Upassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp" />
+        android:layout_alignStart="@+id/Upassword" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/userlogin"
-        android:layout_marginTop="13dp"
-        android:layout_alignEnd="@+id/userlogin"
         android:layout_alignStart="@+id/userlogin" />
+
+    <Button
+        android:id="@+id/forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignEnd="@+id/userlogin"
+        android:layout_marginEnd="32dp"
+        android:text="Forgrt Password" />
 
 
 </android.widget.RelativeLayout>

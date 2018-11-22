@@ -22,7 +22,7 @@ public class ClientLogin extends AppCompatActivity {
 
     public static final String TAG = "ClientLogin";
     EditText Uemail1, Upassword1;
-    Button UlogIn1;
+    Button UlogIn1, btn1, btn2;
     FirebaseAuth auth1;
 
 
@@ -33,11 +33,19 @@ public class ClientLogin extends AppCompatActivity {
 
         auth1 = FirebaseAuth.getInstance();
         //Button btn1 = (Button) findViewById(R.id.UlogIn);
-        Button btn2 = (Button) findViewById(R.id.button4);
+        btn1 =(Button)findViewById(R.id.forgot_pass);
+        btn2 = (Button) findViewById(R.id.button4);
         Uemail1 = (EditText) findViewById(R.id.Uemail);
         Upassword1 = (EditText) findViewById(R.id.Upassword);
         UlogIn1 = (Button)findViewById(R.id.userlogin);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientLogin.this, ClientForgotPassword.class);
+                startActivity(intent);
+            }
+        });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
