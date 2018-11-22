@@ -11,18 +11,18 @@
         android:id="@+id/AsClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="45dp"
-        android:layout_marginStart="47dp"
-        android:text="Button" />
+        android:layout_below="@+id/AsServiceProvider"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="42dp"
+        android:text="Enter As a Client" />
 
     <Button
         android:id="@+id/AsServiceProvider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="95dp"
-        android:text="Button" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/AsClient"
+        android:layout_marginTop="170dp"
+        android:text="Enter As a Service Provider" />
 </android.widget.RelativeLayout>

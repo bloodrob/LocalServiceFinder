@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClientRegister">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/E-mail"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="133dp"
+        android:text="Eimail" />
+
+    <TextView
+        android:id="@+id/Password"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_alignEnd="@+id/E-mail"
+        android:layout_below="@+id/E-mail"
+        android:layout_marginTop="49dp"
+        android:text="Password" />
+
+    <EditText
+        android:id="@+id/ClientEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_alignTop="@+id/E-mail"
+        android:layout_toEndOf="@+id/E-mail" />
+
+    <EditText
+        android:id="@+id/ClientPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ClientEmail"
+        android:layout_alignTop="@+id/Password"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/ClientConPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ClientPassword"
+        android:layout_below="@+id/ClientPassword"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_alignEnd="@+id/Password"
+        android:layout_alignTop="@+id/ClientConPassword"
+        android:text="Confirm Password" />
+
+    <Button
+        android:id="@+id/ClientReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ClientConPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Rgister" />
+
+    <Button
+        android:id="@+id/LogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ClientReg"
+        android:layout_below="@+id/ClientReg"
+        android:text="Alraedy have an account, Log In " />
+</RelativeLayout>

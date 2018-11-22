@@ -6,14 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ClientCredentials extends AppCompatActivity {
 
     Button log, reg;
+
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_credentials);
+
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            Intent intent = new Intent(ClientCredentials.this, ClientHomePage.class);
+            startActivity(intent);
+        }
 
         log = (Button)findViewById(R.id.ToClientLogin);
         reg = (Button)findViewById(R.id.ToClientReg);
