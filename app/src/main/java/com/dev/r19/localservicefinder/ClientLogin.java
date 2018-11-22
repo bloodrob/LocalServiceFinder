@@ -50,7 +50,7 @@ public class ClientLogin extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientLogin.this, MainActivity.class);
+                Intent intent = new Intent(ClientLogin.this, ClientCredentials.class);
                 startActivity(intent);
             }
         });
@@ -80,7 +80,7 @@ public class ClientLogin extends AppCompatActivity {
                                 }
                                 else {
                                     Toast.makeText(ClientLogin.this, "success", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(ClientLogin.this, MainActivity.class);
+                                    Intent intent = new Intent(ClientLogin.this, ClientHomePage.class);
                                     startActivity(intent);
                                 }
 

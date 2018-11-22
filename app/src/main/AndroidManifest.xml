@@ -26,7 +26,9 @@
         <activity android:name=".ClientForgotPassword" />
         <activity android:name=".ClientEmailSend" />
         <activity android:name=".ServiceForgotPassword" />
-        <activity android:name=".ServiceEmailSend"></activity>
+        <activity android:name=".ServiceEmailSend" />
+        <activity android:name=".ServiceHomePage" />
+        <activity android:name=".ClientHomePage"></activity>
     </application>
 
 </manifest>
