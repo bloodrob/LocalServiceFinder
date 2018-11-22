@@ -1,4 +1,4 @@
-/*
+package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceCredentials.class);
-                startActivity(intent);*/
-          /*  }
+                startActivity(intent);
+            }
         });
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,10 +41,9 @@ public class MainActivity extends AppCompatActivity {
         });
         //  Button Function Ends Here
     }
-}*/
+}
 
-
-
+/*
 /// new code
 
     package com.dev.r19.localservicefinder;
@@ -181,4 +180,4 @@ public class MainActivity extends AppCompatActivity {
             dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.nonactivedot));
         }
     }
-}
+}*/
