@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button asClient,asServiceProvider,add1;
+    private Button asClient,asServiceProvider,add1,search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         asClient = (Button)findViewById(R.id.AsClient);
         asServiceProvider = (Button)findViewById(R.id.AsServiceProvider);
         add1 = (Button)findViewById(R.id.add);
+        search = (Button)findViewById(R.id.ServiceSearch);
         asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceEntry.class);
+                startActivity(intent);
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ServiceSearch.class);
                 startActivity(intent);
             }
         });
@@ -118,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         });
         viewPager = (ViewPager) findViewById(R.id.fragment_container);
 
-        pagerViewAdapter = new PagerViewAdapter(getSupportFragmentManager());
+        PagerViewAdapter pagerViewAdapter = new PagerViewAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerViewAdapter);
 
         dotcounts = pagerViewAdapter.getCount();
