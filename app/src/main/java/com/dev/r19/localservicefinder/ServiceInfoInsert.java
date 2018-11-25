@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ServiceInfoInsert extends AppCompatActivity {
 
@@ -32,7 +35,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     EditText spemail, spname, spservicename,  spdob, spaddress, spcity, spdistrict, spstate, sppin, spmobile,  spcompanyname, spcompanydescription;
     RadioButton spmale, spfemale;
     Spinner spproffession;
-
+    List<String> namelist;
     String GetId;
 
 
@@ -66,22 +69,43 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
         // for search the Service node and retrive it and use it on the spinner
         ref1 = database.getReference("Service_info");
-        final List<String> namelist = new ArrayList<>();
+        namelist = new ArrayList<String>();
 
-        ref1.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ServiceSearchModel service = dataSnapshot.getValue(ServiceSearchModel.class);
-                namelist.add(service.Service_name);
-            }
+       ref1.addChildEventListener(new ChildEventListener() {
+           @Override
+           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+               ServiceSearchModel service = dataSnapshot.getValue(ServiceSearchModel.class);
+               namelist.add(service.Service_name);
+           }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+           @Override
+           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-            }
-        });
+           }
+
+           @Override
+           public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+           }
+
+           @Override
+           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+
+           }
+       });
 
 
+        // Adding Items to the Spinner *** Pranjal Das
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist);
+        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spproffession.setAdapter(arrayAdapter);
+
+        // Ends here
 
         //end of search service node
 
@@ -109,17 +133,13 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String State = spstate.getText().toString().trim();
                 String Pin = sppin.getText().toString().trim();
                 String Mobile = spmobile.getText().toString().trim();
-                String Proffession = null;
+                String Proffession = spproffession.getSelectedItem().toString();
                 String Company_name = spcompanyname.getText().toString().trim();
                 String Company_description = spcompanydescription.getText().toString().trim();
 
                 EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description);
             }
         });
-
-        // Adding Items to the Spinner *** Pranjal Das
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,namelist);
-        spproffession.setAdapter(arrayAdapter);
     }
     private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description) {
         ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description);
