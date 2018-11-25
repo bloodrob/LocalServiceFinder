@@ -9,7 +9,7 @@
 
     <FrameLayout
         android:layout_width="391dp"
-        android:layout_height="185dp"
+        android:layout_height="155dp"
         tools:layout_editor_absoluteX="-5dp"
         tools:layout_editor_absoluteY="-1dp"
         android:id="@+id/frameLayout"
@@ -31,7 +31,7 @@
         android:id="@+id/Uemail"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
@@ -43,7 +43,7 @@
         android:id="@+id/Upassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="4dp"
         android:hint="Password"
         android:textColor="#FFFFFF"
         android:ems="10"
@@ -57,30 +57,31 @@
         android:layout_height="50dp"
         android:text="Log in"
         android:textSize="20dp"
-        android:textColor="#EE0E67"
+        android:textColor="#ffffff"
         android:textStyle="bold"
-        android:background="#FAE1EB"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/Upassword"
-        android:layout_alignStart="@+id/Upassword" />
+        android:layout_alignStart="@+id/Upassword"
+        android:background="@drawable/btn_back3"/>
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:text="Register"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/userlogin"
+        android:layout_marginTop="450dp"
+        android:textSize="17dp"
         android:layout_alignStart="@+id/userlogin" />
 
     <Button
         android:id="@+id/forgot_pass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_alignEnd="@+id/userlogin"
-        android:layout_marginEnd="32dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/btn_back3"
+        android:layout_marginLeft="40dp"
+        android:textColor="#1218C7"
+        android:textSize="18dp"
         android:text="Forgrt Password" />
 
 
