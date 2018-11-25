@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceSearch extends AppCompatActivity {
 
@@ -45,7 +49,7 @@ public class ServiceSearch extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         ref= database.getReference("Service_info");
 
-       // final List<ArrayList<String>> Reslist = new ArrayList<>();
+            final List<String> namelist = new ArrayList<>();
       //  final List<String> itemList = new ArrayList<>();
       //  ArrayAdapter adaptor = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, Service_name);
       //  list.setAdapter(adaptor);
@@ -54,13 +58,19 @@ public class ServiceSearch extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String ServiceName = name.getText().toString().trim();
+              //  final String ServiceName = name.getText().toString().trim();
 
                 ref.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                         ServiceSearchModel service = dataSnapshot.getValue(ServiceSearchModel.class);
-                      //  Reslist.add(service.Listitem);
+                        namelist.add(service.Service_name);
+                        //Log.i(TAG, "Name of service =" + namelist);
+                        //System.out.println("list of the name" + namelist);
+                        for (int i=0 ; i<namelist.size(); i++ );
+                        {
+                            Toast.makeText(ServiceSearch.this, "list of service = " + namelist, Toast.LENGTH_LONG).show();
+                        }
                        // ArrayList<String> Listitem1 = service.Listitem;
                       /*  ArrayList<String> Service_Name  = service.Service_name;
                         ArrayList<String > SerialNo = service.Serial_no;
@@ -71,7 +81,7 @@ public class ServiceSearch extends AppCompatActivity {
                             sno.setText((CharSequence) SerialNo);
                         } */
 
-                        if(service.Service_name.equals(ServiceName)) {
+                    /*    if(service.Service_name.equals(ServiceName)) {
 
                             sName1.setText(service.Service_name);
                             sno1.setText(service.Serial_no);
@@ -79,7 +89,7 @@ public class ServiceSearch extends AppCompatActivity {
                         else {
                             Intent intent = new Intent(ServiceSearch.this, ServiceResultNotFound.class);
                             startActivity(intent);
-                        }
+                        } */
                           /*  sName1.setText(service.Service_name);
                             sno1.setText(service.Serial_no);
                             sName2.setText(service.Service_name);
