@@ -1,4 +1,4 @@
-package com.dev.r19.localservicefinder;
+/* package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         //  Button Function Ends Here
     }
 }
+*/
 
-/*
 /// new code
 
     package com.dev.r19.localservicefinder;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     Double longi,lati;
     ViewPager viewPager;
     PagerViewAdapter pagerViewAdapter;
-    Button log,reg,serEntry;
+    Button asClient,asService,serviceEntry,serviceSearch;
     LinearLayout linearLayout;
     private int dotcounts;
     private ImageView[] dots;
@@ -96,12 +96,13 @@ public class MainActivity extends AppCompatActivity {
         //     Permission permission = new Permission();
         //     permission.getPermission(this,this);
 
-        log = (Button)findViewById(R.id.button1);
-        reg = (Button)findViewById(R.id.button2);
-        serEntry = (Button)findViewById(R.id.button3);
+        asClient = (Button)findViewById(R.id.asclient);
+        asService = (Button) findViewById(R.id.asService);
+        serviceEntry = (Button)findViewById(R.id.serviceEntry);
+        serviceSearch = (Button)findViewById(R.id.serviceSearch);
         linearLayout = (LinearLayout)findViewById(R.id.slider);
 
-        log.setOnClickListener(new View.OnClickListener() {
+        asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ClientCredentials.class);
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        reg.setOnClickListener(new View.OnClickListener() {
+        asService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceCredentials.class);
@@ -117,10 +118,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        serEntry.setOnClickListener(new View.OnClickListener() {
+        serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ServiceEntry.class);
+                startActivity(intent);
+            }
+        });
+
+        serviceSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ServiceSearch.class);
                 startActivity(intent);
             }
         });
@@ -188,4 +197,4 @@ public class MainActivity extends AppCompatActivity {
             dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.nonactivedot));
         }
     }
-}*/
+}
