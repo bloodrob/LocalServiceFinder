@@ -31,6 +31,8 @@
         <activity android:name=".ClientHomePage" />
         <activity android:name=".ServiceInfoInsert" />
         <activity android:name=".ServiceEntry" />
+        <activity android:name=".ServiceSearch" />
+        <activity android:name=".ServiceResultNotFound"></activity>
     </application>
 
 </manifest>

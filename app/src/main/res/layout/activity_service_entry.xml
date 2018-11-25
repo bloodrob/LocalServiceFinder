@@ -15,12 +15,12 @@
         android:text="Name"
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="113dp"
-        android:layout_above="@+id/Service_name"
-        android:layout_alignStart="@+id/Service_name"
+        android:layout_above="@+id/EnterName"
+        android:layout_alignStart="@+id/EnterName"
         android:layout_marginBottom="21dp" />
 
     <EditText
-        android:id="@+id/Service_name"
+        android:id="@+id/EnterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
