@@ -18,7 +18,7 @@ public class ServiceHomePage extends AppCompatActivity {
 
     FirebaseAuth auth;
 
-    Button logout;
+    Button logout, submit;
 
     @Override
 
@@ -49,6 +49,15 @@ public class ServiceHomePage extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         logout = (Button)findViewById(R.id.ServiceSignOut);
+        submit = (Button)findViewById(R.id.ToAddProfile);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ServiceHomePage.this, ServiceInfoInsert.class);
+                startActivity(intent);
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
