@@ -3,11 +3,16 @@ package com.dev.r19.localservicefinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import static com.dev.r19.localservicefinder.R.styleable.MenuItem;
 
 public class ServiceHomePage extends AppCompatActivity {
 
@@ -16,6 +21,27 @@ public class ServiceHomePage extends AppCompatActivity {
     Button logout;
 
     @Override
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.service_manu, menu);
+        return true;
+    }
+
+        public boolean onOptionsItemSelected(android.view.MenuItem item) {
+            // Handle item selection
+            switch (item.getItemId()) {
+                case R.id.profile_update:
+                    addUpdate();
+                    return true;
+                case R.id.ProfSetting:
+                    startSetting();
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_home_page);
@@ -39,4 +65,10 @@ public class ServiceHomePage extends AppCompatActivity {
             }
         });
     }
+    public void addUpdate() {
+    }
+
+    public void startSetting() {
+
+        }
 }
