@@ -111,11 +111,12 @@ tools:context=".ServiceInfoInsert">
                 android:textSize="17dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="306dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="136dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="171dp"
                 android:orientation="horizontal">
 
                 <RadioButton
