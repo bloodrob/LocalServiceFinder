@@ -39,6 +39,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     List<String> namelist;
     String GetId;
     String Proffession;
+    String Gender;
 
 
     @Override
@@ -50,8 +51,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spemail = (EditText)findViewById(R.id.SPemail);
         spname = (EditText)findViewById(R.id.SPname);
         spservicename = (EditText)findViewById(R.id.SPservicename);
-        spmale = (RadioButton) findViewById(R.id.Male);
-        spfemale = (RadioButton)findViewById(R.id.Female);
+      //  spmale = (RadioButton) findViewById(R.id.SPmale);
+      //  spfemale = (RadioButton)findViewById(R.id.SPfemale);
         spdob = (EditText)findViewById(R.id.SPdob);
         spaddress = (EditText)findViewById(R.id.SPaddress);
         spcity = (EditText)findViewById(R.id.SPcity);
@@ -72,7 +73,6 @@ public class ServiceInfoInsert extends AppCompatActivity {
         // for search the Service node and retrive it and use it on the spinner
         ref1 = database.getReference("Service_info");
         namelist = new ArrayList<String>();
-
 
        ref1.addChildEventListener(new ChildEventListener() {
            @Override
@@ -103,59 +103,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
        });
 
 
-        List<String> namelist1 = new ArrayList<>();
-        namelist1.add("Doctor");
-        namelist1.add("Tutor");
-        namelist1.add("Pharmacy");
-        namelist1.add("Medical");
-        namelist1.add("Electrician");
-        namelist1.add("IT Professional");
-        namelist1.add("Home Broker");
-        namelist1.add("Land Dealer");
-        namelist1.add("Lawyer");
-        namelist1.add("Plumber");
-        namelist1.add("Shopping Mall");
-        namelist1.add("Co-operative Shop");
-        namelist1.add("Electronic Shop");
-        namelist1.add("Pan Shop");
-        namelist1.add("All in one Shop");
-        namelist1.add("Veterinarian");
-        namelist1.add("Banker");
-        namelist1.add("Insurance Agent");
-        namelist1.add("Car ShowRoom");
-        namelist1.add("Brand ShowRoom");
-        namelist1.add("Tea Shop");
-        namelist1.add("Restaurant");
-        namelist1.add("Food Dhaba");
-        namelist1.add("Wine Shop");
-        namelist1.add("Drinking Bar");
-        namelist1.add("Pub");
-        namelist1.add("Factory");
-        namelist1.add("Local Transport Agency");
-        namelist1.add("Mobile Shop");
-        namelist1.add("Bike Garage");
-        namelist1.add("Car Garage");
-        namelist1.add("Cycle Store");
-        namelist1.add("IT Institute");
-        namelist1.add("Educational Institute");
-        namelist1.add("Play School");
-        namelist1.add("Junior College");
-        namelist1.add("Carpenter");
-        namelist1.add("Architect");
-        namelist1.add("Civil Engineer");
-        namelist1.add("Sub Health center");
-        namelist1.add("Builder");
-        namelist1.add("Private Contractor");
-        namelist1.add("Govt. Contractor");
-        namelist1.add("Mechanic");
-        namelist1.add("Police Man");
-        namelist1.add("Consultancy Firm");
-        namelist1.add("Property Dealer");
-        namelist1.add("Hospital");
-        namelist1.add("HR Consultancy");
-
         // Adding Items to the Spinner *** Pranjal Das
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist1);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spproffession.setAdapter(arrayAdapter);
 
@@ -174,7 +123,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
         // Ends here
 
         //end of search service node
-        Toast.makeText(ServiceInfoInsert.this, "Value" +Proffession, Toast.LENGTH_LONG).show();
+
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,7 +133,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String SP_name = spname.getText().toString().trim();
                 String SP_email = spemail.getText().toString().trim();
                 String Service_name = spservicename.getText().toString().trim();
-                String Gender = null;
+        /*        String Gender = null;
                 if(spmale.isSelected())
                 {
                     Gender = "Male";
@@ -191,7 +141,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 if(spfemale.isSelected())
                 {
                     Gender = "Female";
-                }
+                } */
                 String DOB = spdob.getText().toString().trim();
                 String Address = spaddress.getText().toString().trim();
                 String City = spcity.getText().toString().trim();
@@ -228,8 +178,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
                     return;
                 }
                 Log.e(TAG, "DATA is inserted" +cinfo.SP_email + "," +cinfo.SP_name + "," +cinfo.Service_name + "," + cinfo.Gender + "," + cinfo.DOB + "," +cinfo.Address + "," + cinfo.City + "," + cinfo.State + "," + cinfo.Pin + "," +cinfo.Mobile + "," + cinfo.Proffession + "," + cinfo.Company_name + "," + cinfo.Company_description);
-                Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
+               // startActivity(intent);
             }
 
             @Override
@@ -241,4 +191,25 @@ public class ServiceInfoInsert extends AppCompatActivity {
         });
     }
 
+    // Radio Buttons
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.maleRadio:
+                if (checked)
+                    Gender = "Male";
+                    Toast.makeText(ServiceInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
+                break;
+            case R.id.femaleRadio:
+                if (checked)
+                    Gender = "Female";
+                    Toast.makeText(ServiceInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
+                break;
+        }
+    }
+    // Radio Buttons Works
 }

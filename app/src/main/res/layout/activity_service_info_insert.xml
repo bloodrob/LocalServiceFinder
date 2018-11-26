@@ -38,259 +38,270 @@ tools:context=".ServiceInfoInsert">
 
 
 </FrameLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="80dp">
-    <FrameLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/frameLayout"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true">
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="13dp"
-            android:text="E-mail"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPemail"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="10dp"/>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="63dp"
-            android:text="Name"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPname"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="60dp"/>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="107dp"
-            android:text="Service Name"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPservicename"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="110dp"/>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="171dp"
-            android:text="Gender"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
+        android:layout_alignParentTop="true">
 
-        <RadioGroup
-            android:id="@+id/radioGender"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/SPservicename"
-            android:orientation="horizontal">
-
-
-            <RadioButton
-                android:id="@+id/Male"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="165dp" />
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/frameLayout">
 
             <TextView
-                android:id="@+id/textView17"
-                android:layout_width="58dp"
+                android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="171dp"
-                android:text="Male"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="13dp"
+                android:text="E-mail"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
 
-            <RadioButton
-                android:id="@+id/Female"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="165dp" />
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="171dp"
-            android:text="Female"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
+            <EditText
+                android:id="@+id/SPemail"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="10dp" />
 
-        </RadioGroup>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="219dp"
-            android:text="DOB"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPdob"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="210dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="269dp"
-            android:text="Address"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPaddress"
-            android:layout_width="240dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="260dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="363dp"
-            android:text="City"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPcity"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="353dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="413dp"
-            android:text="District"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPdistrict"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="403dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="463dp"
-            android:text="State"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPstate"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="453dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="513dp"
-            android:text="Pin"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPpin"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="503dp"/>
-        <TextView
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="563dp"
-            android:text="Mobile"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPmobile"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="553dp"/>
-        <TextView
-            android:layout_width="85dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="613dp"
-            android:text="Proffesion"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <Spinner
-            android:id="@+id/SPproffesion"
-            android:layout_width="240dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="603dp"
-            android:layout_marginLeft="110dp"></Spinner>
-        <TextView
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="652dp"
-            android:text="Company Name"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPcompanyname"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="653dp"/>
-        <TextView
-            android:layout_width="105dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="713dp"
-            android:text="Company Description"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <EditText
-            android:id="@+id/SPcompanydescription"
-            android:layout_width="240dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="703dp"/>
-        <Button
-            android:id="@+id/SPsubmit"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="780dp"
-            android:layout_marginLeft="120dp"
-            android:text="SUBMIT"
-            android:textColor="#ffffff"
-            android:background="@drawable/btn_back1"
-            android:textStyle="bold"/>
-    </FrameLayout>
-</ScrollView>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="63dp"
+                android:text="Name"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPname"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="60dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="107dp"
+                android:text="Service Name"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPservicename"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="110dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="171dp"
+                android:text="Gender"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="306dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="136dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/maleRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/femaleRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Female" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="219dp"
+                android:text="DOB"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPdob"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="210dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="269dp"
+                android:text="Address"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPaddress"
+                android:layout_width="240dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="260dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="363dp"
+                android:text="City"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPcity"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="353dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="413dp"
+                android:text="District"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPdistrict"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="403dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="463dp"
+                android:text="State"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPstate"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="453dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="513dp"
+                android:text="Pin"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPpin"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="503dp" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="563dp"
+                android:text="Mobile"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPmobile"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="553dp" />
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="613dp"
+                android:text="Proffesion"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <Spinner
+                android:id="@+id/SPproffesion"
+                android:layout_width="240dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="603dp"
+                android:background="#262667"></Spinner>
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="652dp"
+                android:text="Company Name"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPcompanyname"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="653dp" />
+
+            <TextView
+                android:layout_width="105dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="713dp"
+                android:text="Company Description"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/SPcompanydescription"
+                android:layout_width="240dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="703dp" />
+
+            <Button
+                android:id="@+id/SPsubmit"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="780dp"
+                android:text="ENTER"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </ScrollView>
 </RelativeLayout>
