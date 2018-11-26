@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         import android.location.Location;
         import android.location.LocationListener;
         import android.location.LocationManager;
+        import android.support.annotation.NonNull;
         import android.support.v4.app.ActivityCompat;
         import android.support.v4.content.ContextCompat;
         import android.support.v4.view.ViewPager;
@@ -86,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     private int dotcounts;
     private ImageView[] dots;
+    final int FINE=1;
+    final int COARSE=2;
+    final int INTER =3;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -93,6 +97,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get Runtime Permissions
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
+            {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},FINE);
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},COARSE);
+            }
         //     Permission permission = new Permission();
         //     permission.getPermission(this,this);
 
@@ -197,4 +208,41 @@ public class MainActivity extends AppCompatActivity {
             dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.nonactivedot));
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case FINE:
+
+                // If the permission is granted, get the location, otherwise,
+                // show a Toast
+                if (grantResults.length > 0
+                        && grantResults[0]
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this,
+                            "Permission Denied",
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+            case COARSE:
+
+                // If the permission is granted, get the location, otherwise,
+                // show a Toast
+                if (grantResults.length > 0
+                        && grantResults[0]
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this,
+                            "Permission Denied",
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+    }
 }
+
+

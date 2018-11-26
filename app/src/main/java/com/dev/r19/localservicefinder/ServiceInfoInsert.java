@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     Spinner spproffession;
     List<String> namelist;
     String GetId;
+    String Proffession;
 
 
     @Override
@@ -105,6 +107,18 @@ public class ServiceInfoInsert extends AppCompatActivity {
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spproffession.setAdapter(arrayAdapter);
 
+        spproffession.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Proffession = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         // Ends here
 
         //end of search service node
@@ -133,7 +147,6 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String State = spstate.getText().toString().trim();
                 String Pin = sppin.getText().toString().trim();
                 String Mobile = spmobile.getText().toString().trim();
-                String Proffession = spproffession.getSelectedItem().toString();
                 String Company_name = spcompanyname.getText().toString().trim();
                 String Company_description = spcompanydescription.getText().toString().trim();
 
