@@ -261,7 +261,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_height="30dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="603dp"
-                android:background="#262667"></Spinner>
+                ></Spinner>
 
             <TextView
                 android:layout_width="75dp"
