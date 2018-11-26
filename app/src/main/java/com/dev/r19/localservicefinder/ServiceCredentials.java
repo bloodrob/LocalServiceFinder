@@ -21,10 +21,10 @@ public class ServiceCredentials extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        if (auth.getCurrentUser() != null) {
+      /*  if (auth.getCurrentUser() != null) {
             Intent intent = new Intent(ServiceCredentials.this, ServiceHomePage.class);
             startActivity(intent);
-        }
+        }  */
 
         log = (Button)findViewById(R.id.ToSerLogin);
         reg = (Button)findViewById(R.id.ToSerReg);

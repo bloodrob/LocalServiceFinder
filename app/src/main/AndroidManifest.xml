@@ -34,7 +34,8 @@
         <activity android:name=".ServiceInfoInsert" />
         <activity android:name=".ServiceEntry" />
         <activity android:name=".ServiceSearch" />
-        <activity android:name=".ServiceResultNotFound"></activity>
+        <activity android:name=".ServiceResultNotFound" />
+        <activity android:name=".AddSuccess"></activity>
     </application>
 
 </manifest>

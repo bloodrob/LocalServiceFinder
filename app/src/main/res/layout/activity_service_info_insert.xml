@@ -99,34 +99,48 @@ tools:context=".ServiceInfoInsert">
             android:text="Gender"
             android:textColor="#0000FF"
             android:textSize="17dp"/>
-        <RadioButton
-            android:id="@+id/SPmale"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="165dp"
-            android:layout_marginLeft="110dp"/>
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="171dp"
-            android:text="Male"
-            android:textColor="#0000FF"
-            android:textSize="17dp"/>
-        <RadioButton
-            android:id="@+id/SPfemale"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="165dp"
-            android:layout_marginLeft="210dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SPservicename"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/Male"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="165dp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="58dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="171dp"
+                android:text="Male"
+                android:textColor="#0000FF"
+                android:textSize="17dp" />
+
+            <RadioButton
+                android:id="@+id/Female"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="165dp" />
         <TextView
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="250dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="171dp"
             android:text="Female"
             android:textColor="#0000FF"
             android:textSize="17dp"/>
+
+        </RadioGroup>
         <TextView
             android:layout_width="60dp"
             android:layout_height="30dp"
@@ -237,7 +251,6 @@ tools:context=".ServiceInfoInsert">
             android:id="@+id/SPproffesion"
             android:layout_width="240dp"
             android:layout_height="30dp"
-            android:background="#262667"
             android:layout_marginTop="603dp"
             android:layout_marginLeft="110dp"></Spinner>
         <TextView

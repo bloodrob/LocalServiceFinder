@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +30,7 @@ public class ServiceSearch extends AppCompatActivity {
     Button submit;
     EditText name;
     TextView sName1,sName2, sName3, sno1, sno2, sno3;
-   // ListView list;
+    ListView list;
    // ArrayList<String> Service_name = new ArrayList<>();
 
     @Override
@@ -39,20 +41,16 @@ public class ServiceSearch extends AppCompatActivity {
         submit = (Button)findViewById(R.id.SearchSubmit);
         name = (EditText) findViewById(R.id.EnterName);
         sName1 = (TextView) findViewById(R.id.sername1);
-        sName2 = (TextView) findViewById(R.id.sername2);
-        sName3 = (TextView) findViewById(R.id.sername3);
         sno1 = (TextView)findViewById(R.id.ser1);
-        sno2 = (TextView)findViewById(R.id.ser2);
-        sno3 = (TextView)findViewById(R.id.ser3);
-      //  list = (ListView)findViewById(R.id.ListView);
+
+        list = (ListView)findViewById(R.id.ListView);
 
         database = FirebaseDatabase.getInstance();
         ref= database.getReference("Service_info");
 
-            final List<String> namelist = new ArrayList<>();
+            final List<String> namelist = new ArrayList<String>();
       //  final List<String> itemList = new ArrayList<>();
-      //  ArrayAdapter adaptor = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, Service_name);
-      //  list.setAdapter(adaptor);
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,5 +123,9 @@ public class ServiceSearch extends AppCompatActivity {
                 });
             }
         });
+
+        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,namelist);
+        list.setAdapter(adaptor);
+
     }
 }

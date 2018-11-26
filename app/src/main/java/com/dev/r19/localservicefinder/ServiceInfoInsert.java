@@ -50,8 +50,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spemail = (EditText)findViewById(R.id.SPemail);
         spname = (EditText)findViewById(R.id.SPname);
         spservicename = (EditText)findViewById(R.id.SPservicename);
-        spmale = (RadioButton) findViewById(R.id.SPmale);
-        spfemale = (RadioButton)findViewById(R.id.SPfemale);
+        spmale = (RadioButton) findViewById(R.id.Male);
+        spfemale = (RadioButton)findViewById(R.id.Female);
         spdob = (EditText)findViewById(R.id.SPdob);
         spaddress = (EditText)findViewById(R.id.SPaddress);
         spcity = (EditText)findViewById(R.id.SPcity);
@@ -72,6 +72,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         // for search the Service node and retrive it and use it on the spinner
         ref1 = database.getReference("Service_info");
         namelist = new ArrayList<String>();
+
 
        ref1.addChildEventListener(new ChildEventListener() {
            @Override
@@ -102,8 +103,13 @@ public class ServiceInfoInsert extends AppCompatActivity {
        });
 
 
+        List<String> namelist1 = new ArrayList<>();
+        namelist1.add("one");
+        namelist1.add("two");
+        namelist1.add("three");
+
         // Adding Items to the Spinner *** Pranjal Das
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist1);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         spproffession.setAdapter(arrayAdapter);
 
@@ -122,7 +128,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         // Ends here
 
         //end of search service node
-
+        Toast.makeText(ServiceInfoInsert.this, "Value" +Proffession, Toast.LENGTH_LONG).show();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,8 +182,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
                     return;
                 }
                 Log.e(TAG, "DATA is inserted" +cinfo.SP_email + "," +cinfo.SP_name + "," +cinfo.Service_name + "," + cinfo.Gender + "," + cinfo.DOB + "," +cinfo.Address + "," + cinfo.City + "," + cinfo.State + "," + cinfo.Pin + "," +cinfo.Mobile + "," + cinfo.Proffession + "," + cinfo.Company_name + "," + cinfo.Company_description);
-                //Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
-               // startActivity(intent);
+                Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
+                startActivity(intent);
             }
 
             @Override
