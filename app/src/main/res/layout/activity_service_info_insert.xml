@@ -43,15 +43,13 @@ tools:context=".ServiceInfoInsert">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_below="@+id/frameLayout">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/frameLayout">
+            android:layout_alignParentStart="true">
 
             <TextView
                 android:layout_width="60dp"
