@@ -104,9 +104,55 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
 
         List<String> namelist1 = new ArrayList<>();
-        namelist1.add("one");
-        namelist1.add("two");
-        namelist1.add("three");
+        namelist1.add("Doctor");
+        namelist1.add("Tutor");
+        namelist1.add("Pharmacy");
+        namelist1.add("Medical");
+        namelist1.add("Electrician");
+        namelist1.add("IT Professional");
+        namelist1.add("Home Broker");
+        namelist1.add("Land Dealer");
+        namelist1.add("Lawyer");
+        namelist1.add("Plumber");
+        namelist1.add("Shopping Mall");
+        namelist1.add("Co-operative Shop");
+        namelist1.add("Electronic Shop");
+        namelist1.add("Pan Shop");
+        namelist1.add("All in one Shop");
+        namelist1.add("Veterinarian");
+        namelist1.add("Banker");
+        namelist1.add("Insurance Agent");
+        namelist1.add("Car ShowRoom");
+        namelist1.add("Brand ShowRoom");
+        namelist1.add("Tea Shop");
+        namelist1.add("Restaurant");
+        namelist1.add("Food Dhaba");
+        namelist1.add("Wine Shop");
+        namelist1.add("Drinking Bar");
+        namelist1.add("Pub");
+        namelist1.add("Factory");
+        namelist1.add("Local Transport Agency");
+        namelist1.add("Mobile Shop");
+        namelist1.add("Bike Garage");
+        namelist1.add("Car Garage");
+        namelist1.add("Cycle Store");
+        namelist1.add("IT Institute");
+        namelist1.add("Educational Institute");
+        namelist1.add("Play School");
+        namelist1.add("Junior College");
+        namelist1.add("Carpenter");
+        namelist1.add("Architect");
+        namelist1.add("Civil Engineer");
+        namelist1.add("Sub Health center");
+        namelist1.add("Builder");
+        namelist1.add("Private Contractor");
+        namelist1.add("Govt. Contractor");
+        namelist1.add("Mechanic");
+        namelist1.add("Police Man");
+        namelist1.add("Consultancy Firm");
+        namelist1.add("Property Dealer");
+        namelist1.add("Hospital");
+        namelist1.add("HR Consultancy");
 
         // Adding Items to the Spinner *** Pranjal Das
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,namelist1);
