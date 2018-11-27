@@ -19,11 +19,12 @@
 
     <Button
         android:id="@+id/Blogin"
-        android:layout_width="240dp"
-        android:layout_height="50dp"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="156dp"
+        android:textColor="#ffffff"
         android:text="Back To Log In Page"
         android:background="@drawable/btn_back1"/>
 </RelativeLayout>

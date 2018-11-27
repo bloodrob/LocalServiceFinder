@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.ServiceHomePage">
+    tools:context="com.dev.r19.localservicefinder.ServiceHomePage"
+    android:background="@drawable/background1">
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_marginTop="143dp"
         android:text="Welcome To Your Home."
-        android:layout_alignParentTop="true"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/ServiceSignOut"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/textView11"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
-        android:text="Log Out" />
+        android:layout_marginLeft="130dp"
+        android:background="@drawable/btn_back3"
+        android:layout_marginTop="94dp"
+        android:text="Log Out"
+        android:textStyle="bold"/>
 </RelativeLayout>

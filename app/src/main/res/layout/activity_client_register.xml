@@ -68,7 +68,7 @@
     <Button
         android:id="@+id/ClientReg"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/ClientConPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="92dp"
@@ -80,7 +80,7 @@
     <Button
         android:id="@+id/LogIn"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_alignStart="@+id/ClientReg"
         android:layout_below="@+id/ClientReg"
         android:layout_marginTop="15dp"

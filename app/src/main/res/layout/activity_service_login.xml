@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ServiceLogin"
-    android:background="@drawable/background2">
+    android:background="@drawable/background4">
 
     <EditText
         android:id="@+id/SerLogEmail"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
         android:layout_marginLeft="110dp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:inputType="textEmailAddress"
          />
 
@@ -24,24 +24,26 @@
         android:layout_below="@+id/SerLogEmail"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="110dp"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/ServiceLogIn"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="59dp"
         android:text="Log In"
         android:layout_marginLeft="90dp"
         android:background="@drawable/btn_back2"
         android:textColor="#ffffff"
-        android:layout_below="@+id/SerLogPass"/>
+        android:layout_below="@+id/SerLogPass"
+        android:layout_toEndOf="@+id/textView10"
+        android:layout_marginStart="11dp" />
 
     <Button
         android:id="@+id/BackReg"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
         android:layout_alignStart="@+id/ServiceLogIn"
         android:layout_below="@+id/ServiceLogIn"
         android:layout_marginTop="30dp"
@@ -56,7 +58,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/SerLogEmail"
         android:layout_marginStart="24dp"
-        android:text="E-mail" />
+        android:text="E-mail"
+        android:textColor="#000000"/>
 
     <TextView
         android:id="@+id/textView10"
@@ -64,5 +67,6 @@
         android:layout_height="35dp"
         android:layout_alignStart="@+id/textView9"
         android:layout_alignTop="@+id/SerLogPass"
-        android:text="Password" />
+        android:text="Password"
+        android:textColor="#000000"/>
 </RelativeLayout>

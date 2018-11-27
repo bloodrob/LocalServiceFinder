@@ -54,9 +54,9 @@
     <Button
         android:id="@+id/userlogin"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:text="Log in"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:layout_marginTop="22dp"
@@ -67,7 +67,7 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:text="Register"
         android:layout_marginTop="450dp"
         android:textSize="17dp"
@@ -76,7 +76,7 @@
     <Button
         android:id="@+id/forgot_pass"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginTop="360dp"
         android:background="@drawable/btn_back3"
         android:layout_marginLeft="40dp"
