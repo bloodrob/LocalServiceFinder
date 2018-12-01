@@ -27,7 +27,7 @@ public class ServiceSearch extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference ref;
 
-    Button submit;
+    Button submit,submit1;
     EditText name;
     TextView sName1,sName2, sName3, sno1, sno2, sno3;
     ListView list;
@@ -39,11 +39,20 @@ public class ServiceSearch extends AppCompatActivity {
         setContentView(R.layout.activity_service_search);
 
         submit = (Button)findViewById(R.id.SearchSubmit);
+        submit1 =(Button)findViewById(R.id.listsearch);
         name = (EditText) findViewById(R.id.EnterName);
         sName1 = (TextView) findViewById(R.id.sername1);
         sno1 = (TextView)findViewById(R.id.ser1);
 
         list = (ListView)findViewById(R.id.ListView);
+
+        submit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ServiceSearch.this, ResultInList.class);
+                startActivity(intent);
+            }
+        });
 
         database = FirebaseDatabase.getInstance();
         ref= database.getReference("Service_info");
