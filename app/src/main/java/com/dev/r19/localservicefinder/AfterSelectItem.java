@@ -3,6 +3,8 @@ package com.dev.r19.localservicefinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -64,6 +66,15 @@ public class AfterSelectItem extends AppCompatActivity {
                    }
                    adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
                    item2.setAdapter(adaptor);
+                   item2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                       @Override
+                       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                           String NewItem = (String) item2.getItemAtPosition(position);
+                           Intent intent = new Intent(AfterSelectItem.this, SelectItemDetail.class);
+                           intent.putExtra("NewItem", NewItem);
+                           startActivity(intent);
+                       }
+                   });
                }
 
            }
