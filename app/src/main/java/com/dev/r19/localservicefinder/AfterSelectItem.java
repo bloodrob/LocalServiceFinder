@@ -21,7 +21,7 @@ import java.util.List;
 public class AfterSelectItem extends AppCompatActivity {
 
     ListView item2;
-    DatabaseReference ref;
+    DatabaseReference ref,ref1;
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
     List<String> listRes,listRes1;
@@ -33,17 +33,46 @@ public class AfterSelectItem extends AppCompatActivity {
 
         Intent intent = getIntent();
         Ser_name = intent.getStringExtra("selectItem");
-        Toast.makeText(AfterSelectItem.this,"Strng is :"+Ser_name, Toast.LENGTH_LONG).show();
+       // Toast.makeText(AfterSelectItem.this,"Strng is :"+Ser_name, Toast.LENGTH_LONG).show();
         item2 = (ListView)findViewById(R.id.ItemRes);
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
 
+        ref1 = database.getReference("Service_Provider_info/geoPoint");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Coordinates co = dataSnapshot.getValue(Coordinates.class);
+                Toast.makeText(AfterSelectItem.this, "Res is :"+co.longitude, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
          listRes = new ArrayList<>();
         listRes1 = new ArrayList<>();
        // Toast.makeText(AfterSelectItem.this, " Res :",Toast.LENGTH_LONG).show();
         final String Serv_name = Ser_name.toString().trim();
-        Toast.makeText(AfterSelectItem.this, " Res :"+Serv_name, Toast.LENGTH_LONG).show();
+       // Toast.makeText(AfterSelectItem.this, " Res :"+Serv_name, Toast.LENGTH_LONG).show();
        ref.addChildEventListener(new ChildEventListener() {
            @Override
            public void onChildAdded(DataSnapshot dataSnapshot, String s) {

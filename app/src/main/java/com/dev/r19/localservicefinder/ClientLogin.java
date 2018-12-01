@@ -80,7 +80,7 @@ public class ClientLogin extends AppCompatActivity {
                                 }
                                 else {
                                     Toast.makeText(ClientLogin.this, "success", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(ClientLogin.this, ClientHomePage.class);
+                                    Intent intent = new Intent(ClientLogin.this, Home.class);
                                     startActivity(intent);
                                 }
 

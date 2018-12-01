@@ -91,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
     final int COARSE=2;
     final int INTER =3;
 
+    static Location userLocation;
+    LocationManager locationManager;
+    LocationListener locationListener;
+
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
             }
         //     Permission permission = new Permission();
         //     permission.getPermission(this,this);
+        //Request Location
+        getLocation();
 
         asClient = (Button)findViewById(R.id.asclient);
         asService = (Button) findViewById(R.id.asService);
@@ -113,9 +119,14 @@ public class MainActivity extends AppCompatActivity {
         serviceSearch = (Button)findViewById(R.id.serviceSearch);
         linearLayout = (LinearLayout)findViewById(R.id.slider);
 
+
         asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(userLocation==null)
+                {
+                    return;
+                }
                 Intent intent = new Intent(MainActivity.this, ClientCredentials.class);
                 startActivity(intent);
             }
@@ -184,8 +195,52 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        if(userLocation==null)
+        {
+            Toast.makeText(MainActivity.this,"Location not Found",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(MainActivity.this,"Location Found",Toast.LENGTH_LONG).show();
+        }
     }
+
+    @SuppressLint("MissingPermission")
+    public void getLocation()
+    {
+        locationManager = (LocationManager)getSystemService(MainActivity.LOCATION_SERVICE);
+        userLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        if(userLocation!=null)
+        {
+            return;
+        }
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                userLocation = location;
+                if(location!=null)
+                {
+                    Toast.makeText(MainActivity.this, "" + location.getLatitude() + " / " + location.getLongitude(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+
+            }
+        };
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,this.locationListener);
+    }
+
 
     private void onChangeTab(int i) {
 

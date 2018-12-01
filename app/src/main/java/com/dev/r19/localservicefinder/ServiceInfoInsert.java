@@ -1,6 +1,10 @@
 package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +29,7 @@ import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Locale;
 
 public class ServiceInfoInsert extends AppCompatActivity {
 
@@ -40,6 +45,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     String GetId;
     String Proffession;
     String Gender;
+    Coordinates geoPoint;
 
 
     @Override
@@ -205,12 +211,39 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String Company_name = spcompanyname.getText().toString().trim();
                 String Company_description = spcompanydescription.getText().toString().trim();
 
-                EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description);
+                //Location A Edited By Pranjal Das
+
+                // Build a String for Location Geocoding
+                String geoString = City.concat(",").concat(District).concat(State);
+                Location A= new Location(LocationManager.NETWORK_PROVIDER);
+                Geocoder gc =  new Geocoder(ServiceInfoInsert.this,Locale.getDefault());
+                List<android.location.Address> adr;
+                try {
+                    adr=gc.getFromLocationName(geoString,1);
+                    if(adr==null)
+                    {
+                        Toast.makeText(ServiceInfoInsert.this,"No Address found",Toast.LENGTH_LONG).show();
+                    }
+                    Address x = adr.get(0);
+                    double longi = x.getLongitude();
+                    double lati = x.getLatitude();
+                    geoPoint = new Coordinates(longi,lati);
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(ServiceInfoInsert.this,"Error",Toast.LENGTH_LONG).show();
+                }
+
+
+                // Ends Here By Pranjal Das
+
+
+                EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description, geoPoint);
             }
         });
     }
-    private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description) {
-        ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description);
+    private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description, Coordinates geoPoint) {
+        ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,geoPoint);
 
         cinfo.active_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         GetId = cinfo.active_id;
