@@ -38,7 +38,8 @@
         <activity android:name=".ServiceSearch" />
         <activity android:name=".ServiceResultNotFound" />
         <activity android:name=".AddSuccess" />
-        <activity android:name=".ResultInList"></activity>
+        <activity android:name=".ResultInList" />
+        <activity android:name=".AfterSelectItem"></activity>
     </application>
 
 </manifest>

@@ -44,7 +44,7 @@ public class ServiceSearch extends AppCompatActivity {
         sName1 = (TextView) findViewById(R.id.sername1);
         sno1 = (TextView)findViewById(R.id.ser1);
 
-        list = (ListView)findViewById(R.id.ListView);
+       // list = (ListView)findViewById(R.id.ListView);
 
         submit1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +133,7 @@ public class ServiceSearch extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> adaptor = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,namelist);
-        list.setAdapter(adaptor);
+
 
     }
 }

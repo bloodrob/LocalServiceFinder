@@ -1,7 +1,10 @@
 package com.dev.r19.localservicefinder;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,6 +27,7 @@ public class ResultInList extends AppCompatActivity {
     DatabaseReference ref;
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
+    //public static String selectItem = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +53,22 @@ public class ResultInList extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 ListResult res = dataSnapshot.getValue(ListResult.class);
                 resList1.add(res.Service_name);
-                for (int i =0; i<resList1.size(); i++); {
-                    Toast.makeText(ResultInList.this, " Result is :" + resList1, Toast.LENGTH_LONG).show();
+             //   for (int i =0; i<resList1.size(); i++); {
+               //     Toast.makeText(ResultInList.this, " Result is :" + resList1, Toast.LENGTH_LONG).show();
 
-                }
+               // }
                 adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,resList1 );
                 list1.setAdapter(adaptor);
+                list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                       String selectItem = (String) list1.getItemAtPosition(position);
+                        Toast.makeText(ResultInList.this, "Selected item :"+selectItem, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(ResultInList.this, AfterSelectItem.class);
+                        intent.putExtra("selectItem", selectItem);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
