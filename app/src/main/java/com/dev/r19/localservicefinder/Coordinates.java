@@ -1,5 +1,7 @@
 package com.dev.r19.localservicefinder;
 
+import android.location.Location;
+
 public class Coordinates {
     Double longitude;
     Double latitude;

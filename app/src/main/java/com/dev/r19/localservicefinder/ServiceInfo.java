@@ -10,14 +10,15 @@ import android.location.Location;
 public class ServiceInfo {
 
     String active_id, SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile,Proffession, Company_name, Company_description;
-    Coordinates geoPoint;
+    double latitude;
+    double longitude;
 
     public ServiceInfo() {
 
     }
 
-    public ServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_Description, Coordinates geoPoint) {
-      //  this.active_id = active_id;
+    public ServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_Description, double latitude, double longitude) {
+        //  this.active_id = active_id;t
         this.SP_name = SP_name;
         this.SP_email = SP_email;
         this.Service_name = Service_name;
@@ -32,7 +33,8 @@ public class ServiceInfo {
         this.Proffession = Proffession;
         this.Company_name = Company_name;
         this.Company_description = Company_Description;
-        this.geoPoint = geoPoint;
+        this.latitude = latitude;
+        this.longitude = longitude;
 
     }
 

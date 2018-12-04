@@ -45,7 +45,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     String GetId;
     String Proffession;
     String Gender;
-    Coordinates geoPoint;
+    double longitude, latitude;
 
 
     @Override
@@ -225,9 +225,9 @@ public class ServiceInfoInsert extends AppCompatActivity {
                         Toast.makeText(ServiceInfoInsert.this,"No Address found",Toast.LENGTH_LONG).show();
                     }
                     Address x = adr.get(0);
-                    double longi = x.getLongitude();
-                    double lati = x.getLatitude();
-                    geoPoint = new Coordinates(longi,lati);
+                    longitude = x.getLongitude();
+                    latitude = x.getLatitude();
+
                 }
                 catch (Exception e)
                 {
@@ -238,12 +238,12 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 // Ends Here By Pranjal Das
 
 
-                EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description, geoPoint);
+                EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description, latitude, longitude);
             }
         });
     }
-    private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description, Coordinates geoPoint) {
-        ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,geoPoint);
+    private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description, double latitude, double longitude) {
+        ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,latitude, longitude);
 
         cinfo.active_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         GetId = cinfo.active_id;

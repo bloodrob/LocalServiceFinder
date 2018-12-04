@@ -1,6 +1,7 @@
 package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
+import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import java.util.List;
 public class AfterSelectItem extends AppCompatActivity {
 
     ListView item2;
-    DatabaseReference ref,ref1;
+    DatabaseReference ref;
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
     List<String> listRes,listRes1;
@@ -39,34 +40,6 @@ public class AfterSelectItem extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
 
-        ref1 = database.getReference("Service_Provider_info/geoPoint");
-        ref1.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Coordinates co = dataSnapshot.getValue(Coordinates.class);
-                Toast.makeText(AfterSelectItem.this, "Res is :"+co.longitude, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
          listRes = new ArrayList<>();
         listRes1 = new ArrayList<>();
@@ -78,6 +51,10 @@ public class AfterSelectItem extends AppCompatActivity {
            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                ItemSelect res = dataSnapshot.getValue(ItemSelect.class);
 
+               Location loc = new Location("");
+               loc.setLatitude(res.latitude);
+               loc.setLongitude(res.longitude);
+
               // listRes1.add(res.SP_name);
 
            /*    for (int i = 0; i<listRes.size(); i++); {
@@ -85,13 +62,13 @@ public class AfterSelectItem extends AppCompatActivity {
                } */
 
 
-               if (res.Service_name.equals(Serv_name)) {
+               if (res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) {
 
-                   Toast.makeText(AfterSelectItem.this, " Res name :"+res.SP_name, Toast.LENGTH_LONG).show();
+                //   Toast.makeText(AfterSelectItem.this, " Res name :"+res.SP_name, Toast.LENGTH_LONG).show();
                    listRes.add(res.SP_name);
 
                    for (int i = 0; i<listRes.size(); i++); {
-                       Toast.makeText(AfterSelectItem.this, " Res list :"+listRes, Toast.LENGTH_LONG).show();
+                   //    Toast.makeText(AfterSelectItem.this, " Res list :"+listRes, Toast.LENGTH_LONG).show();
                    }
                    adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
                    item2.setAdapter(adaptor);
