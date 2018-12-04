@@ -26,14 +26,14 @@ public class AfterSelectItem extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
     List<String> listRes,listRes1;
-    String Ser_name;
+    static String Ser_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_select_item);
 
         Intent intent = getIntent();
-        Ser_name = intent.getStringExtra("selectItem");
+        //Ser_name = intent.getStringExtra("selectItem");
        // Toast.makeText(AfterSelectItem.this,"Strng is :"+Ser_name, Toast.LENGTH_LONG).show();
         item2 = (ListView)findViewById(R.id.ItemRes);
 

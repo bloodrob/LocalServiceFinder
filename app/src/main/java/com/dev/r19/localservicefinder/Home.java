@@ -1,10 +1,13 @@
 package com.dev.r19.localservicefinder;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,11 +18,20 @@ import java.util.Locale;
 public class Home extends AppCompatActivity {
     private TextView curCity;
     private String city;
+    private ImageButton selectItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        selectItem = (ImageButton)findViewById(R.id.Doctor);
+        selectItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name= "Doctor";
+                startActivity(intent);
+            }
+        });
         curCity = (TextView)findViewById(R.id.currentCity);
         getLocation(MainActivity.userLocation);
         curCity.setText(""+city);
