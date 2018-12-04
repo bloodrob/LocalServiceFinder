@@ -11,6 +11,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
@@ -35,6 +41,7 @@ public class Home extends AppCompatActivity {
         curCity = (TextView)findViewById(R.id.currentCity);
         getLocation(MainActivity.userLocation);
         curCity.setText(""+city);
+
     }
 
     public void getLocation(Location location)

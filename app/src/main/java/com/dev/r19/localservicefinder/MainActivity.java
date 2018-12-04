@@ -59,15 +59,21 @@ public class MainActivity extends AppCompatActivity {
         import android.Manifest;
         import android.annotation.SuppressLint;
         import android.content.Context;
+        import android.content.DialogInterface;
         import android.content.Intent;
         import android.content.pm.PackageManager;
         import android.location.Location;
         import android.location.LocationListener;
         import android.location.LocationManager;
+        import android.net.ConnectivityManager;
+        import android.net.NetworkInfo;
+        import android.os.Build;
+        import android.provider.Settings;
         import android.support.annotation.NonNull;
         import android.support.v4.app.ActivityCompat;
         import android.support.v4.content.ContextCompat;
         import android.support.v4.view.ViewPager;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
@@ -76,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
         import android.widget.LinearLayout;
         import android.widget.TextView;
         import android.widget.Toast;
+
+        import com.google.firebase.database.ChildEventListener;
+        import com.google.firebase.database.DataSnapshot;
+        import com.google.firebase.database.DatabaseError;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -90,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
     final int FINE=1;
     final int COARSE=2;
     final int INTER =3;
+    FirebaseDatabase database;
+    DatabaseReference ref,ref1;
 
     static Location userLocation;
     LocationManager locationManager;
@@ -100,6 +115,76 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Database Qeury
+        database = FirebaseDatabase.getInstance();
+
+        // Ends Here
+        ref = database.getReference().child("Service_Provider_info").child("geoPoint");
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Coordinates c = dataSnapshot.getValue(Coordinates.class);
+                Toast.makeText(MainActivity.this, ""+c.longitude,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        // Check your Internet First
+        // Check internet Connection
+        ConnectivityManager cm = (ConnectivityManager)this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected =  activeNetwork != null && activeNetwork.isConnected();
+
+        if(!isConnected)
+        {
+            // Alert Here
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(MainActivity.this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(MainActivity.this);
+            }
+            builder.setTitle("INTERNET CONNECTIVITY")
+                    .setMessage("Please Check your Internet Connection. Turn on Your Mobile Data or Wi-Fi")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                           // Open Settings
+                            startActivityForResult(new Intent(Settings.ACTION_SETTINGS),0);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+            // Alert Ends
+        }
+        else
+        {
+            Toast.makeText(this,"Internet Available",Toast.LENGTH_LONG).show();
+        }
+
+
 
         // Get Runtime Permissions
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED
