@@ -51,12 +51,12 @@ public class ResultInList extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 ListResult res = dataSnapshot.getValue(ListResult.class);
-                resList1.add(res.Service_name+ "," +res.Address);
+                resList1.add(res.Service_name);
              //   for (int i =0; i<resList1.size(); i++); {
                //     Toast.makeText(ResultInList.this, " Result is :" + resList1, Toast.LENGTH_LONG).show();
 
                // }
-                adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_2,resList1 );
+                adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,resList1 );
                 list1.setAdapter(adaptor);
                 list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

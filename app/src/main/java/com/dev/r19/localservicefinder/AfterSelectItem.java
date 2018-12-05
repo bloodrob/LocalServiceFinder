@@ -65,7 +65,7 @@ public class AfterSelectItem extends AppCompatActivity {
                if (res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) {
 
                 //   Toast.makeText(AfterSelectItem.this, " Res name :"+res.SP_name, Toast.LENGTH_LONG).show();
-                   listRes.add(res.SP_name);
+                   listRes.add(res.SP_name + "\n" +res.Address + "\n\n");
 
                    for (int i = 0; i<listRes.size(); i++); {
                    //    Toast.makeText(AfterSelectItem.this, " Res list :"+listRes, Toast.LENGTH_LONG).show();
