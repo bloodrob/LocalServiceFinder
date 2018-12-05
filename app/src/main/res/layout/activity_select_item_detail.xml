@@ -20,7 +20,7 @@
         android:id="@+id/spname"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="TextView"
+        android:text=""
         android:layout_alignBaseline="@+id/textView18"
         android:layout_alignBottom="@+id/textView18"
         android:layout_alignParentEnd="true"
@@ -39,7 +39,7 @@
         android:id="@+id/spphone"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="TextView"
+        android:text=""
         android:layout_alignBaseline="@+id/textView20"
         android:layout_alignBottom="@+id/textView20"
         android:layout_alignStart="@+id/spname" />
@@ -51,13 +51,13 @@
         android:layout_alignStart="@+id/textView20"
         android:layout_below="@+id/textView20"
         android:layout_marginTop="48dp"
-        android:text="address" />
+        android:text="Address" />
 
     <TextView
         android:id="@+id/spaddress"
         android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:text="TextView"
+        android:layout_height="70dp"
+        android:text=""
         android:layout_alignBaseline="@+id/textView22"
         android:layout_alignBottom="@+id/textView22"
         android:layout_alignStart="@+id/spphone" />
@@ -70,4 +70,21 @@
         android:text="Here is Your Selected Service provier Details"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/textView22"
+        android:layout_below="@+id/spaddress"
+        android:layout_marginTop="45dp"
+        android:text="Company Description" />
+
+    <TextView
+        android:id="@+id/compdesp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_alignStart="@+id/spaddress"
+        android:layout_alignTop="@+id/textView21"
+        android:text="" />
 </RelativeLayout>

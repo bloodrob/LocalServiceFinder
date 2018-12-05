@@ -18,14 +18,13 @@ public class ClientCredentials extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_credentials);
-
+        //checking the login session status
         auth = FirebaseAuth.getInstance();
-
         if (auth.getCurrentUser() != null) {
             Intent intent = new Intent(ClientCredentials.this, Home.class);
             startActivity(intent);
         }
-
+        //end of login session check
         log = (Button)findViewById(R.id.ToClientLogin);
         reg = (Button)findViewById(R.id.ToClientReg);
 

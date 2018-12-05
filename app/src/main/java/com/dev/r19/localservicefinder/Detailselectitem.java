@@ -5,14 +5,15 @@ package com.dev.r19.localservicefinder;
  */
 
 public class Detailselectitem {
-    String SP_name, Mobile, Address;
+    String SP_name, Mobile, Address, Company_description;
 
     public Detailselectitem() {
     }
 
-    public Detailselectitem(String SP_name, String mobile, String address) {
+    public Detailselectitem(String SP_name, String mobile, String address, String Company_description) {
         this.SP_name = SP_name;
         Mobile = mobile;
         Address = address;
+        this.Company_description = Company_description;
     }
 }

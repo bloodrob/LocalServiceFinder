@@ -28,13 +28,12 @@ public class ClientForgotPassword extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         resetPass1 = (Button)findViewById(R.id.resetPass);
         Remail1 = (EditText) findViewById(R.id.Remail);
-
         resetPass1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String Remail = Remail1.getText().toString().trim();
-
+                //firebase reset password activity start
                 auth.sendPasswordResetEmail(Remail)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -50,6 +49,7 @@ public class ClientForgotPassword extends AppCompatActivity {
                                 }
                             }
                         });
+                //End of reset activity
             }
         });
 

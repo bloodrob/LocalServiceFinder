@@ -20,26 +20,33 @@ import java.util.List;
 
 public class SelectItemDetail extends AppCompatActivity {
 
-
-    TextView name, phone, address;
+    //defining the variable
+    TextView name, phone, address, cdescription;
     FirebaseDatabase database;
     DatabaseReference ref;
     String passname;
+
+    //end
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_item_detail);
 
+        //Geting the string i.e passed from the AfterSelectItem page throug intent
         Intent intent = getIntent();
         passname = intent.getStringExtra("NewItem");
-
+        //end
+        //Button initialization start
         name = (TextView)findViewById(R.id.spname);
         phone = (TextView)findViewById(R.id.spphone);
         address = (TextView)findViewById(R.id.spaddress);
+        cdescription = (TextView)findViewById(R.id.compdesp);
+        //end of button initialization
 
         final String nameget = passname.toString().trim();
         Coordinates point1 = new Coordinates();
 
+        //firebase activity is start from here
         database = FirebaseDatabase.getInstance();
 
         ref = database.getReference("Service_Provider_info");
@@ -58,6 +65,7 @@ public class SelectItemDetail extends AppCompatActivity {
                     name.setText(res.SP_name);
                     phone.setText(res.Mobile);
                     address.setText(res.Address);
+                    cdescription.setText(res.Company_description);
                 }
             }
 
@@ -81,7 +89,7 @@ public class SelectItemDetail extends AppCompatActivity {
 
             }
         });
-
+        //End of firebase activity
 
     }
 }

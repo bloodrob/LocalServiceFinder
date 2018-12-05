@@ -54,7 +54,7 @@ public class ClientLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //Listener activity for the authenticate value
         UlogIn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +69,7 @@ public class ClientLogin extends AppCompatActivity {
                 if(TextUtils.isEmpty(Upassword)) {
                     Toast.makeText(ClientLogin.this, "No password", Toast.LENGTH_LONG).show();
                 }
+                //Firebase activity for signin user
                 auth1.signInWithEmailAndPassword(Uemail,Upassword)
                         .addOnCompleteListener(ClientLogin.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -86,8 +87,9 @@ public class ClientLogin extends AppCompatActivity {
 
                             }
                         });
-
+                //end of firebase activity
             }
         });
+        //end of auth activity
     }
 }

@@ -35,9 +35,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
+        // checking the loggin session of the user
         auth = FirebaseAuth.getInstance();
         signout = (Button)findViewById(R.id.SignOut);
         signout.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +50,7 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
-
+        //end of session check activity
         selectItem = (ImageButton)findViewById(R.id.Doctor);
         selectItem.setOnClickListener(new View.OnClickListener() {
             @Override
