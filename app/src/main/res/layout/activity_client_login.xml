@@ -62,7 +62,7 @@
         android:layout_marginTop="22dp"
         android:layout_below="@+id/Upassword"
         android:layout_alignStart="@+id/Upassword"
-        android:background="@drawable/btn_back3"/>
+        android:background="@drawable/btn_back4"/>
 
     <Button
         android:id="@+id/button4"
@@ -78,11 +78,21 @@
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginTop="360dp"
-        android:background="@drawable/btn_back3"
+        android:background="@drawable/btn_back4"
         android:layout_marginLeft="40dp"
-        android:textColor="#1218C7"
+        android:textColor="#ffffff"
         android:textSize="18dp"
-        android:text="Forgrt Password" />
+        android:text="Forgot Password" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/forgot_pass"
+        android:layout_marginTop="13dp"
+        android:text="Don't have an account"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="120dp"/>
 
 
 </android.widget.RelativeLayout>
