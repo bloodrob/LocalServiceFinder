@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">LocalServiceFinder</string>
-
+    
+    <string name="Prof_Doctor">Doctor</string>
+    <string name="Prof_Tutor">Tutor</string>
+    <string name="Prof_Pharmacy">Pharmacy</string>
+    <string name="Prof_Hospital">Hospital</string>
+    <string name="Prof_Electrician">Electrician</string>
+    <string name="Prof_IT_Professional">IT Professional</string>
+    <string name="Prof_Insurance_Agent">Insurance Agent</string>
+    <string name="Prof_Restaurant">Restaurant</string>
+    <string name="Prof_Car_ShowRoom">"Car ShowRoom"</string>
+    <string name="Prof_Local_Transport_Agency">Local Transport Agency</string>
+    <string name="Prof_Dhaba">Dhaba</string>
+    <string name="Prof_Lawyer">Lawyer</string>
+    <string name="Prof_Vehicle_Rent">Vehicle Rent</string>
+    <string name="Prof_Travel_Agent">Travel Agent</string>
 </resources>
