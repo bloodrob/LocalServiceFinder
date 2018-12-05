@@ -27,7 +27,7 @@ import java.util.Locale;
 public class Home extends AppCompatActivity {
     private TextView curCity;
     private String city;
-    private ImageButton selectItem;
+    private ImageButton doctor;
     private Button signout;
 
     FirebaseAuth auth;
@@ -35,6 +35,11 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        // Set Location
+        curCity = (TextView)findViewById(R.id.currentCity);
+        getLocation(MainActivity.userLocation);
+        curCity.setText(""+city);
+
         // checking the loggin session of the user
         auth = FirebaseAuth.getInstance();
         signout = (Button)findViewById(R.id.SignOut);
@@ -51,8 +56,10 @@ public class Home extends AppCompatActivity {
             }
         });
         //end of session check activity
-        selectItem = (ImageButton)findViewById(R.id.Doctor);
-        selectItem.setOnClickListener(new View.OnClickListener() {
+
+        // Click on Doctor Image Button
+        doctor = (ImageButton)findViewById(R.id.doctor_imagebutton);
+        doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, AfterSelectItem.class);
@@ -60,10 +67,6 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        curCity = (TextView)findViewById(R.id.currentCity);
-        getLocation(MainActivity.userLocation);
-        curCity.setText(""+city);
-
     }
 
     public void getLocation(Location location)
