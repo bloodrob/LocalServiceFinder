@@ -7,10 +7,13 @@ import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,10 +28,31 @@ public class Home extends AppCompatActivity {
     private TextView curCity;
     private String city;
     private ImageButton selectItem;
+    private Button signout;
+
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+
+        auth = FirebaseAuth.getInstance();
+        signout = (Button)findViewById(R.id.SignOut);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+                FirebaseUser user = auth.getCurrentUser();
+                if (user  == null) {
+                    Intent intent = new Intent(Home.this, ClientCredentials.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            }
+        });
+
         selectItem = (ImageButton)findViewById(R.id.Doctor);
         selectItem.setOnClickListener(new View.OnClickListener() {
             @Override

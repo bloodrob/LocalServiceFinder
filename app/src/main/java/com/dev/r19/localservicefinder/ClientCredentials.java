@@ -22,7 +22,7 @@ public class ClientCredentials extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            Intent intent = new Intent(ClientCredentials.this, ClientHomePage.class);
+            Intent intent = new Intent(ClientCredentials.this, Home.class);
             startActivity(intent);
         }
 

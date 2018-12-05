@@ -5,14 +5,16 @@ package com.dev.r19.localservicefinder;
  */
 
 public class ListResult {
-        String Service_name, Serial_no;
+        String Service_name, Serial_no, Address;
 
     public ListResult() {
     }
 
-    public ListResult(String service_name, String serial_no) {
-        Service_name = service_name;
-        Serial_no = serial_no;
+    public ListResult(String service_name, String serial_no, String Address) {
+        this.Service_name = service_name;
+        this.Serial_no = serial_no;
+        this.Address= Address;
+
     }
 
   /*  public String getSerial_name() {
