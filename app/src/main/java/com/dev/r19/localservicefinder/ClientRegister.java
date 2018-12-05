@@ -46,7 +46,7 @@ public class ClientRegister extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //listener for the required reg variable value
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +82,7 @@ public class ClientRegister extends AppCompatActivity {
                     Toast.makeText(ClientRegister.this, "Password must be same", Toast.LENGTH_LONG).show();
                     return;
                 }
-
+                //Firebase activity for user register
                 auth.createUserWithEmailAndPassword(ClientEmail, ClientPassword)
                         .addOnCompleteListener(ClientRegister.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -95,7 +95,8 @@ public class ClientRegister extends AppCompatActivity {
                                 }
                             }
                         });
+                //end of firebase register activity
             }
-        });
+        }); //end of listener
     }
 }

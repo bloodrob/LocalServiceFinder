@@ -52,7 +52,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/userlogin"
+        android:id="@+id/Userlogin"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:text="Log in"

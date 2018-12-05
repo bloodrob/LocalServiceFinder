@@ -40,7 +40,9 @@
         <activity android:name=".AddSuccess" />
         <activity android:name=".ResultInList" />
         <activity android:name=".AfterSelectItem" />
-        <activity android:name=".SelectItemDetail"></activity>
+        <activity android:name=".SelectItemDetail" />
+        <activity android:name=".ClientFeedback" />
+        <activity android:name=".SuccessClientFeedback"></activity>
     </application>
 
 </manifest>

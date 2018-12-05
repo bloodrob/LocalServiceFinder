@@ -23,7 +23,7 @@ public class ClientLogin extends AppCompatActivity {
     public static final String TAG = "ClientLogin";
     EditText Uemail1, Upassword1;
     Button UlogIn1, btn1, btn2;
-    FirebaseAuth auth1;
+    FirebaseAuth auth;
 
 
     @Override
@@ -31,13 +31,13 @@ public class ClientLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_login);
 
-        auth1 = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         //Button btn1 = (Button) findViewById(R.id.UlogIn);
         btn1 =(Button)findViewById(R.id.forgot_pass);
         btn2 = (Button) findViewById(R.id.button4);
         Uemail1 = (EditText) findViewById(R.id.Uemail);
         Upassword1 = (EditText) findViewById(R.id.Upassword);
-        UlogIn1 = (Button)findViewById(R.id.userlogin);
+        UlogIn1 = (Button)findViewById(R.id.Userlogin);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +70,7 @@ public class ClientLogin extends AppCompatActivity {
                     Toast.makeText(ClientLogin.this, "No password", Toast.LENGTH_LONG).show();
                 }
                 //Firebase activity for signin user
-                auth1.signInWithEmailAndPassword(Uemail,Upassword)
+                auth.signInWithEmailAndPassword(Uemail,Upassword)
                         .addOnCompleteListener(ClientLogin.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

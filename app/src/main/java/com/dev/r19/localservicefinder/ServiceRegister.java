@@ -29,8 +29,6 @@ public class ServiceRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_register);
-
-
         auth = FirebaseAuth.getInstance();
         submit =(Button)findViewById(R.id.ServiceReg);
         Tologin =(Button)findViewById(R.id.SerLogin);
@@ -46,7 +44,7 @@ public class ServiceRegister extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //listener activity for the variables and the values for user create
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +84,7 @@ public class ServiceRegister extends AppCompatActivity {
                 }
                 // End of validation
 
-                //creating user account using the method below to firebase authenticatio
+                //creating user account using the method below to firebase authentication
                 auth.createUserWithEmailAndPassword(ServiceEmail, ServicePass)
                         .addOnCompleteListener(ServiceRegister.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -104,9 +102,9 @@ public class ServiceRegister extends AppCompatActivity {
 
                             }
                         });
-
+                //end of firebase user create activity
 
             }
-        });
+        }); //end of listener acivity
     }
 }

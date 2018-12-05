@@ -30,8 +30,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="95dp"
             android:textColor="#ffffff"
-            android:textSize="30dp"
-            android:text="If you want to explore services in your City Register as a client." />
+            android:text="We all like immediate response to our need whatever it is or wherever it is. Our need must be fulfill. We need services at our local area, working area or within our surrounding. This system bring us to this facility to all that we can find something we want somewhere we need." />
     </RelativeLayout>
 
 </android.widget.RelativeLayout>

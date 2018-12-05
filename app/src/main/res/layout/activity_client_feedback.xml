@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.r19.localservicefinder.ClientFeedback">
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Hello friend, Please give us a feedback to our system. Your one valuable feedback can help us to improve our system as the better place for you all to be used"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/textView25"
+        android:layout_below="@+id/textView25"
+        android:layout_marginTop="63dp"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/cliname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView25"
+        android:layout_alignTop="@+id/textView26"
+        android:layout_marginEnd="18dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_alignStart="@+id/textView26"
+        android:layout_centerVertical="true"
+        android:text="E-mail" />
+
+    <EditText
+        android:id="@+id/cliemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cliname"
+        android:layout_alignTop="@+id/textView27"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="70dp"
+        android:layout_height="35dp"
+        android:layout_alignEnd="@+id/textView27"
+        android:layout_below="@+id/cliemail"
+        android:layout_marginTop="47dp"
+        android:text="Message" />
+
+    <EditText
+        android:id="@+id/climessage"
+        android:layout_width="211dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/cliemail"
+        android:layout_below="@+id/cliemail"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/feedbacksubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Submit Feedback" />
+</RelativeLayout>
