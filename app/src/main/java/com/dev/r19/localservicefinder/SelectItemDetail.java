@@ -34,7 +34,7 @@ public class SelectItemDetail extends AppCompatActivity {
 
         //Geting the string i.e passed from the AfterSelectItem page throug intent
         Intent intent = getIntent();
-        passname = intent.getStringExtra("NewItem");
+        passname = intent.getStringExtra("SendItem");
         //end
         //Button initialization start
         name = (TextView)findViewById(R.id.spname);
@@ -44,17 +44,11 @@ public class SelectItemDetail extends AppCompatActivity {
         //end of button initialization
 
         final String nameget = passname.toString().trim();
-        Coordinates point1 = new Coordinates();
 
         //firebase activity is start from here
         database = FirebaseDatabase.getInstance();
 
         ref = database.getReference("Service_Provider_info");
-
-
-
-
-
 
         ref.addChildEventListener(new ChildEventListener() {
             @Override

@@ -59,8 +59,10 @@ public class AfterSelectItem extends AppCompatActivity {
                        @Override
                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                            String NewItem = (String) item2.getItemAtPosition(position);
+                           String[] name = NewItem.split("\n");
+                           String SendItem = name[0];
                            Intent intent = new Intent(AfterSelectItem.this, SelectItemDetail.class);
-                           intent.putExtra("NewItem", NewItem);
+                           intent.putExtra("SendItem", SendItem);
                            startActivity(intent);
                        }
                    });

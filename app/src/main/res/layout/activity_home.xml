@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="60dp"
+        android:background="@drawable/back_register"
         android:id="@+id/LinHeader"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
@@ -19,6 +20,8 @@
         <TextView
             android:id="@+id/textView23"
             android:layout_marginTop="5dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -35,6 +38,7 @@
             android:layout_alignTop="@+id/textView23"
             android:layout_centerHorizontal="true"
             android:text="TextView"
+            android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -47,6 +51,7 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/btn_back4"
             android:text="Log Out"
+            android:textColor="#ffffff"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -80,6 +85,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_doctor" />
 
@@ -101,6 +107,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_lawyer" />
 
@@ -122,6 +129,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_tutor" />
 
@@ -144,6 +152,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_travel_agent" />
 
@@ -167,6 +176,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_it_professionals" />
 
@@ -188,6 +198,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_restaurant" />
 
@@ -209,6 +220,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_electrician" />
 
@@ -230,6 +242,186 @@
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
                         android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_pharmacy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Pharmacy" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_doctor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Doctor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_lawyer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Lawyer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_tutor" />
+
+                    <TextView
+                        android:layout_width="89dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/Prof_Tutor"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_travel_agent" />
+
+                    <TextView
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Travel_Agent"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_it_professionals" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_IT_Professional" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_restaurant" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Restaurant" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_electrician" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="@string/Prof_Electrician" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
                         android:background="@android:color/transparent"
                         android:src="@drawable/image_pharmacy" />
 
