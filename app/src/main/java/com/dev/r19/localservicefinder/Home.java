@@ -37,8 +37,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         // Set Location
         curCity = (TextView)findViewById(R.id.currentCity);
-        getLocation(MainActivity.userLocation);
-        curCity.setText(""+city);
+       // getLocation(MainActivity.userLocation);
+        curCity.setText(""+MainActivity.City);
 
         // checking the loggin session of the user
         auth = FirebaseAuth.getInstance();

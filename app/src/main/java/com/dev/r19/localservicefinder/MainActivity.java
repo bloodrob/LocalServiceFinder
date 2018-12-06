@@ -54,74 +54,90 @@ public class MainActivity extends AppCompatActivity {
 
 /// new code
 
-    package com.dev.r19.localservicefinder;
+package com.dev.r19.localservicefinder;
 
-        import android.Manifest;
-        import android.annotation.SuppressLint;
-        import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.content.pm.PackageManager;
-        import android.location.Location;
-        import android.location.LocationListener;
-        import android.location.LocationManager;
-        import android.net.ConnectivityManager;
-        import android.net.NetworkInfo;
-        import android.os.Build;
-        import android.provider.Settings;
-        import android.support.annotation.NonNull;
-        import android.support.v4.app.ActivityCompat;
-        import android.support.v4.content.ContextCompat;
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AlertDialog;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.ImageView;
-        import android.widget.LinearLayout;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import com.google.firebase.auth.FirebaseAuth;
-        import com.google.firebase.auth.FirebaseUser;
-        import com.google.firebase.database.ChildEventListener;
-        import com.google.firebase.database.DataSnapshot;
-        import com.google.firebase.database.DatabaseError;
-        import com.google.firebase.database.DatabaseReference;
-        import com.google.firebase.database.FirebaseDatabase;
-        import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     //   int finecode = 1;
-    Double longi,lati;
+    Double longi, lati;
     ViewPager viewPager;
     PagerViewAdapter pagerViewAdapter;
-    Button asClient,asService,serviceEntry,serviceSearch;
+    Button asClient, asService, serviceEntry, serviceSearch;
     LinearLayout linearLayout;
     private int dotcounts;
     private ImageView[] dots;
-    final int FINE=1;
-    final int COARSE=2;
-    final int INTER =3;
+    final int FINE = 1;
+    final int COARSE = 2;
+    final int INTER = 3;
     FirebaseDatabase database;
-    DatabaseReference ref,ref1;
+    DatabaseReference ref, ref1;
 
 
     static Location userLocation;
     LocationManager locationManager;
     LocationListener locationListener;
+    static String City;
 
-    @SuppressLint("MissingPermission")
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            getPermission();
+        }
+        // Get Runtime Permissions
+        //  if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        //        && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        //    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE);
+        //    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, COARSE);
+        // }
+        //     Permission permission = new Permission();
+        //     permission.getPermission(this,this);
+        //Request Location
+        getLocation();
         // Database Qeury
         database = FirebaseDatabase.getInstance();
-
-
 
         // Ends Here
         ref = database.getReference().child("Service_Provider_info").child("geoPoint");
@@ -129,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Coordinates c = dataSnapshot.getValue(Coordinates.class);
-                Toast.makeText(MainActivity.this, ""+c.longitude,Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "" + c.longitude, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -154,12 +170,11 @@ public class MainActivity extends AppCompatActivity {
         });
         // Check your Internet First
         // Check internet Connection
-        ConnectivityManager cm = (ConnectivityManager)this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected =  activeNetwork != null && activeNetwork.isConnected();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnected();
 
-        if(!isConnected)
-        {
+        if (!isConnected) {
             // Alert Here
             AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -171,8 +186,8 @@ public class MainActivity extends AppCompatActivity {
                     .setMessage("Please Check your Internet Connection. Turn on Your Mobile Data or Wi-Fi")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                           // Open Settings
-                            startActivityForResult(new Intent(Settings.ACTION_SETTINGS),0);
+                            // Open Settings
+                            startActivityForResult(new Intent(Settings.ACTION_SETTINGS), 0);
                         }
                     })
                     .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -183,31 +198,15 @@ public class MainActivity extends AppCompatActivity {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
             // Alert Ends
-        }
-        else
-        {
-            Toast.makeText(this,"Internet Available",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Internet Available", Toast.LENGTH_LONG).show();
         }
 
-
-
-        // Get Runtime Permissions
-            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
-            {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},FINE);
-                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},COARSE);
-            }
-        //     Permission permission = new Permission();
-        //     permission.getPermission(this,this);
-        //Request Location
-        getLocation();
-
-        asClient = (Button)findViewById(R.id.asclient);
+        asClient = (Button) findViewById(R.id.asclient);
         asService = (Button) findViewById(R.id.asService);
-        serviceEntry = (Button)findViewById(R.id.serviceEntry);
-        serviceSearch = (Button)findViewById(R.id.serviceSearch);
-        linearLayout = (LinearLayout)findViewById(R.id.slider);
+        serviceEntry = (Button) findViewById(R.id.serviceEntry);
+        serviceSearch = (Button) findViewById(R.id.serviceSearch);
+        linearLayout = (LinearLayout) findViewById(R.id.slider);
 
 
         asClient.setOnClickListener(new View.OnClickListener() {
@@ -233,8 +232,8 @@ public class MainActivity extends AppCompatActivity {
         serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ServiceEntry.class);
-                startActivity(intent);
+         //       Intent intent = new Intent(MainActivity.this, Navigation.class);
+           //     startActivity(intent);
             }
         });
 
@@ -254,19 +253,18 @@ public class MainActivity extends AppCompatActivity {
 
         dots = new ImageView[dotcounts];
 
-        for(int i=0;i<dotcounts;i++)
-        {
+        for (int i = 0; i < dotcounts; i++) {
             dots[i] = new ImageView(this);
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.nonactivedot));
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactivedot));
 
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-            params.setMargins(8,0,8,0);
+            params.setMargins(8, 0, 8, 0);
 
-            linearLayout.addView(dots[i],params);
+            linearLayout.addView(dots[i], params);
         }
 
-        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.activedot));
+        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.activedot));
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -285,22 +283,29 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        if(userLocation==null)
-        {
-            Toast.makeText(MainActivity.this,"Location not Found",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(MainActivity.this,"Location Found",Toast.LENGTH_LONG).show();
+        if (userLocation == null) {
+            Toast.makeText(MainActivity.this, "Location not Found", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(MainActivity.this, "Location Found", Toast.LENGTH_LONG).show();
         }
     }
 
-    @SuppressLint("MissingPermission")
-    public void getLocation()
-    {
-        locationManager = (LocationManager)getSystemService(MainActivity.LOCATION_SERVICE);
-        userLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+    public void getLocation() {
+        locationManager = (LocationManager) getSystemService(MainActivity.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            getPermission();
+            return;
+        }
+        userLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
         if(userLocation!=null)
         {
+            City = getCity(userLocation);
             return;
         }
         locationListener = new LocationListener() {
@@ -311,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "" + location.getLatitude() + " / " + location.getLongitude(), Toast.LENGTH_LONG).show();
                 }
+                City = getCity(location);
             }
 
             @Override
@@ -354,6 +360,41 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Check Permission
+    public void getPermission()
+    {
+        if(ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, COARSE);
+            }
+            return;
+        }
+        else
+        {
+
+        }
+
+
+        if(ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
+        {
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION))
+            {
+
+            }
+            else
+            {
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},FINE);
+            }
+            return;
+        }
+        else
+        {
+
+        }
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -387,6 +428,29 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    public String getCity(Location location)
+    {
+        String city=null;
+        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        List<Address> addresses=null;
+        try {
+           // Toast.makeText(MainActivity.this,"Inside GetCity : "+location.getLatitude()+" / "+location.getLongitude(),Toast.LENGTH_LONG).show();
+            addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        try {
+            city = addresses.get(0).getLocality();
+        }
+        catch (Exception e)
+        {
+            city = "City Not Found";
+        }
+        return city;
     }
 }
 

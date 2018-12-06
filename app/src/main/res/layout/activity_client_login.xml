@@ -73,8 +73,7 @@
         android:layout_marginLeft="40dp"
         android:background="@drawable/btn_back5"
         android:textSize="17dp"
-        android:textColor="#ffffff
-"
+        android:textColor="#ffffff"
         android:layout_alignStart="@+id/userlogin" />
 
     <Button

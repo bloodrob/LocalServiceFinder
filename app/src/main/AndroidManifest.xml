@@ -42,7 +42,7 @@
         <activity android:name=".AfterSelectItem" />
         <activity android:name=".SelectItemDetail" />
         <activity android:name=".ClientFeedback" />
-        <activity android:name=".SuccessClientFeedback"></activity>
+        <activity android:name=".SuccessClientFeedback" />
     </application>
 
 </manifest>
