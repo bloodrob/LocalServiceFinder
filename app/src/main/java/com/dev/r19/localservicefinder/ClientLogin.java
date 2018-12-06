@@ -59,15 +59,20 @@ public class ClientLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Uemail = Uemail1.getText().toString().trim();
-                String Upassword = Upassword1.getText().toString().trim();
+
+                    String Uemail = Uemail1.getText().toString().trim();
+                    String Upassword = Upassword1.getText().toString().trim();
+
+
 
                 if(TextUtils.isEmpty(Uemail)) {
                     Toast.makeText(ClientLogin.this, "No email id", Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if(TextUtils.isEmpty(Upassword)) {
                     Toast.makeText(ClientLogin.this, "No password", Toast.LENGTH_LONG).show();
+                    return;
                 }
                 //Firebase activity for signin user
                 auth.signInWithEmailAndPassword(Uemail,Upassword)

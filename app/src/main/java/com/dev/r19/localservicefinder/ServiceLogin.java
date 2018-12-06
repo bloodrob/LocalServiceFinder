@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,6 +48,15 @@ public class ServiceLogin extends AppCompatActivity {
 
                 String SerLogEmail = email.getText().toString().trim();
                 String SerLogPass = pass.getText().toString().trim();
+
+                if (TextUtils.isEmpty(SerLogEmail)) {
+                    Toast.makeText(ServiceLogin.this, " E-mail Required", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(SerLogPass)) {
+                    Toast.makeText(ServiceLogin.this, " Password Required", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 auth.signInWithEmailAndPassword(SerLogEmail, SerLogPass)
                         .addOnCompleteListener(ServiceLogin.this, new OnCompleteListener<AuthResult>() {
