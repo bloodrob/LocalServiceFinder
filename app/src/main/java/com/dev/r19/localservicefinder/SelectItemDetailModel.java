@@ -4,13 +4,13 @@ package com.dev.r19.localservicefinder;
  * Created by akash on 11/30/2018.
  */
 
-public class Detailselectitem {
+public class SelectItemDetailModel {
     String SP_name, Mobile, Address, Company_description;
 
-    public Detailselectitem() {
+    public SelectItemDetailModel() {
     }
 
-    public Detailselectitem(String SP_name, String mobile, String address, String Company_description) {
+    public SelectItemDetailModel(String SP_name, String mobile, String address, String Company_description) {
         this.SP_name = SP_name;
         Mobile = mobile;
         Address = address;

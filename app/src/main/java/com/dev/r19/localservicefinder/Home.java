@@ -27,7 +27,7 @@ import java.util.Locale;
 public class Home extends AppCompatActivity {
     private TextView curCity;
     private String city;
-    private ImageButton doctor;
+    private ImageButton doctor, tutor;
     private Button signout;
 
     FirebaseAuth auth;
@@ -64,6 +64,16 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name= "Doctor";
+                startActivity(intent);
+            }
+        });
+        tutor = (ImageButton)findViewById(R.id.tutor_imagebutton);
+        tutor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Home.this,AfterSelectItem.class);
+                AfterSelectItem.Ser_name=getString(R.string.Prof_Tutor);
                 startActivity(intent);
             }
         });

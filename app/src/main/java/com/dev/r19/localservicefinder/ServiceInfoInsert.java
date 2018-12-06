@@ -25,10 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
 
 public class ServiceInfoInsert extends AppCompatActivity {
@@ -242,7 +240,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         });
     }
     private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description, double latitude, double longitude) {
-        ServiceInfo cinfo = new ServiceInfo(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,latitude, longitude);
+        ServiceInfoInsertModel cinfo = new ServiceInfoInsertModel(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,latitude, longitude);
 
         cinfo.active_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         GetId = cinfo.active_id;
@@ -256,7 +254,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ServiceInfo cinfo = dataSnapshot.getValue(ServiceInfo.class);
+                ServiceInfoInsertModel cinfo = dataSnapshot.getValue(ServiceInfoInsertModel.class);
 
                 if (cinfo == null) {
                     Log.e(TAG, "Data is null");

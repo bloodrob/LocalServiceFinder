@@ -1,22 +1,15 @@
 package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
-import android.location.Location;
-import android.renderscript.Sampler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SelectItemDetail extends AppCompatActivity {
 
@@ -53,7 +46,7 @@ public class SelectItemDetail extends AppCompatActivity {
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Detailselectitem res = dataSnapshot.getValue(Detailselectitem.class);
+                SelectItemDetailModel res = dataSnapshot.getValue(SelectItemDetailModel.class);
 
                 if (res.SP_name.equals(nameget)) {
                     name.setText(res.SP_name);

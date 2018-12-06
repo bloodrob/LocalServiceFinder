@@ -125,12 +125,13 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/tutor_imagebutton"
                         android:layout_width="fill_parent"
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
-                        android:scaleType="fitXY"
-                        android:padding="15dp"
                         android:background="@android:color/transparent"
+                        android:padding="15dp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/image_tutor" />
 
                     <TextView

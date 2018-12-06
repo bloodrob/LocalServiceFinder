@@ -7,17 +7,17 @@ import android.location.Location;
  * Created by R19 on 11/22/2018.
  */
 
-public class ServiceInfo {
+public class ServiceInfoInsertModel {
 
     String active_id, SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile,Proffession, Company_name, Company_description;
     double latitude;
     double longitude;
 
-    public ServiceInfo() {
+    public ServiceInfoInsertModel() {
 
     }
 
-    public ServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_Description, double latitude, double longitude) {
+    public ServiceInfoInsertModel(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_Description, double latitude, double longitude) {
         //  this.active_id = active_id;t
         this.SP_name = SP_name;
         this.SP_email = SP_email;
