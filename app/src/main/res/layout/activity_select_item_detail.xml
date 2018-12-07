@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.SelectItemDetail">
+    tools:context="com.dev.r19.localservicefinder.SelectItemDetail"
+    android:background="@drawable/background4">
 
     <TextView
         android:id="@+id/textView18"
@@ -14,13 +15,17 @@
         android:layout_marginTop="117dp"
         android:text="Name"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/spname"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="40dp"
-        android:text=""
+        android:textColor="#000000"
+        android:textSize="18dp"
         android:layout_alignBaseline="@+id/textView18"
         android:layout_alignBottom="@+id/textView18"
         android:layout_alignParentEnd="true"
@@ -32,14 +37,18 @@
         android:layout_height="40dp"
         android:layout_alignStart="@+id/textView18"
         android:layout_below="@+id/textView18"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:layout_marginTop="63dp"
         android:text="Mobile" />
 
     <TextView
         android:id="@+id/spphone"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="40dp"
-        android:text=""
+        android:textColor="#000000"
+        android:textSize="18dp"
         android:layout_alignBaseline="@+id/textView20"
         android:layout_alignBottom="@+id/textView20"
         android:layout_alignStart="@+id/spname" />
@@ -48,6 +57,8 @@
         android:id="@+id/textView22"
         android:layout_width="70dp"
         android:layout_height="40dp"
+        android:textColor="#000000"
+        android:textSize="18dp"
         android:layout_alignStart="@+id/textView20"
         android:layout_below="@+id/textView20"
         android:layout_marginTop="48dp"
@@ -57,7 +68,8 @@
         android:id="@+id/spaddress"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:text=""
+        android:textColor="#000000"
+        android:textSize="16dp"
         android:layout_alignBaseline="@+id/textView22"
         android:layout_alignBottom="@+id/textView22"
         android:layout_alignStart="@+id/spphone" />
@@ -69,7 +81,9 @@
         android:layout_marginTop="35dp"
         android:text="Here is Your Selected Service provier Details"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/textView21"
@@ -78,6 +92,8 @@
         android:layout_alignStart="@+id/textView22"
         android:layout_below="@+id/spaddress"
         android:layout_marginTop="45dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Company Description" />
 
     <TextView
@@ -86,5 +102,6 @@
         android:layout_height="70dp"
         android:layout_alignStart="@+id/spaddress"
         android:layout_alignTop="@+id/textView21"
-        android:text="" />
+        android:textColor="#000000"
+        android:textSize="16dp" />
 </RelativeLayout>

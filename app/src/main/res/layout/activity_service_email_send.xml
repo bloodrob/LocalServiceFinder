@@ -14,16 +14,17 @@
         android:layout_marginTop="65dp"
         android:text="A password reset link has been sent to your registered e-mail. Please check your emai and click the link on it. After reseting your password go to your Log in page and try to login again."
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
 
     <Button
         android:id="@+id/Slogin"
-        android:layout_width="150dp"
+        android:layout_width="180dp"
         android:layout_height="45dp"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="119dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/btn_back1"
+        android:layout_marginTop="289dp"
+        android:textColor="#000000"
+        android:background="@drawable/btn_back5"
         android:text="Back To Log In Page" />
 </RelativeLayout>

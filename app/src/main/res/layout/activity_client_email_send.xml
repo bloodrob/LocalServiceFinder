@@ -11,11 +11,12 @@
         android:id="@+id/textView3"
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="120dp"
         android:text="A password reset link has been sent to your registered e-mail. Please check your emai and click the link on it. After reseting your password go to your Log in page and try to login again."
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="13dp"/>
+        android:textSize="13dp"
+        android:textColor="#ffffff"/>
 
     <Button
         android:id="@+id/Blogin"
@@ -23,8 +24,8 @@
         android:layout_height="45dp"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="156dp"
-        android:textColor="#ffffff"
+        android:layout_marginTop="220dp"
+        android:textColor="#000000"
         android:text="Back To Log In Page"
-        android:background="@drawable/btn_back1"/>
+        android:background="@drawable/btn_back5"/>
 </RelativeLayout>
