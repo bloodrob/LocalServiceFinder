@@ -64,7 +64,7 @@ public class ServiceLogin extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(ServiceLogin.this, "You Are logged in", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(ServiceLogin.this, ServiceHomePage.class);
+                                    Intent intent = new Intent(ServiceLogin.this, ProviderHome.class);
                                     startActivity(intent);
                                 }
                                 else {
