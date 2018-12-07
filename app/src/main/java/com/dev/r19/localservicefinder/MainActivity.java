@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ClientHome.class);
+                Intent intent = new Intent(MainActivity.this,ProviderHome.class);
                 startActivity(intent);
             }
         });

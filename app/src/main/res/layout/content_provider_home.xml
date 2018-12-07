@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProviderHome"
+    tools:showIn="@layout/app_bar_provider_home">
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back0051">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:useDefaultMargins="true">
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/profile_update_imagebutton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_update_profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="Update Profile" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_update_status" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="Update Status" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/tutor_imagebutton"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:background="@android:color/transparent"
+                        android:padding="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/image_offers" />
+
+                    <TextView
+                        android:layout_width="89dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Special Offers"
+                        android:textColor="#ffffff"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="fill"
+                        android:scaleType="fitXY"
+                        android:padding="15dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/image_logout" />
+
+                    <TextView
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="Log Out"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

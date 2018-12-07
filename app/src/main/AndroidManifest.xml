@@ -46,6 +46,10 @@
         <activity
             android:name=".ClientHome"
             android:label="@string/title_activity_client_home"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".ProviderHome"
+            android:label="@string/title_activity_provider_home"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
     </application>
 
