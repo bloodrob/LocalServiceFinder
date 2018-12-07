@@ -21,7 +21,7 @@ public class ClientCredentials extends AppCompatActivity {
         //checking the login session status
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
-            Intent intent = new Intent(ClientCredentials.this, Home.class);
+            Intent intent = new Intent(ClientCredentials.this, ClientHome.class);
             startActivity(intent);
         }
         //end of login session check

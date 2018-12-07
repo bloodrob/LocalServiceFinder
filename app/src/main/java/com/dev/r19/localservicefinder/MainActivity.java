@@ -137,37 +137,6 @@ public class MainActivity extends AppCompatActivity {
         //Request Location
         getLocation();
         // Database Qeury
-        database = FirebaseDatabase.getInstance();
-
-        // Ends Here
-        ref = database.getReference().child("Service_Provider_info").child("geoPoint");
-        ref.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Coordinates c = dataSnapshot.getValue(Coordinates.class);
-                Toast.makeText(MainActivity.this, "" + c.longitude, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
         // Check your Internet First
         // Check internet Connection
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(MainActivity.this.CONNECTIVITY_SERVICE);
@@ -202,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Internet Available", Toast.LENGTH_LONG).show();
         }
 
+
+        // Button Working Here
+
         asClient = (Button) findViewById(R.id.asclient);
         asService = (Button) findViewById(R.id.asService);
         serviceEntry = (Button) findViewById(R.id.serviceEntry);
@@ -232,6 +204,8 @@ public class MainActivity extends AppCompatActivity {
         serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ClientHome.class);
+                startActivity(intent);
             }
         });
 
@@ -242,6 +216,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        // Working With Fragment
         viewPager = (ViewPager) findViewById(R.id.fragment_container);
 
         PagerViewAdapter pagerViewAdapter = new PagerViewAdapter(getSupportFragmentManager());

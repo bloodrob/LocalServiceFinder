@@ -29,7 +29,7 @@
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:background="@drawable/btn_back2"
-        android:text="Cleint" />
+        android:text="Client" />
 
     <Button
         android:id="@+id/asService"
@@ -39,8 +39,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="8dp"
         android:textColor="#ffffff"
+        android:textSize="20dp"
         android:background="@drawable/btn_back1"
-        android:text="Service Provider" />
+        android:text="Provider" />
 
     <LinearLayout
         android:id="@+id/slider"
