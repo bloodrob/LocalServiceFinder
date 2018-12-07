@@ -15,8 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class ProviderHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,22 @@ public class ProviderHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ProviderHome.this, ServiceInfoInsert.class);
                 startActivity(intent);
+            }
+        });
+        ImageButton logout = (ImageButton)findViewById(R.id.logout_imagebutton);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // checking the loggin session of the user
+                auth = FirebaseAuth.getInstance();
+                auth.signOut();
+                FirebaseUser user = auth.getCurrentUser();
+                if (user  == null) {
+                    Intent intent = new Intent(ProviderHome.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+                //end of session check activity
             }
         });
 

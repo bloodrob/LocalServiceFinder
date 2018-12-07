@@ -67,7 +67,7 @@ public class ServiceHomePage extends AppCompatActivity {
                 FirebaseUser user = auth.getCurrentUser();
 
                 if (user == null) {
-                    Intent intent = new Intent(ServiceHomePage.this, ServiceCredentials.class);
+                    Intent intent = new Intent(ServiceHomePage.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }

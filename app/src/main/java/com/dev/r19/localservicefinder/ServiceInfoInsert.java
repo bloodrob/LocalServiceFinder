@@ -261,8 +261,9 @@ public class ServiceInfoInsert extends AppCompatActivity {
                     return;
                 }
                 Log.e(TAG, "DATA is inserted" +cinfo.SP_email + "," +cinfo.SP_name + "," +cinfo.Service_name + "," + cinfo.Gender + "," + cinfo.DOB + "," +cinfo.Address + "," + cinfo.City + "," + cinfo.State + "," + cinfo.Pin + "," +cinfo.Mobile + "," + cinfo.Proffession + "," + cinfo.Company_name + "," + cinfo.Company_description);
-                Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
-                startActivity(intent);
+              //  Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
+                //startActivity(intent);
+                Toast.makeText(ServiceInfoInsert.this, " data is successfully submited", Toast.LENGTH_LONG).show();
             }
 
             @Override

@@ -18,7 +18,7 @@ public class SuccessClientFeedback extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SuccessClientFeedback.this, Home.class);
+                Intent intent = new Intent(SuccessClientFeedback.this, ClientHome.class);
                 startActivity(intent);
             }
         });

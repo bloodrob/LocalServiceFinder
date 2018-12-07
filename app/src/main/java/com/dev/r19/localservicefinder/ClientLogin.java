@@ -50,7 +50,7 @@ public class ClientLogin extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientLogin.this, ClientCredentials.class);
+                Intent intent = new Intent(ClientLogin.this, ClientRegister.class);
                 startActivity(intent);
             }
         });

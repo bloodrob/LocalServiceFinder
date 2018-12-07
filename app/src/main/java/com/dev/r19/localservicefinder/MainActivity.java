@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
     final int COARSE = 2;
     final int INTER = 3;
     FirebaseDatabase database;
+    FirebaseAuth auth,auth1;
     DatabaseReference ref, ref1;
 
 
@@ -188,7 +189,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     return;
                 }
-                Intent intent = new Intent(MainActivity.this, ClientCredentials.class);
+                //checking the seesion state of the user
+                auth = FirebaseAuth.getInstance();
+                if (auth.getCurrentUser() != null) {
+                    Intent intent = new Intent(MainActivity.this, ClientHome.class);
+                    startActivity(intent);
+                }
+                //end
+                Intent intent = new Intent(MainActivity.this, ClientLogin.class);
                 startActivity(intent);
             }
         });
@@ -196,7 +204,14 @@ public class MainActivity extends AppCompatActivity {
         asService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ServiceCredentials.class);
+                //checking the seesion state of the user
+                auth1 = FirebaseAuth.getInstance();
+                if (auth1.getCurrentUser() != null) {
+                    Intent intent = new Intent(MainActivity.this, ProviderHome.class);
+                    startActivity(intent);
+                }
+                //end
+                Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
                 startActivity(intent);
             }
         });
@@ -204,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ProviderHome.class);
+                Intent intent = new Intent(MainActivity.this,ServiceEntry.class);
                 startActivity(intent);
             }
         });
@@ -278,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
             getPermission();
             return;
         }
-        userLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+        userLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         if(userLocation!=null)
         {
             City = getCity(userLocation);

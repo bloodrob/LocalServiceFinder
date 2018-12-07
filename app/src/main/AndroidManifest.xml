@@ -20,11 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClientCredentials" />
         <activity android:name=".ClientLogin" />
         <activity android:name=".ClientRegister" />
-        <activity android:name=".Home" />
-        <activity android:name=".ServiceCredentials" />
         <activity android:name=".ServiceLogin" />
         <activity android:name=".ServiceRegister" />
         <activity android:name=".ClientForgotPassword" />
@@ -32,12 +29,10 @@
         <activity android:name=".ServiceForgotPassword" />
         <activity android:name=".ServiceEmailSend" />
         <activity android:name=".ServiceHomePage" />
-        <activity android:name=".ClientHomePage" />
         <activity android:name=".ServiceInfoInsert" />
         <activity android:name=".ServiceEntry" />
         <activity android:name=".ServiceSearch" />
         <activity android:name=".ServiceResultNotFound" />
-        <activity android:name=".AddSuccess" />
         <activity android:name=".ResultInList" />
         <activity android:name=".AfterSelectItem" />
         <activity android:name=".SelectItemDetail" />
