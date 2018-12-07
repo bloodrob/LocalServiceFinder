@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ClientHome"
+    android:id="@+id/mainContents"
+    android:visibility="visible"
+    tools:showIn="@layout/app_bar_client_home">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back0051">
+
+
+            <ScrollView
+                android:layout_marginTop="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:useDefaultMargins="true">
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/doctor_kD"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_doctor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Doctor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_lawyer" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Lawyer" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/tutor_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:background="@android:color/transparent"
+                            android:padding="15dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/image_tutor" />
+
+                        <TextView
+                            android:layout_width="89dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/Prof_Tutor"
+                            android:textColor="#ffffff"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_travel_agent" />
+
+                        <TextView
+                            android:layout_width="95dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Travel_Agent"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_it_professionals" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_IT_Professional" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_restaurant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Restaurant" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_electrician" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Electrician" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_pharmacy" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Pharmacy" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_doctor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Doctor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_lawyer" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Lawyer" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/tutor_imagebutton1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_tutor" />
+
+                        <TextView
+                            android:layout_width="89dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/Prof_Tutor"
+                            android:textColor="#ffffff"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_travel_agent" />
+
+                        <TextView
+                            android:layout_width="95dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Travel_Agent"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_it_professionals" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_IT_Professional" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_restaurant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Restaurant" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_electrician" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Electrician" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_pharmacy" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Pharmacy" />
+                    </LinearLayout>
+                </GridLayout>
+            </ScrollView>
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
