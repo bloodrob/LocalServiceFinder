@@ -62,6 +62,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.AnimatedImageDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -79,6 +81,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     Double longi, lati;
     ViewPager viewPager;
     PagerViewAdapter pagerViewAdapter;
-    Button asClient, asService, serviceEntry, serviceSearch;
+    Button asClient, asService;
     LinearLayout linearLayout;
     private int dotcounts;
     private ImageView[] dots;
@@ -178,8 +181,6 @@ public class MainActivity extends AppCompatActivity {
 
         asClient = (Button) findViewById(R.id.asclient);
         asService = (Button) findViewById(R.id.asService);
-        serviceEntry = (Button) findViewById(R.id.serviceEntry);
-        serviceSearch = (Button) findViewById(R.id.serviceSearch);
         linearLayout = (LinearLayout) findViewById(R.id.slider);
 
 
@@ -223,24 +224,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        serviceEntry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ServiceEntry.class);
-                startActivity(intent);
-            }
-        });
-
-        serviceSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ServiceSearch.class);
-                startActivity(intent);
-            }
-        });
-
-
-
         // Working With Fragment
         viewPager = (ViewPager) findViewById(R.id.fragment_container);
 
@@ -267,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
             }
 
             @Override

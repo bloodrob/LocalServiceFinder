@@ -4,17 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@drawable/back0051"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Local  Service  Finder"
+            android:textColor="#268026"
+            android:textSize="38dp" />
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
+        android:layout_below="@id/Header"
+        android:layout_marginTop="110dp"
+        android:background="#66887659"
+        android:animateLayoutChanges="true"
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="305dp"
+        android:layout_height="320dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="62dp">
+        android:layout_alignParentTop="true">
     </android.support.v4.view.ViewPager>
 
 
@@ -24,65 +48,44 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="37dp"
-        android:layout_marginStart="13dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginStart="11dp"
+        android:background="@drawable/btn_back7"
+        android:text="Client"
         android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:background="@drawable/btn_back2"
-        android:text="Client" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/asService"
-        android:layout_width="179dp"
+        android:layout_width="159dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/asclient"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="8dp"
         android:textColor="#ffffff"
         android:textSize="20dp"
-        android:background="@drawable/btn_back1"
+        android:background="@drawable/btn_back7"
         android:text="Provider" />
 
     <LinearLayout
         android:id="@+id/slider"
-        android:layout_width="95dp"
-        android:layout_height="33dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="182dp"
-        android:layout_marginEnd="130dp"
-        android:orientation="horizontal"></LinearLayout>
-
-    <Button
-        android:id="@+id/serviceEntry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/fragment_container"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="-62dp"
-        android:layout_marginEnd="35dp"
-        android:text="service Entry" />
-
-    <Button
-        android:id="@+id/serviceSearch"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fragment_container"
-        android:layout_alignStart="@+id/asclient"
-        android:layout_marginBottom="-62dp"
-        android:text="Service Search" />
+        android:layout_marginLeft="130dp"
+        android:layout_below="@+id/fragment_container"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"></LinearLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="25dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="106dp"
-        android:textSize="34dp"
         android:fontFamily="cursive"
-        android:textColor="#a31096"
-        android:text="PROCEED AS" />
-
+        android:text="PROCEED AS"
+        android:textColor="#8ccf48"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@+id/asclient"
+        android:textSize="20dp" />
 
 </android.widget.RelativeLayout>
