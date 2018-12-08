@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="10dp"
-            android:text="4. How to use it as a Client?"
+            android:text="4-. How to use it as a Client?"
             android:textColor="#000000"
             android:textSize="15dp"
             />

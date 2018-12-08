@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseAuth auth,auth1;
     DatabaseReference ref, ref1;
+    String getemail;
 
 
     static Location userLocation;
@@ -182,6 +183,25 @@ public class MainActivity extends AppCompatActivity {
         linearLayout = (LinearLayout) findViewById(R.id.slider);
 
 
+        asService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //checking the seesion state of the user
+                auth1 = FirebaseAuth.getInstance();
+                if (auth1.getCurrentUser() == null) {
+                    Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
+                    startActivity(intent);
+                }
+                else {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    getemail = user.getEmail();
+                    Intent intent = new Intent(MainActivity.this, ProviderHome.class);
+                    ProviderHome.Service_email = getemail;
+                    startActivity(intent);
+                }  //end
+            }
+        });
+
         asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,21 +221,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        asService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //checking the seesion state of the user
-                auth1 = FirebaseAuth.getInstance();
-                if (auth1.getCurrentUser() == null) {
-                    Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
-                    startActivity(intent);
-                }
-                else {
-                    Intent intent = new Intent(MainActivity.this, ProviderHome.class);
-                    startActivity(intent);
-                }  //end
-            }
-        });
+
 
         serviceEntry.setOnClickListener(new View.OnClickListener() {
             @Override

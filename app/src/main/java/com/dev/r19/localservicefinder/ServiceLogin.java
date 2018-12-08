@@ -21,6 +21,7 @@ public class ServiceLogin extends AppCompatActivity {
 
     Button submit, ToReg;
     EditText email, pass;
+    String SerLogEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class ServiceLogin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String SerLogEmail = email.getText().toString().trim();
+                SerLogEmail = email.getText().toString().trim();
                 String SerLogPass = pass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(SerLogEmail)) {
@@ -65,6 +66,7 @@ public class ServiceLogin extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(ServiceLogin.this, "You Are logged in", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(ServiceLogin.this, ProviderHome.class);
+                                    ProviderHome.Service_email = SerLogEmail;
                                     startActivity(intent);
                                 }
                                 else {
