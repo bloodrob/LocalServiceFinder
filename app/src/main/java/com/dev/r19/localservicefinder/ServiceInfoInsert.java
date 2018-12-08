@@ -2,6 +2,7 @@ package com.dev.r19.localservicefinder;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -30,6 +31,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ServiceInfoInsert extends AppCompatActivity {
 
@@ -70,7 +73,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spproffession = (Spinner)findViewById(R.id.SPproffesion);
         spcompanyname = (EditText)findViewById(R.id.SPcompanyname);
         spcompanydescription = (EditText)findViewById(R.id.SPcompanydescription);
-        check = (CheckBox)findViewById(R.id.checkBox);
+        check = (CheckBox)findViewById(R.id.checkbox);
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
@@ -193,10 +196,21 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String State = spstate.getText().toString().trim();
                 String Pin = sppin.getText().toString().trim();
                 String Mobile = spmobile.getText().toString().trim();
+                //validating the mobile n o
+                Pattern pattern;
+                Matcher matcher;
+                String mobilePattern = "(0 |[0-9][0-9])?[0-9]{10}";
+                pattern = Pattern.compile(mobilePattern);
+                matcher = pattern.matcher(Mobile);
+                if (!matcher.matches()) {
+                    spmobile.setText("Mobile no not valid");
+                    return;
+                }
                 String Company_name = spcompanyname.getText().toString().trim();
                 String Company_description = spcompanydescription.getText().toString().trim();
                 if (!check.isChecked()) {
                     Toast.makeText(ServiceInfoInsert.this, "You must accept the terms and condiotion before you proceed.", Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 //Location A Edited By Pranjal Das
@@ -255,6 +269,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
               //  Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
                 //startActivity(intent);
                 Toast.makeText(ServiceInfoInsert.this, " data is successfully submited", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ServiceInfoInsert.this, ProviderHome.class);
             }
 
             @Override

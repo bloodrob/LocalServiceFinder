@@ -292,6 +292,14 @@ tools:context=".ServiceInfoInsert">
                 android:layout_height="80dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="703dp" />
+           <CheckBox
+               android:id="@+id/checkbox"
+               android:layout_width="240dp"
+               android:layout_height="40dp"
+               android:layout_marginLeft="100dp"
+               android:layout_marginTop="780dp"
+               android:text="I accept the terms and conditons and want to continue and submit my details"
+               />
 
             <Button
                 android:id="@+id/SPsubmit"
@@ -299,7 +307,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginLeft="120dp"
-                android:layout_marginTop="780dp"
+                android:layout_marginTop="850dp"
                 android:text="INSERT INFORMATION"
                 android:layout_marginBottom="20dp"
                 android:textStyle="bold" />
