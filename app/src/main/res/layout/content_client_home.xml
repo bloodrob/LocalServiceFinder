@@ -420,28 +420,6 @@
                             android:text="@string/Prof_Carpenter" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/painter_imagebutton"
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_painter" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Painter" />
-                    </LinearLayout>
                 </GridLayout>
             </ScrollView>
     </RelativeLayout>
