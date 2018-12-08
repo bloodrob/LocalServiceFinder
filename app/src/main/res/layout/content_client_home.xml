@@ -33,7 +33,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/doctor_kD"
+                            android:id="@+id/doctor_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
                             android:layout_gravity="fill"
@@ -56,6 +56,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/lawyer_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
                             android:layout_gravity="fill"
@@ -102,6 +103,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/travel_agent_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
                             android:layout_gravity="fill"
@@ -118,7 +120,6 @@
                             android:text="@string/Prof_Travel_Agent"
                             android:textAlignment="center" />
                     </LinearLayout>
-
                     <LinearLayout
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -126,6 +127,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/it_solutions_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
                             android:layout_gravity="fill"
@@ -140,230 +142,6 @@
                             android:layout_gravity="center"
                             android:textColor="#ffffff"
                             android:text="@string/Prof_IT_Solutions" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_restaurant" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Restaurant" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_electrician" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Electrician" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_pharmacy" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Pharmacy" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_doctor" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Doctor" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_lawyer" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Lawyer" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/tutor_imagebutton1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_tutor" />
-
-                        <TextView
-                            android:layout_width="89dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/Prof_Tutor"
-                            android:textColor="#ffffff"
-                            android:textAlignment="center" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_travel_agent" />
-
-                        <TextView
-                            android:layout_width="95dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Travel_Agent"
-                            android:textAlignment="center" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_it_professionals" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_IT_Solutions" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_restaurant" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Restaurant" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_columnWeight="1"
-                        android:layout_rowWeight="1"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:layout_width="fill_parent"
-                            android:layout_height="150dp"
-                            android:layout_gravity="fill"
-                            android:scaleType="fitXY"
-                            android:padding="15dp"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/image_electrician" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:textColor="#ffffff"
-                            android:text="@string/Prof_Electrician" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -387,6 +165,75 @@
                             android:layout_gravity="center"
                             android:textColor="#ffffff"
                             android:text="@string/Prof_Pharmacy" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/hospital_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_hospital" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Hospital" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/pathology_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_pathology" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Pathology_Lab" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/insurance_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_insurance" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Insurance_Agent" />
                     </LinearLayout>
                 </GridLayout>
             </ScrollView>

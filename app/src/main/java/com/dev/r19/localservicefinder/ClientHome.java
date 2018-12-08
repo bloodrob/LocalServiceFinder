@@ -63,7 +63,7 @@ public class ClientHome extends AppCompatActivity
 
         // ImageButton Works are here
         // Doctor ImageButton
-        ImageButton doctor = (ImageButton)findViewById(R.id.doctor_kD);
+        ImageButton doctor = (ImageButton)findViewById(R.id.doctor_imagebutton);
         doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +86,7 @@ public class ClientHome extends AppCompatActivity
             }
         });
 
-        // Pharmacy ImageButton
+        //Pharmacy ImageButton
         ImageButton pharmacy = (ImageButton)findViewById(R.id.pharmacy_imagebutton);
         pharmacy.setOnClickListener(new View.OnClickListener() {
             @Override
