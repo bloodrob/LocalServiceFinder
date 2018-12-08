@@ -242,6 +242,29 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/restaurant_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_restaurant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Restaurant" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
                             android:id="@+id/hotel_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
@@ -257,6 +280,167 @@
                             android:layout_gravity="center"
                             android:textColor="#ffffff"
                             android:text="@string/Prof_Hotels" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/barwine_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_bar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Bar_Wine_Shop" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/beauty_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_beauty" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Beauty_Products" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/jewellery_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_jewellery" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Jewellery" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/electrician_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_electrician" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Electrician" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/plumber_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_plumber" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Plumber" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/carpenter_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_carpenter" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Carpenter" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/painter_imagebutton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="fill"
+                            android:scaleType="fitXY"
+                            android:padding="15dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/image_painter" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="@string/Prof_Painter" />
                     </LinearLayout>
                 </GridLayout>
             </ScrollView>
