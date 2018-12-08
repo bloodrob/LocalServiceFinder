@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SuccessClientFeedback extends AppCompatActivity {
+public class SuccessFeedback extends AppCompatActivity {
 
     Button submit;
 
@@ -18,7 +18,7 @@ public class SuccessClientFeedback extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SuccessClientFeedback.this, ClientHome.class);
+                Intent intent = new Intent(SuccessFeedback.this, ClientHome.class);
                 startActivity(intent);
             }
         });

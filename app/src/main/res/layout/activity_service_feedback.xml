@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.r19.localservicefinder.ServiceFeedback">
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hello !!! , Please Give your valuable feedback regarding the use of the application and also helps us to find the drawback and better improvement of our application. "
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView23"
+        android:layout_below="@+id/textView23"
+        android:layout_marginTop="70dp"
+        android:text="Name"
+        android:textColor="#000000"
+        />
+
+    <EditText
+        android:id="@+id/spname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView23"
+        android:layout_marginEnd="27dp"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+      />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView30"
+        android:layout_below="@+id/spname"
+        android:layout_marginTop="40dp"
+        android:text="E-mail"
+        android:textColor="#000000"
+        />
+
+    <EditText
+        android:id="@+id/spemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spname"
+        android:layout_below="@+id/spname"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView31"
+        android:layout_below="@+id/spemail"
+        android:layout_marginTop="50dp"
+        android:text="Subject"
+        android:textColor="#000000"
+        />
+
+    <EditText
+        android:id="@+id/spsubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spemail"
+        android:layout_below="@+id/spemail"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Message"
+        android:textColor="#000000"
+        android:layout_below="@+id/spsubject"
+        android:layout_alignStart="@+id/textView32" />
+
+    <EditText
+        android:id="@+id/spmessage"
+        android:layout_width="212dp"
+        android:layout_height="80dp"
+        android:layout_alignStart="@+id/spsubject"
+        android:layout_below="@+id/spsubject"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+    <Button
+        android:id="@+id/submitfeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/spname"
+        android:layout_marginBottom="10dp"
+        android:text="Submit Feedback" />
+</RelativeLayout>

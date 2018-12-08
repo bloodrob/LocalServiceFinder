@@ -37,7 +37,7 @@
         <activity android:name=".AfterSelectItem" />
         <activity android:name=".SelectItemDetail" />
         <activity android:name=".ClientFeedback" />
-        <activity android:name=".SuccessClientFeedback" />
+        <activity android:name=".SuccessFeedback" />
         <activity
             android:name=".ClientHome"
             android:label="@string/title_activity_client_home"
@@ -46,7 +46,9 @@
             android:name=".ProviderHome"
             android:label="@string/title_activity_provider_home"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".ClientInfoInsert"></activity>
+        <activity android:name=".ClientInfoInsert" />
+        <activity android:name=".ServiceFeedback" />
+        <activity android:name=".UserGuide"></activity>
     </application>
 
 </manifest>

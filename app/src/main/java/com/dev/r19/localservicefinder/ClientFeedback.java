@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ClientFeedback extends AppCompatActivity {
 
     public static final String TAG = ClientFeedbackModel.class.getSimpleName();
-    EditText name,email,message;
+    EditText name,email,sub,message;
     Button submit;
     String cli_id;
 
@@ -31,6 +31,7 @@ public class ClientFeedback extends AppCompatActivity {
 
         name = (EditText)findViewById(R.id.cliname);
         email = (EditText)findViewById(R.id.cliemail);
+        sub =(EditText)findViewById(R.id.clisubject);
         message = (EditText)findViewById(R.id.climessage);
         submit = (Button)findViewById(R.id.feedbacksubmit);
 
@@ -42,14 +43,15 @@ public class ClientFeedback extends AppCompatActivity {
             public void onClick(View v) {
                 String Client_name = name.getText().toString().trim();
                 String Client_email = email.getText().toString().trim();
+                String Subject = sub.getText().toString().trim();
                 String Message = message.getText().toString().trim();
 
-                GetIdOfUser(Client_name, Client_email, Message);
+                GetIdOfUser(Client_name, Client_email,Subject, Message);
             }
         });
     }
-    private void GetIdOfUser(String Client_name,String Client_email,String Message) {
-        ClientFeedbackModel cont = new ClientFeedbackModel(Client_name, Client_email, Message);
+    private void GetIdOfUser(String Client_name,String Client_email,String Subject, String Message) {
+        ClientFeedbackModel cont = new ClientFeedbackModel(Client_name, Client_email,Subject, Message);
         cont.Client_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
         cli_id = cont.Client_id;
         ref.child(cli_id).setValue(cont);
@@ -66,7 +68,7 @@ public class ClientFeedback extends AppCompatActivity {
                     return;
                 }
                 Log.e(TAG, "Data is Inserted" +cont.Client_name + "," +cont.Client_email + "," +cont.Message);
-                Intent intent = new Intent(ClientFeedback.this, SuccessClientFeedback.class);
+                Intent intent = new Intent(ClientFeedback.this, SuccessFeedback.class);
                 startActivity(intent);
             }
 
