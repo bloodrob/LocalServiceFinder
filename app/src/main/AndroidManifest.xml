@@ -48,7 +48,8 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ClientInfoInsert" />
         <activity android:name=".ServiceFeedback" />
-        <activity android:name=".UserGuide"></activity>
+        <activity android:name=".UserGuide" />
+        <activity android:name=".CustomResultSearcList"></activity>
     </application>
 
 </manifest>

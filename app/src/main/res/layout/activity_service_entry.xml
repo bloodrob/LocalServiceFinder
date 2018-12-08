@@ -19,11 +19,11 @@
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="113dp"
         android:layout_marginBottom="15dp"
-        android:layout_above="@+id/EnterName"
-        android:layout_alignStart="@+id/EnterName" />
+        android:layout_above="@+id/cityname"
+        android:layout_alignStart="@+id/cityname" />
 
     <EditText
-        android:id="@+id/EnterName"
+        android:id="@+id/cityname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -49,6 +49,6 @@
         tools:layout_editor_absoluteY="293dp"
         android:layout_marginBottom="191dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/EnterName"
+        android:layout_alignEnd="@+id/cityname"
         android:layout_marginEnd="54dp" />
 </RelativeLayout>

@@ -33,7 +33,7 @@ public class ServiceEntry extends AppCompatActivity {
 
         submit1 = (Button)findViewById(R.id.submit);
         serialno1 = (EditText)findViewById(R.id.Serial_no);
-        name = (EditText)findViewById(R.id.EnterName);
+        name = (EditText)findViewById(R.id.cityname);
 
         ref = database.getReference("Service_info");
         database.getReference("app name").setValue("Location base service finder");

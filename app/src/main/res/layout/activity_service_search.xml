@@ -7,57 +7,79 @@
     tools:context="com.dev.r19.localservicefinder.ServiceSearch">
 
     <EditText
-        android:id="@+id/EnterName"
+        android:id="@+id/cityname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="57dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/ser1" />
+        android:layout_alignStart="@+id/SearchSubmit" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/EnterName"
-        android:layout_alignBottom="@+id/EnterName"
+        android:layout_alignBaseline="@+id/cityname"
+        android:layout_alignBottom="@+id/cityname"
         android:layout_alignParentStart="true"
         android:layout_marginStart="17dp"
-        android:text="Enter a name" />
+        android:text="Enter city name" />
 
     <Button
         android:id="@+id/SearchSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
         android:text="Search"
-        android:layout_below="@+id/EnterName"
-        android:layout_alignStart="@+id/EnterName" />
-
-    <TextView
-        android:id="@+id/sername1"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
-        android:text="result"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/EnterName" />
-
-    <TextView
-        android:id="@+id/ser1"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textView13" />
+        android:layout_above="@+id/listsearch"
+        android:layout_toEndOf="@+id/textView13"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="112dp" />
 
     <Button
         android:id="@+id/listsearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check the avaible services here for your required information "
-        android:layout_above="@+id/ser1"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_below="@+id/cityname"
+        android:layout_marginTop="44dp"
+        android:text="Enter District name" />
+
+    <EditText
+        android:id="@+id/districtname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cityname"
+        android:layout_below="@+id/cityname"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView39"
+        android:layout_below="@+id/districtname"
+        android:layout_marginTop="44dp"
+        android:text="Proffesion" />
+
+    <Spinner
+        android:id="@+id/proffesion"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView48"
+        android:layout_alignStart="@+id/districtname" />
 
 </RelativeLayout>
