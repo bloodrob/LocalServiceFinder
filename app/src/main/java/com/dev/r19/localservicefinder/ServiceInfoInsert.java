@@ -1,5 +1,6 @@
 package com.dev.r19.localservicefinder;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -39,6 +41,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
     EditText spemail, spname, spservicename,  spdob, spaddress, spcity, spdistrict, spstate, sppin, spmobile,  spcompanyname, spcompanydescription;
     RadioButton spmale, spfemale;
     Spinner spproffession;
+    CheckBox check;
     List<String> namelist;
     String GetId;
     String Proffession;
@@ -67,6 +70,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spproffession = (Spinner)findViewById(R.id.SPproffesion);
         spcompanyname = (EditText)findViewById(R.id.SPcompanyname);
         spcompanydescription = (EditText)findViewById(R.id.SPcompanydescription);
+        check = (CheckBox)findViewById(R.id.checkBox);
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
@@ -191,6 +195,9 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 String Mobile = spmobile.getText().toString().trim();
                 String Company_name = spcompanyname.getText().toString().trim();
                 String Company_description = spcompanydescription.getText().toString().trim();
+                if (!check.isChecked()) {
+                    Toast.makeText(ServiceInfoInsert.this, "You must accept the terms and condiotion before you proceed.", Toast.LENGTH_LONG).show();
+                }
 
                 //Location A Edited By Pranjal Das
 

@@ -5,7 +5,9 @@ import android.media.MediaCodec;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,16 +53,29 @@ public class ClientRegister extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String ClientEmail = email.getText().toString().trim();
+                final String ClientEmail = email.getText().toString().trim();
                 String ClientPassword = pass.getText().toString().trim();
                 String ClientConPassword = pass1.getText().toString().trim();
+
+                //Email validation
+                Pattern pattern;
+                Matcher matcher;
 
                 if (TextUtils.isEmpty(ClientEmail)) {
                     Toast.makeText(ClientRegister.this, "E-mail required", Toast.LENGTH_LONG).show();
                     return;
                 }
-                Pattern pattern;
-                Matcher matcher;
+                final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                pattern = Pattern.compile(emailPattern);
+                matcher = pattern.matcher(ClientEmail);
+                if (!matcher.matches()) {
+                    Toast.makeText(ClientRegister.this, "Email-not valid", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                //end of email validation
+
+              //start of password validation
+
                 final String expression =  "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{8,}$";
                 pattern = Pattern.compile(expression);
                 matcher = pattern.matcher(ClientPassword);
@@ -82,6 +97,7 @@ public class ClientRegister extends AppCompatActivity {
                     Toast.makeText(ClientRegister.this, "Password must be same", Toast.LENGTH_LONG).show();
                     return;
                 }
+                //end of password validation
                 //Firebase activity for user register
                 auth.createUserWithEmailAndPassword(ClientEmail, ClientPassword)
                         .addOnCompleteListener(ClientRegister.this, new OnCompleteListener<AuthResult>() {
