@@ -49,7 +49,7 @@ public class ServiceFeedback extends AppCompatActivity {
         sublist.add("Compliment");
         sublist.add("Comment");
         sublist.add("Report");
-        sublist.add("Suggest");
+        sublist.add("Suggestion");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sublist);
         arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);

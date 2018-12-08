@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -15,12 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClientFeedback extends AppCompatActivity {
 
     public static final String TAG = ClientFeedbackModel.class.getSimpleName();
-    EditText name,email,sub,message;
+    EditText name,email,message;
+    Spinner sub;
     Button submit;
     String cli_id;
+    String Subject;
+    List<String > sublist;
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -31,9 +40,32 @@ public class ClientFeedback extends AppCompatActivity {
 
         name = (EditText)findViewById(R.id.cliname);
         email = (EditText)findViewById(R.id.cliemail);
-        sub =(EditText)findViewById(R.id.clisubject);
+        sub =(Spinner) findViewById(R.id.clisubject);
         message = (EditText)findViewById(R.id.climessage);
         submit = (Button)findViewById(R.id.feedbacksubmit);
+        // array list for store feedback sub and add in spinner
+        sublist = new ArrayList<>();
+        sublist.add("Compliment");
+        sublist.add("Comment");
+        sublist.add("Report");
+        sublist.add("Suggetion");
+
+        ArrayAdapter<String > adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sublist);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        sub.setAdapter(adapter);
+        sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Subject = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //end
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Client_Feedback");
@@ -43,7 +75,6 @@ public class ClientFeedback extends AppCompatActivity {
             public void onClick(View v) {
                 String Client_name = name.getText().toString().trim();
                 String Client_email = email.getText().toString().trim();
-                String Subject = sub.getText().toString().trim();
                 String Message = message.getText().toString().trim();
 
                 GetIdOfUser(Client_name, Client_email,Subject, Message);
