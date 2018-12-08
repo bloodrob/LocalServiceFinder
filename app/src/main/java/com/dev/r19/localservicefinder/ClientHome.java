@@ -136,23 +136,27 @@ public class ClientHome extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.custom_search)
+        if (id == R.id.nav_custom_search)
         {
-            Toast.makeText(ClientHome.this,"This Feature is not yet Implemented",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+            startActivity(intent);
             // Handle the camera action
         }
 
-        else if (id == R.id.nav_gallery)
+        else if (id == R.id.nav_myprofile)
         {
-
+            Intent intent = new Intent(ClientHome.this,ClientInfoInsert.class);
+            startActivity(intent);
         }
 
-        else if (id == R.id.nav_slideshow) {
-
+        else if (id == R.id.nav_feedback)
+        {
+            Intent intent = new Intent(ClientHome.this,ClientFeedback.class);
+            startActivity(intent);
         }
 
         // Action on Logout Option
-        else if (id == R.id.log_out)
+        else if (id == R.id.nav_log_out)
         {
             // checking the loggin session of the user
             auth = FirebaseAuth.getInstance();
@@ -172,7 +176,7 @@ public class ClientHome extends AppCompatActivity
 
         }
 
-        else if (id == R.id.nav_send)
+        else if (id == R.id.nav_aboutus)
         {
 
         }

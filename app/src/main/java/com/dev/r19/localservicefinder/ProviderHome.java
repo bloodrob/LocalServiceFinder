@@ -106,17 +106,35 @@ public class ProviderHome extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_ser_myprofile)
+        {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        }
 
-        } else if (id == R.id.nav_slideshow) {
+        else if (id == R.id.nav_ser_feedback)
+        {
+            Intent intent = new Intent(ProviderHome.this,ServiceFeedback.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_ser_log_out)
+        {
+            // checking the loggin session of the user
+            auth = FirebaseAuth.getInstance();
+            auth.signOut();
+            FirebaseUser user = auth.getCurrentUser();
+            if (user  == null) {
+                Intent intent = new Intent(ProviderHome.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+            //end of session check activity
+        }
+        else if (id == R.id.nav_share)
+        {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        }
+        else if (id == R.id.nav_aboutus)
+        {
 
         }
 
