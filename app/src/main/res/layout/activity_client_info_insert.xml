@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.r19.localservicefinder.ClientInfoInsert">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="48dp"
+        android:text="Update your profile for future reference" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView16"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="70dp"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/clientEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_below="@+id/textView16"
+        android:layout_marginTop="55dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_below="@+id/clientEmail"
+        android:layout_marginTop="44dp"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/clientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/clientEmail"
+        android:layout_below="@+id/clientEmail"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignTop="@+id/radioGender"
+        android:layout_alignStart="@+id/textView34" />
+
+    <RadioGroup
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:id="@+id/radioGender"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/clientName"
+        android:layout_alignStart="@+id/clientName">
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/radioGroup"
+            android:layout_below="@+id/editText7"
+            android:layout_marginTop="39dp"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/radioGroup"
+            android:layout_alignEnd="@+id/radioMale"
+            android:layout_marginEnd="18dp"
+            android:text="Female" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView35"
+        android:layout_below="@+id/radioGender"
+        android:layout_marginTop="44dp"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/clientPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioGender"
+        android:layout_below="@+id/radioGender"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView36"
+        android:layout_below="@+id/clientPhone"
+        android:layout_marginTop="32dp"
+        android:text="TextView" />
+
+    <EditText
+        android:id="@+id/clientAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/clientPhone"
+        android:layout_below="@+id/clientPhone"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
+
+    <Button
+        android:id="@+id/submitClientInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Submit your info" />
+
+
+</RelativeLayout>

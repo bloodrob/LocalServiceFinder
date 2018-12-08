@@ -191,12 +191,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //checking the seesion state of the user
                 auth = FirebaseAuth.getInstance();
-                if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(MainActivity.this, ClientHome.class);
+                if (auth.getCurrentUser() == null) {
+                    Intent intent = new Intent(MainActivity.this, ClientLogin.class);
                     startActivity(intent);
                 }
                 //end
-                Intent intent = new Intent(MainActivity.this, ClientLogin.class);
+                Intent intent = new Intent(MainActivity.this, ClientHome.class);
                 startActivity(intent);
             }
         });
@@ -206,13 +206,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //checking the seesion state of the user
                 auth1 = FirebaseAuth.getInstance();
-                if (auth1.getCurrentUser() != null) {
-                    Intent intent = new Intent(MainActivity.this, ProviderHome.class);
+                if (auth1.getCurrentUser() == null) {
+                    Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
                     startActivity(intent);
                 }
-                //end
-                Intent intent = new Intent(MainActivity.this, ServiceLogin.class);
-                startActivity(intent);
+                else {
+                    Intent intent = new Intent(MainActivity.this, ProviderHome.class);
+                    startActivity(intent);
+                }  //end
             }
         });
 

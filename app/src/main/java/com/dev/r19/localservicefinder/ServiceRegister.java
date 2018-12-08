@@ -53,14 +53,23 @@ public class ServiceRegister extends AppCompatActivity {
                 final String ServicePass = pass.getText().toString().trim();
                 String ServiceConPass = pass1.getText().toString().trim();
 
-                // validating the Credential
+                // validating the email
+                Pattern pattern;
+                Matcher matcher;
                 if (TextUtils.isEmpty(ServiceEmail)) {
                     Toast.makeText(ServiceRegister.this, "E-mail Required", Toast.LENGTH_LONG).show();
                     return;
                 }
+                final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                pattern = Pattern.compile(emailPattern);
+                matcher = pattern.matcher(ServiceEmail);
+                if (!matcher.matches()) {
+                    Toast.makeText(ServiceRegister.this, "Email-not valid", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                //end of email validation
                 //validating password
-                Pattern pattern;
-                Matcher matcher;
+
                 final String expression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
                 pattern = Pattern.compile(expression);
                 matcher = pattern.matcher(ServicePass);
