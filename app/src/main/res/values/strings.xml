@@ -2,19 +2,41 @@
     <string name="app_name">LocalServiceFinder</string>
 
     <string name="Prof_Doctor">Doctor</string>
+    <string name="Prof_Lawyer">Lawyer</string>
     <string name="Prof_Tutor">Tutor</string>
+    <string name="Prof_Travel_Agent">Travel Agent</string>
+    <string name="Prof_IT_Solutions">IT Solutions</string>
     <string name="Prof_Pharmacy">Pharmacy</string>
     <string name="Prof_Hospital">Hospital</string>
-    <string name="Prof_Electrician">Electrician</string>
-    <string name="Prof_IT_Professional">IT Professional</string>
+    <string name="Prof_Pathology_Lab">Pathology Lab</string>
+    <string name="Prof_Photography">Photography</string>
     <string name="Prof_Insurance_Agent">Insurance Agent</string>
-    <string name="Prof_Restaurant">Restaurant</string>
-    <string name="Prof_Car_ShowRoom">"Car ShowRoom"</string>
-    <string name="Prof_Local_Transport_Agency">Local Transport Agency</string>
-    <string name="Prof_Dhaba">Dhaba</string>
-    <string name="Prof_Lawyer">Lawyer</string>
     <string name="Prof_Vehicle_Rent">Vehicle Rent</string>
-    <string name="Prof_Travel_Agent">Travel Agent</string>
+    <string name="Prof_Restaurant">Restaurant</string>
+    <string name="Prof_Hotels">Hotels</string>
+    <string name="Prof_Bar_Wine_Shop">Bar Wine Shops</string>
+    <string name="Prof_Beauty_Products">Beauty Products</string>
+    <string name="Prof_Jewellery">Jewellery</string>
+    <string name="Prof_Grocery">Grocery</string>
+    <string name="Prof_Clothing">Clothing</string>
+    <string name="Prof_Electronics">Electronics</string>
+    <string name="Prof_Hardware">Hardware</string>
+    <string name="Prof_Showrooms">Showrooms</string>
+    <string name="Prof_Housing">Housing</string>
+    <string name="Prof_Property_Dealers">Property Dealers</string>
+    <string name="Prof_Electrician">Electrician</string>
+    <string name="Prof_Plumber">Plumber</string>
+    <string name="Prof_Carpenter">Carpenter</string>
+    <string name="Prof_Painter">Painter</string>
+    <string name="Prof_Agriculture">Agriculture</string>
+    <string name="Prof_Transports">Transports</string>
+    <string name="Prof_Educational_Institute">Educational Institute</string>
+    <string name="Prof_Consultancy_Firm">Consultancy Firm</string>
+
+
+    <string name="Prof_Others">Others</string>
+
+
     <string name="title_activity_navigation">Navigation</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

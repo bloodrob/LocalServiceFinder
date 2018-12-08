@@ -139,7 +139,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:textColor="#ffffff"
-                            android:text="@string/Prof_IT_Professional" />
+                            android:text="@string/Prof_IT_Solutions" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -319,7 +319,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:textColor="#ffffff"
-                            android:text="@string/Prof_IT_Professional" />
+                            android:text="@string/Prof_IT_Solutions" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -372,6 +372,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/pharmacy_imagebutton"
                             android:layout_width="fill_parent"
                             android:layout_height="150dp"
                             android:layout_gravity="fill"

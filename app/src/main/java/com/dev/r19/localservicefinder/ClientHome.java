@@ -85,6 +85,17 @@ public class ClientHome extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        // Pharmacy ImageButton
+        ImageButton pharmacy = (ImageButton)findViewById(R.id.pharmacy_imagebutton);
+        pharmacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this,AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Builder";
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
