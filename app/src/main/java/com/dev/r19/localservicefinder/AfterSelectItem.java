@@ -61,7 +61,7 @@ public class AfterSelectItem extends AppCompatActivity {
                loc.setLongitude(res.longitude);
                 //end of object work
                 // checking the required data retrieve condition
-               if ((res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) || res.City.equals(getcity) && res.District.equals(gotdistrict) && res.Proffession.equals(getproffesion)) {
+               if ((res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) || (res.City.equals(getcity) && res.District.equals(gotdistrict) && res.Proffession.equals(getproffesion))) {
                    listRes.add(res.SP_name + "\n" +res.Address + "\n" +res.City+ "\n" +res.District+ "\n"+res.Company_description+ "\n Mobile number :"+res.Mobile+ "\n E-mail :"+res.SP_email+ "\n\n");
                    adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
                    item2.setAdapter(adaptor);
@@ -80,7 +80,7 @@ public class AfterSelectItem extends AppCompatActivity {
                    //end
                }
                else {
-                   Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_LONG).show();
+                   Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_SHORT).show();
                    return;
                }
 

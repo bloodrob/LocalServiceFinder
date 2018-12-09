@@ -81,6 +81,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Lawyer";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -91,6 +92,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = getString(R.string.Prof_Tutor);
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -102,6 +104,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this,AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Pharmacy";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -113,6 +116,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Travel Agent";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -124,6 +128,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "IT Solutions";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -134,6 +139,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Hospital";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -144,6 +150,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Pathology Lab";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -154,6 +161,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Insurance Agent";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -164,6 +172,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Restaurant";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -174,6 +183,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Hotels";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -184,6 +194,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Bar Wine Shops";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -194,6 +205,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Beauty Products";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -204,6 +216,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Jewellery";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -214,6 +227,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Electrician";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -224,6 +238,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Plumber";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });
@@ -234,6 +249,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = "Carpenter";
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });

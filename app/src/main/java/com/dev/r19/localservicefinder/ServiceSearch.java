@@ -3,6 +3,7 @@ package com.dev.r19.localservicefinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -109,9 +110,17 @@ public class ServiceSearch extends AppCompatActivity {
 
              Intent intent = new Intent(ServiceSearch.this, AfterSelectItem.class);
                 //passing the string value to the customResultSearchList page
-                AfterSelectItem.key = "Robin";
+                AfterSelectItem.key = "AfterSelectItem";
                 AfterSelectItem.getcity = cityName.getText().toString().trim();
+                if (TextUtils.isEmpty(AfterSelectItem.getcity)) {
+                    Toast.makeText(ServiceSearch.this, "City name required to find the provider", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 AfterSelectItem.getdistrict = ditrictName.getText().toString().trim();
+                if (TextUtils.isEmpty(AfterSelectItem.getdistrict)) {
+                    Toast.makeText(ServiceSearch.this, "District name is required to find the provider", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 AfterSelectItem.getproffesion = selectItem.toString().trim();
                 startActivity(intent);
             }
