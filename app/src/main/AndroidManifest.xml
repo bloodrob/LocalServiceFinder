@@ -48,6 +48,7 @@
         <activity android:name=".ServiceFeedback" />
         <activity android:name=".UserGuide" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".AboutUs"></activity>
     </application>
 
 </manifest>
