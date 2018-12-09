@@ -7,16 +7,10 @@
     tools:context="com.dev.r19.localservicefinder.UserGuide"
     android:background="@drawable/back0051">
 
-
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textView38"
             android:layout_width="wrap_content"
@@ -27,13 +21,31 @@
             android:textColor="#390201"
             android:textSize="23dp"
             />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_below="@+id/header"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
         <TextView
             android:id="@+id/textView40"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="10dp"
-            android:text="1. What is in the application ?"
+            android:text="1. What is in the application and why it is introduced to you ?"
             android:textColor="#000000"
             android:textSize="15dp"
             />
@@ -44,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="@string/In_the_app" />
 
         <TextView
             android:id="@+id/textView42"
@@ -52,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="10dp"
-            android:text="2. Why it is introduce to you ?"
+            android:text="2. Why this app is helpful ?"
             android:textColor="#000000"
             android:textSize="15dp"
             />
@@ -63,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="@string/why_it_is_helpful" />
 
         <TextView
             android:id="@+id/textView44"
@@ -82,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="@string/use_as_sp" />
 
         <TextView
             android:id="@+id/textView46"
@@ -90,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="10dp"
-            android:text="4-. How to use it as a Client?"
+            android:text="4. How to use it as a Client?"
             android:textColor="#000000"
             android:textSize="15dp"
             />
@@ -99,9 +111,10 @@
             android:id="@+id/textView47"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
-            android:text="TextView" />
+            android:text="@string/use_as_client" />
 
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
