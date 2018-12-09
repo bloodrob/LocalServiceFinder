@@ -66,7 +66,7 @@ public class AfterSelectItem extends AppCompatActivity {
                    adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
                    item2.setAdapter(adaptor);
                    //set a string for the selected item to be passed
-                   item2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                  /* item2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                        @Override
                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                            String NewItem = (String) item2.getItemAtPosition(position);
@@ -76,7 +76,7 @@ public class AfterSelectItem extends AppCompatActivity {
                            intent.putExtra("SendItem", SendItem);
                            startActivity(intent);
                        }
-                   });
+                   }); */
                    //end
                }
                else {
