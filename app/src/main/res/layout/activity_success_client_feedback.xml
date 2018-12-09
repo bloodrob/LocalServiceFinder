@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.SuccessFeedback">
+    tools:context="com.dev.r19.localservicefinder.SuccessFeedback"
+    android:background="@drawable/background3">
 
     <Button
         android:id="@+id/submitfeedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="73dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="100dp"
+        android:background="@drawable/txt_back"
         android:layout_marginTop="35dp"
         android:text="Back to Home page" />
 
@@ -21,7 +21,9 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="280dp"
+        android:textColor="#200202"
+        android:textSize="18dp"
         android:text="Thank you for your valuable feedback.We will do our best to fulfill your need."
-        android:layout_below="@+id/button3"
+        android:layout_below="@+id/submitfeedback"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

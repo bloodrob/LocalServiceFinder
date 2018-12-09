@@ -43,7 +43,8 @@ tools:context=".ServiceInfoInsert">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/frameLayout">
+        android:layout_below="@+id/frameLayout"
+        android:background="@drawable/back0051">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -55,7 +56,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="53dp"
                 android:text="E-mail"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -65,13 +66,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="50dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="63dp"
+                android:layout_marginTop="103dp"
                 android:text="Name"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -81,13 +84,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="60dp" />
+                android:layout_marginTop="100dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="107dp"
+                android:layout_marginTop="147dp"
                 android:text="Service Name"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -97,13 +102,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="110dp" />
+                android:layout_marginTop="150dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="171dp"
+                android:layout_marginTop="211dp"
                 android:text="Gender"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -114,7 +121,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="115dp"
-                android:layout_marginTop="171dp"
+                android:layout_marginTop="211dp"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -136,7 +143,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="60dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="219dp"
+                android:layout_marginTop="259dp"
                 android:text="DOB"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -146,13 +153,13 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="210dp" />
+                android:layout_marginTop="250dp" />
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="269dp"
+                android:layout_marginTop="309dp"
                 android:text="Address"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -162,13 +169,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="260dp" />
+                android:layout_marginTop="300dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="363dp"
+                android:layout_marginTop="403dp"
                 android:text="City"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -178,13 +187,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="353dp" />
+                android:layout_marginTop="393dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="413dp"
+                android:layout_marginTop="453dp"
                 android:text="District"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -194,13 +205,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="403dp" />
+                android:layout_marginTop="443dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="463dp"
+                android:layout_marginTop="503dp"
                 android:text="State"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -210,13 +223,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="453dp" />
+                android:layout_marginTop="493dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="513dp"
+                android:layout_marginTop="553dp"
                 android:text="Pin"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -226,13 +241,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="503dp" />
+                android:layout_marginTop="543dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="563dp"
+                android:layout_marginTop="603dp"
                 android:text="Mobile"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -242,13 +259,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="553dp" />
+                android:layout_marginTop="593dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="85dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="613dp"
+                android:layout_marginTop="653dp"
                 android:text="Proffesion"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -258,14 +277,14 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="603dp"
+                android:layout_marginTop="643dp"
                 ></Spinner>
 
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="652dp"
+                android:layout_marginTop="692dp"
                 android:text="Company Name"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -275,13 +294,15 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="653dp" />
+                android:layout_marginTop="693dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
 
             <TextView
                 android:layout_width="105dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="713dp"
+                android:layout_marginTop="753dp"
                 android:text="Company Description"
                 android:textColor="#0000FF"
                 android:textSize="17dp" />
@@ -291,23 +312,25 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="240dp"
                 android:layout_height="80dp"
                 android:layout_marginLeft="110dp"
-                android:layout_marginTop="703dp" />
+                android:layout_marginTop="743dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#0000FF"/>
            <CheckBox
                android:id="@+id/checkbox"
                android:layout_width="240dp"
                android:layout_height="40dp"
                android:layout_marginLeft="100dp"
-               android:layout_marginTop="780dp"
+               android:layout_marginTop="820dp"
                android:text="I accept the terms and conditons and want to continue and submit my details"
                />
 
             <Button
                 android:id="@+id/SPsubmit"
-                android:background="@drawable/round_button"
+                android:background="@drawable/btn_back5"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginLeft="120dp"
-                android:layout_marginTop="850dp"
+                android:layout_marginTop="890dp"
                 android:text="INSERT INFORMATION"
                 android:layout_marginBottom="20dp"
                 android:textStyle="bold" />

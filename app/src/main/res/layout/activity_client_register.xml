@@ -21,17 +21,19 @@
         android:id="@+id/TextView14"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="149dp"
+        android:layout_below="@+id/TextView13"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:textSize="16dp"
         android:textColor="#d8ec0c83"
-        android:text="Password"
-        android:textSize="18dp"/>
+        android:text="Password"/>
 
     <EditText
         android:id="@+id/ClientEmail"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
+        android:background="@drawable/txt_back"
         android:textColor="#d8ec0c83"
         android:inputType="textEmailAddress"
         android:layout_alignTop="@+id/TextView13"
@@ -40,32 +42,36 @@
     <EditText
         android:id="@+id/ClientPassword"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/ClientEmail"
-        android:layout_alignTop="@+id/TextView14"
+        android:layout_height="40dp"
         android:textColor="#d8ec0c83"
-        android:ems="10"
-        android:inputType="textPassword" />
+        android:layout_below="@+id/ClientEmail"
+        android:layout_marginTop="25dp"
+        android:layout_alignStart="@+id/ClientEmail"
+        android:background="@drawable/txt_back"
+        android:inputType="textPassword"
+         />
 
     <EditText
         android:id="@+id/ClientConPassword"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignStart="@+id/ClientPassword"
         android:layout_below="@+id/ClientPassword"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:textColor="#d8ec0c83"
         android:ems="10"
+        android:background="@drawable/txt_back"
         android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/TextView14"
-        android:layout_alignTop="@+id/ClientConPassword"
+        android:layout_below="@+id/TextView14"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:textSize="16dp"
         android:textColor="#d8ec0c83"
-        android:textSize="15dp"
         android:text="Confirm Password" />
 
     <Button

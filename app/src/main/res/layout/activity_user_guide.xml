@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.UserGuide">
+    tools:context="com.dev.r19.localservicefinder.UserGuide"
+    android:background="@drawable/back0051">
 
 
     <LinearLayout
@@ -21,8 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
             android:text="USER GUIDE to help you understand the application"
-            android:textColor="#228B22"
+            android:textColor="#390201"
             android:textSize="23dp"
             />
         <TextView
