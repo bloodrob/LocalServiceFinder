@@ -24,7 +24,7 @@
         android:layout_below="@+id/textView16"
         android:layout_marginStart="33dp"
         android:layout_marginTop="70dp"
-        android:text="TextView" />
+        android:text="E-mail" />
 
     <EditText
         android:id="@+id/clientEmail"
@@ -43,7 +43,7 @@
         android:layout_alignStart="@+id/textView33"
         android:layout_below="@+id/clientEmail"
         android:layout_marginTop="44dp"
-        android:text="TextView" />
+        android:text="Name" />
 
     <EditText
         android:id="@+id/clientName"
@@ -54,21 +54,22 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+      />
 
     <TextView
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Gender"
         android:layout_alignTop="@+id/radioGender"
         android:layout_alignStart="@+id/textView34" />
 
-    <RadioGroup
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="230dp"
         android:layout_height="40dp"
         android:id="@+id/radioGender"
         android:layout_marginTop="20dp"
+        android:orientation="horizontal"
         android:layout_below="@+id/clientName"
         android:layout_alignStart="@+id/clientName">
 
@@ -76,9 +77,8 @@
             android:id="@+id/radioMale"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:layout_alignStart="@+id/radioGroup"
-            android:layout_below="@+id/editText7"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="1dp"
+            android:onClick="onRadioButtonClicked"
             android:text="Male" />
 
         <RadioButton
@@ -87,7 +87,9 @@
             android:layout_height="40dp"
             android:layout_alignStart="@+id/radioGroup"
             android:layout_alignEnd="@+id/radioMale"
-            android:layout_marginEnd="18dp"
+            android:layout_marginEnd="1dp"
+            android:onClick="onRadioButtonClicked"
+            android:layout_marginLeft="150dp"
             android:text="Female" />
 
 
@@ -100,7 +102,7 @@
         android:layout_alignEnd="@+id/textView35"
         android:layout_below="@+id/radioGender"
         android:layout_marginTop="44dp"
-        android:text="TextView" />
+        android:text="Mobile" />
 
     <EditText
         android:id="@+id/clientPhone"
@@ -119,7 +121,7 @@
         android:layout_alignStart="@+id/textView36"
         android:layout_below="@+id/clientPhone"
         android:layout_marginTop="32dp"
-        android:text="TextView" />
+        android:text="Address" />
 
     <EditText
         android:id="@+id/clientAddress"

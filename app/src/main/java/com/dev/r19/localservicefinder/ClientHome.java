@@ -74,7 +74,15 @@ public class ClientHome extends AppCompatActivity
         });
 
         // ImageButton Lawyer
-
+        ImageButton lawyer = (ImageButton)findViewById(R.id.lawyer_imagebutton);
+        lawyer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Lawyer";
+                startActivity(intent);
+            }
+        });
         // Imagebutton Tutor
         ImageButton tutor =(ImageButton)findViewById(R.id.tutor_imagebutton);
         tutor.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +100,139 @@ public class ClientHome extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this,AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Builder";
+                AfterSelectItem.Ser_name = "Pharmacy";
+                startActivity(intent);
+            }
+        });
+
+        //Travel Agent
+        ImageButton travel_agent = (ImageButton)findViewById(R.id.travel_agent_imagebutton);
+        travel_agent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Travel Agent";
+                startActivity(intent);
+            }
+        });
+
+        //IT solution
+        ImageButton it_solution = (ImageButton)findViewById(R.id.it_solutions_imagebutton);
+        it_solution.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "IT Solutions";
+                startActivity(intent);
+            }
+        });
+        //hospital
+        ImageButton hospital = (ImageButton)findViewById(R.id.hospital_imagebutton);
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Hospital";
+                startActivity(intent);
+            }
+        });
+        //Pathology lab
+        ImageButton pathology_lab = (ImageButton)findViewById(R.id.pathology_imagebutton);
+        pathology_lab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Pathology Lab";
+                startActivity(intent);
+            }
+        });
+        //Insurance agent
+        ImageButton insurance_agent = (ImageButton)findViewById(R.id.insurance_imagebutton);
+        insurance_agent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Insurance Agent";
+                startActivity(intent);
+            }
+        });
+        //Restaurant
+        ImageButton restaurant = (ImageButton)findViewById(R.id.restaurant_imagebutton);
+        restaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Restaurant";
+                startActivity(intent);
+            }
+        });
+        //Hotels
+        ImageButton hotels = (ImageButton)findViewById(R.id.hotel_imagebutton);
+        hotels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Hotels";
+                startActivity(intent);
+            }
+        });
+        //bar wine shop
+        ImageButton bar_wine_shop = (ImageButton)findViewById(R.id.barwine_imagebutton);
+        bar_wine_shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Bar Wine Shops";
+                startActivity(intent);
+            }
+        });
+        //Beauty Product
+        ImageButton beauty_product = (ImageButton)findViewById(R.id.beauty_imagebutton);
+        beauty_product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Beauty Products";
+                startActivity(intent);
+            }
+        });
+        //Jewellery
+        ImageButton jewellery = (ImageButton)findViewById(R.id.jewellery_imagebutton);
+        jewellery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Jewellery";
+                startActivity(intent);
+            }
+        });
+        //Electrician
+        ImageButton electrician = (ImageButton)findViewById(R.id.electrician_imagebutton);
+        electrician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Electrician";
+                startActivity(intent);
+            }
+        });
+        //Plumber
+        ImageButton plumber = (ImageButton)findViewById(R.id.plumber_imagebutton);
+        plumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Plumber";
+                startActivity(intent);
+            }
+        });
+        //Carpenter
+        ImageButton carpenter = (ImageButton)findViewById(R.id.carpenter_imagebutton);
+        carpenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                AfterSelectItem.Ser_name = "Carpenter";
                 startActivity(intent);
             }
         });

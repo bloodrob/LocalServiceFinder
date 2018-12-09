@@ -68,6 +68,10 @@ public class AfterSelectItem extends AppCompatActivity {
                    });
                    //end
                }
+               else {
+                   Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_LONG).show();
+                   return;
+               }
 
            }
 

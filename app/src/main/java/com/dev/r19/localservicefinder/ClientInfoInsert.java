@@ -22,7 +22,7 @@ public class ClientInfoInsert extends AppCompatActivity {
 
     public static final String TAG = ClientInfoInsertModel.class.getSimpleName();
     EditText name, email, mobile, address;
-    RadioGroup gender;
+  //  RadioGroup gender;
     Button submit;
     String Gender;
     String getid;
@@ -37,7 +37,7 @@ public class ClientInfoInsert extends AppCompatActivity {
 
         name = (EditText)findViewById(R.id.clientName);
         email = (EditText)findViewById(R.id.clientEmail);
-        gender = (RadioGroup)findViewById(R.id.radioGender);
+      //  gender = (RadioGroup)findViewById(R.id.radioGender);
         mobile = (EditText)findViewById(R.id.clientPhone);
         address = (EditText)findViewById(R.id.clientAddress);
         submit = (Button)findViewById(R.id.submitClientInfo);
@@ -98,12 +98,12 @@ public class ClientInfoInsert extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.maleRadio:
+            case R.id.radioMale:
                 if (checked)
                     Gender = "Male";
                 Toast.makeText(ClientInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
                 break;
-            case R.id.femaleRadio:
+            case R.id.radioFemale:
                 if (checked)
                     Gender = "Female";
                 Toast.makeText(ClientInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
