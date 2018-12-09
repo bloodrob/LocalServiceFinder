@@ -108,6 +108,7 @@ public class ProviderHome extends AppCompatActivity
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
+                Toast.makeText(ProviderHome.this, "You are Logged out", Toast.LENGTH_LONG).show();
                 //end of session check activity
             }
         });

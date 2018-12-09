@@ -325,7 +325,7 @@ public class ClientHome extends AppCompatActivity
                         startActivity(intent);
                 }
             //end of session check activity
-            Toast.makeText(ClientHome.this,"you are Logged Out",Toast.LENGTH_LONG).show();
+            Toast.makeText(ClientHome.this,"you are Logged Out",Toast.LENGTH_SHORT).show();
         }
 
         else if (id == R.id.nav_share)
