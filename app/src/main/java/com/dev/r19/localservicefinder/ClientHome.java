@@ -69,6 +69,7 @@ public class ClientHome extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
                 AfterSelectItem.Ser_name = getString(R.string.Prof_Doctor);
+                AfterSelectItem.key ="ClientHome";
                 startActivity(intent);
             }
         });

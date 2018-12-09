@@ -26,7 +26,9 @@ public class AfterSelectItem extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
     List<String> listRes;
+    String Serv_name,gotcity,gotdistrict,gotproffesion;
     static String Ser_name;
+    static String getcity,getdistrict,getproffesion,key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,16 @@ public class AfterSelectItem extends AppCompatActivity {
         listRes = new ArrayList<>();
         //gating the selected item to the string i.e pass through intent from the home.java page
         Intent intent = getIntent();
-        final String Serv_name = Ser_name.toString().trim();
+        final String key1 = key.toString().trim();
+        if (key1.equals("AfterSelectItem")) {
+            gotcity = getcity.toString().trim();
+            gotdistrict = getdistrict.toString().trim();
+            gotproffesion = getproffesion.toString().trim();
+        }
+        else {
+         Serv_name = Ser_name.toString().trim();
+        }
+
         //end
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
@@ -50,8 +61,8 @@ public class AfterSelectItem extends AppCompatActivity {
                loc.setLongitude(res.longitude);
                 //end of object work
                 // checking the required data retrieve condition
-               if (res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) {
-                   listRes.add(res.SP_name + "\n" +res.Address + "\n\n");
+               if ((res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) || res.City.equals(getcity) && res.District.equals(gotdistrict) && res.Proffession.equals(getproffesion)) {
+                   listRes.add(res.SP_name + "\n" +res.Address + "\n" +res.City+ "\n" +res.District+ "\n"+res.Company_description+ "\n Mobile number :"+res.Mobile+ "\n E-mail :"+res.SP_email+ "\n\n");
                    adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
                    item2.setAdapter(adaptor);
                    //set a string for the selected item to be passed
@@ -72,6 +83,7 @@ public class AfterSelectItem extends AppCompatActivity {
                    Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_LONG).show();
                    return;
                }
+
 
            }
 

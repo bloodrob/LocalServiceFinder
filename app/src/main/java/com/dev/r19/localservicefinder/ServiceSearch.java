@@ -107,11 +107,12 @@ public class ServiceSearch extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-             Intent intent = new Intent(ServiceSearch.this, CustomResultSearcList.class);
+             Intent intent = new Intent(ServiceSearch.this, AfterSelectItem.class);
                 //passing the string value to the customResultSearchList page
-                CustomResultSearcList.getcity = cityName.getText().toString().trim();
-                CustomResultSearcList.getdistrict = ditrictName.getText().toString().trim();
-                CustomResultSearcList.getproffesion = selectItem.toString().trim();
+                AfterSelectItem.key = "Robin";
+                AfterSelectItem.getcity = cityName.getText().toString().trim();
+                AfterSelectItem.getdistrict = ditrictName.getText().toString().trim();
+                AfterSelectItem.getproffesion = selectItem.toString().trim();
                 startActivity(intent);
             }
         });
