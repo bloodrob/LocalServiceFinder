@@ -5,11 +5,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="288dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="61dp"
-        >
+        android:layout_centerVertical="true"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/textView3"
@@ -17,20 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
-            android:text="Welcome To Local Service Finder" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="95dp"
-            android:textColor="#ffffff"
-            android:text="We all like immediate response to our need whatever it is or wherever it is. Our need must be fulfill. We need services at our local area, working area or within our surrounding. This system bring us to this facility to all that we can find something we want somewhere we need." />
+            android:padding="10dp"
+            android:text="@string/page3content"
+            android:textColor="#0e0bd4"
+            android:textSize="15dp" />
     </RelativeLayout>
 
 </android.widget.RelativeLayout>

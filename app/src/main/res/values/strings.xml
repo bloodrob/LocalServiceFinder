@@ -108,4 +108,23 @@
 
 
     </string>
+
+
+    <string name="page1content">Welcome to Local service Finder, Your one stop destination for exploring neighbourhood
+        in click of few buttons in your smartphone. We are happy to guide you to know your surrounding better. We are glad
+        that you came here to try this app.
+    </string>
+
+    <string name="page2content">If you continue as client then you will be able to find address and contact information of
+    all the services you may frequently need, may it be a medical personnel, a good restaurant, your shopping destinations
+    Hotels, Institutes, Home Solutions and Many More... within your Surroundings. So give It a try and Know your surrounding
+    better.
+    </string>
+
+    <string name="page3content">
+        If you have any Bussiness, you can register as a Service Provider. We all want our Bussiness to grow. Nowadays, It is
+        very important to advertise youself to online community. We understand your needs. So, thats why we bring to you this
+        app. you can achieve more visibility to your potential customer without investing any money in the name of advertisement.
+        So, register yourself today and make yourself visible to your online potential online customer free of cost. TRY NOW.
+    </string>
 </resources>

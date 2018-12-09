@@ -6,35 +6,18 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="288dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="42dp">
+        android:layout_centerVertical="true">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
+            android:padding="10dp"
+            android:text="@string/page1content"
             android:textColor="#0e0bd4"
-            android:textColorHighlight="#415156"
-            android:text="Welcome To Local Service Finder" />
-
-        <TextView
-            android:textColorHighlight="#ffffff"
-            android:id="@+id/tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="95dp"
-            android:textColor="#1c0983"
-            android:textStyle="bold"
-            android:text="This App Helps you in Knowing your City Well. You can find Contact information of any Type of Service available in you Locality." />
+            android:textSize="15dp" />
     </RelativeLayout>
 </android.widget.RelativeLayout>
