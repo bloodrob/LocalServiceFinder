@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -28,7 +29,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
@@ -50,6 +53,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
     String Proffession;
     String Gender;
     double longitude, latitude;
+    static Calendar myCalendar;
+    static String DOB;
 
 
     @Override
@@ -63,7 +68,15 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spservicename = (EditText)findViewById(R.id.SPservicename);
       //  spmale = (RadioButton) findViewById(R.id.SPmale);
       //  spfemale = (RadioButton)findViewById(R.id.SPfemale);
+        //for calendar
         spdob = (EditText)findViewById(R.id.SPdob);
+        spdob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(ServiceInfoInsert.this, Bdate, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         spaddress = (EditText)findViewById(R.id.SPaddress);
         spcity = (EditText)findViewById(R.id.SPcity);
         spdistrict = (EditText)findViewById(R.id.SPdistrict);
@@ -74,6 +87,8 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spcompanyname = (EditText)findViewById(R.id.SPcompanyname);
         spcompanydescription = (EditText)findViewById(R.id.SPcompanydescription);
         check = (CheckBox)findViewById(R.id.checkbox);
+
+        myCalendar = Calendar.getInstance();
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
@@ -189,7 +204,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 {
                     Gender = "Female";
                 } */
-                String DOB = spdob.getText().toString().trim();
+              //  String DOB = spdob.getText().toString().trim();
                 String Address = spaddress.getText().toString().trim();
                 String City = spcity.getText().toString().trim();
                 String District = spdistrict.getText().toString().trim();
@@ -270,6 +285,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 //startActivity(intent);
                 Toast.makeText(ServiceInfoInsert.this, " data is successfully submited", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ServiceInfoInsert.this, ProviderHome.class);
+                startActivity(intent);
             }
 
             @Override
@@ -302,4 +318,23 @@ public class ServiceInfoInsert extends AppCompatActivity {
         }
     }
     // Radio Buttons Works
+
+    //for calender
+    DatePickerDialog.OnDateSetListener Bdate = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, month);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+        }
+    };
+    private void updateLabel() {
+        String myDateFormat = "MM/dd/yy";
+        SimpleDateFormat sdf = new SimpleDateFormat(myDateFormat, Locale.ENGLISH);
+        spdob.setText(sdf.format(myCalendar.getTime()));
+        DOB = spdob.getText().toString().trim();
+        Toast.makeText(ServiceInfoInsert.this, "date is :"+DOB, Toast.LENGTH_SHORT).show();
+    }
+    //end of calendar activity
 }
