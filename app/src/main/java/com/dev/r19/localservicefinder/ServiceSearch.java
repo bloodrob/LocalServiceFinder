@@ -43,7 +43,6 @@ public class ServiceSearch extends AppCompatActivity {
         setContentView(R.layout.activity_service_search);
 
         submit = (Button)findViewById(R.id.SearchSubmit);
-        submit1 =(Button)findViewById(R.id.listsearch);
         cityName = (EditText) findViewById(R.id.cityname);
         ditrictName = (EditText)findViewById(R.id.districtname);
         proffessionName =(Spinner)findViewById(R.id.proffesion);
