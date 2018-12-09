@@ -72,6 +72,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth,auth1;
     DatabaseReference ref, ref1;
     String getemail;
+    Handler handler;
 
 
     static Location userLocation;
@@ -206,10 +208,6 @@ public class MainActivity extends AppCompatActivity {
         asClient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userLocation==null)
-                {
-                    return;
-                }
                 //checking the seesion state of the user
                 auth = FirebaseAuth.getInstance();
                 if (auth.getCurrentUser() == null) {
@@ -237,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
         // Working With Fragment
         viewPager = (ViewPager) findViewById(R.id.fragment_container);
 
-        PagerViewAdapter pagerViewAdapter = new PagerViewAdapter(getSupportFragmentManager());
+        final PagerViewAdapter pagerViewAdapter = new PagerViewAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerViewAdapter);
 
         dotcounts = pagerViewAdapter.getCount();
@@ -273,11 +271,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        if (userLocation == null) {
+       /* if (userLocation == null) {
             Toast.makeText(MainActivity.this, "Location not Found", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(MainActivity.this, "Location Found", Toast.LENGTH_LONG).show();
-        }
+        }*/
+
     }
 
     public void getLocation() {
@@ -304,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
                 userLocation = location;
                 if(location!=null)
                 {
-                    Toast.makeText(MainActivity.this, "" + location.getLatitude() + " / " + location.getLongitude(), Toast.LENGTH_LONG).show();
+               //     Toast.makeText(MainActivity.this, "" + location.getLatitude() + " / " + location.getLongitude(), Toast.LENGTH_LONG).show();
                 }
                 City = getCity(location);
             }
