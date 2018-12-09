@@ -335,7 +335,8 @@ public class ClientHome extends AppCompatActivity
 
         else if (id == R.id.nav_aboutus)
         {
-
+            Intent intent = new Intent(ClientHome.this,AboutUs.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
