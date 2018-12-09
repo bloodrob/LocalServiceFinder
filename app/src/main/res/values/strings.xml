@@ -66,45 +66,45 @@
     </string>
     <string name="why_it_is_helpful"> <b>
         We bring you some of the feature in the appliaction that may help to know the benefits of using this help.
-        such as :
+        such as : \n
         1.  Client will get their service provider contact information just visiting the system on their mobile from home or
-        their workplace.
+        their workplace. \n
         2.  Client do not need to go outside to find the service provider to their service or contact any other person to find
-        or in search of the service provider.
+        or in search of the service provider. \n
         3.  It will very beneficial for those who are unable to advertise their job or service in the wide area. They do not need
-        to advertise their posting advertise in the newspaper or on the street.
-        4.  It will help all the service provider to reach the high popularity level and increase their reachability .
-        5.  The client and the service provider directly interact on phone or mobile with their issues.
+        to advertise their posting advertise in the newspaper or on the street. \n
+        4.  It will help all the service provider to reach the high popularity level and increase their reachability .\n
+        5.  The client and the service provider directly interact on phone or mobile with their issues. \n
         6.  Client can check the list of all service provider within his or her area and compare the services of the service provider
         to get the better service.                  </b>
 
     </string>
     <string name="use_as_client">  <b> You want to use this appliation as a client, Just perform few step and you reach your desired
-        need. As a client you can search for service provider so follow these simple step below :
+        need. As a client you can search for service provider so follow these simple step below : \n
 
-        1. Just click in the client button (Left bottom side of the application)
-        2. After that click on the Register button if you are new to the app.
-        3. After that fill up the required authentication form. You will be required to enter your email and password.
-        4. After registration go to the Log in page and fill up the form and proceed by clicking Log in button.
-        5. Now if your log in credential is correct than you can enter to the client home page.
-        6. if your log in credential is not correct than you will get an error message.
-        7. Now from the home page you can search for the provider accroding to their proffesion within a certain range directly.
+        1. Just click in the client button (bottom left side of the application). \n
+        2. After that click on the Register button if you are new to the app. \n
+        3. After that fill up the required authentication form. You will be required to enter your email and password. \n
+        4. After registration go to the Log in page and fill up the form and proceed by clicking Log in button. \n
+        5. Now if your log in credential is correct than you can enter to the client home page.\n
+        6. if your log in credential is not correct than you will get an error message.\n
+        7. Now from the home page you can search for the provider accroding to their proffesion within a certain range directly.\n
         8. You can also make a custom search available in the manu . In custom search you can search for a service provider
-        by city, district and proffesion.
+        by city, district and proffesion.\n
         9. You can give us comment, compliment, suggetion in the feedback page.        </b></string>
     <string name="use_as_sp">  <b> You want to use this appliation as a Service Provider, Just perform few step and you reach your desired
         need. As a Service Provider you can update your persional and professional information and advertise youself and your profession so follow
-        these simple step below :
+        these simple step below : \n
 
-         1. Just click in the Service Provider button ( bottom right side of the application)
-        2. After that click on the Register button if you are new to the app.
-        3. After that fill up the required authentication form. You will be required to enter your email and password.
-        4. After registration go to the Log in page and fill up the form and proceed by clicking Log in button.
-        5. Now if your log in credential is correct than you can enter to the Service Provider home page.
-        6. if your log in credential is not correct than you will get an error message.
-        7. Now from the home page you can update your profile with persional and professional information.
-        8. You can update your profile if any wrong or outdated information is avaiable.
-        9.  You can give us comment, compliment, suggetion in the feedback page. </b>
+         1. Just click in the Service Provider button ( bottom right side of the application).\n
+        2. After that click on the Register button if you are new to the app. \n
+        3. After that fill up the required authentication form. You will be required to enter your email and password.\n
+        4. After registration go to the Log in page and fill up the form and proceed by clicking Log in button.\n
+        5. Now if your log in credential is correct than you can enter to the Service Provider home page.\n
+        6. if your log in credential is not correct than you will get an error message.\n
+        7. Now from the home page you can update your profile with persional and professional information.\n
+        8. You can update your profile if any wrong or outdated information is avaiable.\n
+        9.  You can give us comment, compliment, suggetion in the feedback page. \n </b>
 
 
     </string>
