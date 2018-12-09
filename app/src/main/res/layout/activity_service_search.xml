@@ -11,15 +11,14 @@
         android:id="@+id/cityname"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="157dp"
         android:ems="10"
         android:background="@drawable/txt_back"
         android:inputType="textPersonName"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/SearchSubmit" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView13"
@@ -39,21 +38,11 @@
         android:layout_height="50dp"
         android:text="Search"
         android:background="@drawable/btn_back4"
-        android:layout_above="@+id/listsearch"
-        android:layout_toEndOf="@+id/textView13"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        android:layout_marginStart="11dp"
-        android:layout_marginBottom="112dp" />
-
-    <Button
-        android:id="@+id/listsearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check the avaible services here for your required information "
+        android:layout_marginBottom="88dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView39"
@@ -97,5 +86,16 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView48"
         android:layout_alignStart="@+id/districtname" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:text="Make a Search for service provider. All Three details are required correctly"
+        android:textColor="#000000"
+        android:textSize="22dp"
+        android:layout_above="@+id/textView13"
+        android:layout_alignStart="@+id/textView13" />
 
 </RelativeLayout>
