@@ -8,6 +8,11 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -29,45 +34,23 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <android.support.v4.view.ViewPager
-        android:layout_below="@id/Header"
-        android:layout_marginTop="110dp"
-        android:background="#2e38842e"
-        android:animateLayoutChanges="true"
-        android:id="@+id/fragment_container"
+    <LinearLayout
+        android:id="@+id/fraglinear"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-    </android.support.v4.view.ViewPager>
-
-
-    <Button
-        android:id="@+id/asclient"
-        android:layout_width="159dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="19dp"
-        android:layout_marginStart="11dp"
-        android:background="@drawable/btn_back7"
-        android:text="Client"
-        android:fontFamily="cursive"
-        android:textColor="#ffffff"
-        android:textSize="20dp" />
+        android:layout_below="@id/Header"
+        android:layout_marginTop="10dp">
 
-    <Button
-        android:id="@+id/asService"
-        android:layout_width="159dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/asclient"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="8dp"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:fontFamily="cursive"
-        android:background="@drawable/btn_back7"
-        android:text="Provider" />
+         <android.support.v4.view.ViewPager
+             android:id="@+id/fragment_container"
+              android:background="#2e38842e"
+              android:animateLayoutChanges="true"
+              android:layout_width="match_parent"
+              android:layout_height="320dp"
+              android:layout_alignParentStart="true"
+              android:layout_alignParentTop="true">
+         </android.support.v4.view.ViewPager>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/slider"
@@ -75,31 +58,78 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="140dp"
         android:gravity="center"
-        android:layout_below="@+id/fragment_container"
+        android:layout_below="@+id/fraglinear"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal">
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/proceedas"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="cursive"
-        android:text="PROCEED AS"
-        android:textColor="#8ccf48"
-        android:layout_marginBottom="5dp"
-        android:layout_above="@+id/asclient"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/usermanual"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/slider"
-        android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="15dp"
-        android:textColor="#220469"
-        android:text="@string/User_Guide" />
+        android:id="@+id/userlinaer"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/usermanual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/slider"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:textColor="#220469"
+            android:text="@string/User_Guide" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/proceedlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userlinaer"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/proceedas"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:fontFamily="cursive"
+            android:text="PROCEED AS"
+            android:textColor="#8ccf48"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <Button
+            android:id="@+id/asclient"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/btn_back7"
+            android:text="Client"
+            android:fontFamily="cursive"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_marginStart="15dp"
+            android:id="@+id/asService"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:fontFamily="cursive"
+            android:background="@drawable/btn_back7"
+            android:text="Provider" />
+
+
+    </LinearLayout>
+
+    </LinearLayout>
 
 </android.widget.RelativeLayout>
