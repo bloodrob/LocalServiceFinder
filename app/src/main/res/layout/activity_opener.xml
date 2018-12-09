@@ -4,31 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/rela"
+    android:background="@drawable/background7"
     android:layout_height="match_parent"
     tools:context=".Opener">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="206dp"
-        android:src="@mipmap/ic_launcher" />
-
-    <TextView
-        android:id="@+id/explore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="91dp"
+        android:foregroundGravity="center"
         android:layout_centerInParent="true"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/advertise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="228dp"
-        android:text="" />
+        android:src="@mipmap/ic_launcher" />
 
 </android.widget.RelativeLayout>

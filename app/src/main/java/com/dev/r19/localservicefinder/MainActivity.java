@@ -224,7 +224,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        // User Guide
+        TextView userguide = (TextView)findViewById(R.id.usermanual);
+        userguide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UserGuide.class);
+                startActivity(intent);
+            }
+        });
 
         // Working With Fragment
         viewPager = (ViewPager) findViewById(R.id.fragment_container);

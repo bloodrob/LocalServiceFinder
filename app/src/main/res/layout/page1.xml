@@ -19,7 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="31dp"
-            android:textColor="#ffffff"
+            android:textColor="#0e0bd4"
             android:textColorHighlight="#415156"
             android:text="Welcome To Local Service Finder" />
 
@@ -33,7 +33,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginTop="95dp"
-            android:textColor="#ffffff"
+            android:textColor="#1c0983"
             android:textStyle="bold"
             android:text="This App Helps you in Knowing your City Well. You can find Contact information of any Type of Service available in you Locality." />
     </RelativeLayout>
