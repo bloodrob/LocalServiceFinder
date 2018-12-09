@@ -102,14 +102,6 @@ public class ServiceSearch extends AppCompatActivity {
 
         //end of adding
 
-        submit1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ServiceSearch.this, ResultInList.class);
-                startActivity(intent);
-            }
-        });
-
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

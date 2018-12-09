@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Opener">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +33,6 @@
         <activity android:name=".ServiceEntry" />
         <activity android:name=".ServiceSearch" />
         <activity android:name=".ServiceResultNotFound" />
-        <activity android:name=".ResultInList" />
         <activity android:name=".AfterSelectItem" />
         <activity android:name=".SelectItemDetail" />
         <activity android:name=".ClientFeedback" />
@@ -49,7 +48,8 @@
         <activity android:name=".ClientInfoInsert" />
         <activity android:name=".ServiceFeedback" />
         <activity android:name=".UserGuide" />
-        <activity android:name=".CustomResultSearcList"></activity>
+        <activity android:name=".CustomResultSearcList" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
