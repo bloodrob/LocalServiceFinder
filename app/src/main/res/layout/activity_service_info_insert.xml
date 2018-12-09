@@ -150,6 +150,8 @@ tools:context=".ServiceInfoInsert">
 
             <EditText
                 android:id="@+id/SPdob"
+                android:focusable="false"
+                android:editable="false"
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="110dp"
