@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.ServiceFeedback">
+    tools:context="com.dev.r19.localservicefinder.ServiceFeedback"
+    android:background="@drawable/background5">
 
     <TextView
         android:id="@+id/textView23"
@@ -15,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#000000"
+        android:textSize="15dp"
         />
 
     <TextView
@@ -25,18 +27,22 @@
         android:layout_below="@+id/textView23"
         android:layout_marginTop="70dp"
         android:text="Name"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
+        android:textSize="17dp"
         />
 
     <EditText
         android:id="@+id/spname"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textView23"
         android:layout_marginEnd="27dp"
         android:layout_marginTop="54dp"
         android:ems="10"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="@drawable/txt_back1"
         android:inputType="textPersonName"
       />
 
@@ -48,17 +54,21 @@
         android:layout_below="@+id/spname"
         android:layout_marginTop="40dp"
         android:text="E-mail"
-        android:textColor="#000000"
+        android:textSize="17dp"
+        android:textColor="#ffffff"
         />
 
     <EditText
         android:id="@+id/spemail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignStart="@+id/spname"
         android:layout_below="@+id/spname"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="@drawable/txt_back1"
         android:inputType="textEmailAddress" />
 
     <TextView
@@ -66,7 +76,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Subject"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
+        android:textSize="17dp"
         android:layout_alignBaseline="@+id/spsubject"
         android:layout_alignBottom="@+id/spsubject"
         android:layout_alignEnd="@+id/textView30" />
@@ -86,7 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:text="Message"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
+        android:textSize="17dp"
         android:layout_below="@+id/spsubject"
         android:layout_alignStart="@+id/textView32" />
 
@@ -98,17 +110,21 @@
         android:layout_below="@+id/spsubject"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:textColor="#ffffff"
+        android:background="@drawable/txt_back1"
         android:inputType="textPersonName"
          />
 
     <Button
         android:id="@+id/submitfeedback"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/spname"
-        android:layout_marginBottom="10dp"
-        android:text="Submit Feedback" />
+        android:layout_marginLeft="120dp"
+        android:layout_marginBottom="20dp"
+        android:text="Submit Feedback"
+        android:textStyle="bold"
+        android:background="@drawable/btn_back4"/>
 
 
 </RelativeLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.ClientInfoInsert">
+    tools:context="com.dev.r19.localservicefinder.ClientInfoInsert"
+    android:background="@drawable/back0051">
 
     <TextView
         android:id="@+id/textView16"
@@ -12,8 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="121dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="48dp"
+        android:textColor="#740404"
+        android:textSize="17dp"
         android:text="Update your profile for future reference" />
 
     <TextView
@@ -23,16 +26,21 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView16"
         android:layout_marginStart="33dp"
+        android:textColor="#740404"
+        android:textSize="17dp"
         android:layout_marginTop="70dp"
         android:text="E-mail" />
 
     <EditText
         android:id="@+id/clientEmail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView16"
+        android:layout_height="40dp"
+        android:layout_marginLeft="130dp"
         android:layout_below="@+id/textView16"
         android:layout_marginTop="55dp"
+        android:textColor="#740404"
+        android:textAlignment="center"
+        android:background="@drawable/txt_back"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
@@ -43,16 +51,21 @@
         android:layout_alignStart="@+id/textView33"
         android:layout_below="@+id/clientEmail"
         android:layout_marginTop="44dp"
+        android:textColor="#740404"
+        android:textSize="17dp"
         android:text="Name" />
 
     <EditText
         android:id="@+id/clientName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignStart="@+id/clientEmail"
         android:layout_below="@+id/clientEmail"
         android:layout_marginTop="28dp"
+        android:textColor="#740404"
+        android:textAlignment="center"
         android:ems="10"
+        android:background="@drawable/txt_back"
         android:inputType="textPersonName"
       />
 
@@ -61,7 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gender"
-        android:layout_alignTop="@+id/radioGender"
+        android:textColor="#740404"
+        android:textSize="17dp"
+        android:layout_below="@+id/textView34"
+        android:layout_marginTop="36dp"
         android:layout_alignStart="@+id/textView34" />
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
@@ -101,16 +117,21 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView35"
         android:layout_below="@+id/radioGender"
+        android:textColor="#740404"
+        android:textSize="17dp"
         android:layout_marginTop="44dp"
         android:text="Mobile" />
 
     <EditText
         android:id="@+id/clientPhone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignStart="@+id/radioGender"
         android:layout_below="@+id/radioGender"
         android:layout_marginTop="31dp"
+        android:textColor="#740404"
+        android:textAlignment="center"
+        android:background="@drawable/txt_back"
         android:ems="10"
         android:inputType="phone" />
 
@@ -121,25 +142,32 @@
         android:layout_alignStart="@+id/textView36"
         android:layout_below="@+id/clientPhone"
         android:layout_marginTop="32dp"
+        android:textColor="#740404"
+        android:textSize="17dp"
         android:text="Address" />
 
     <EditText
         android:id="@+id/clientAddress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_alignStart="@+id/clientPhone"
         android:layout_below="@+id/clientPhone"
         android:layout_marginTop="14dp"
         android:ems="10"
+        android:background="@drawable/txt_back"
         android:inputType="textPostalAddress" />
 
     <Button
         android:id="@+id/submitClientInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Submit your info" />
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/clientAddress"
+        android:layout_alignStart="@+id/clientAddress"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_back8"
+        android:text="Submit your info"
+        android:textColor="#740404"
+        android:textStyle="bold"/>
 
 
 </RelativeLayout>
