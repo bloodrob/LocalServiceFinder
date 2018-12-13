@@ -63,7 +63,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.graphics.drawable.AnimatedImageDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -175,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                     .show();
             // Alert Ends
         } else {
-            Toast.makeText(this, "Internet Available", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(this, "Internet Available", Toast.LENGTH_LONG).show();
         }
 
 
@@ -421,7 +420,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String getCity(Location location)
     {
-        String city=null;
+        String city="City Not Found";
         Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
         List<Address> addresses=null;
         try {

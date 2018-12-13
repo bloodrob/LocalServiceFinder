@@ -53,6 +53,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/updatestatus_imagebutton"
                         android:layout_width="fill_parent"
                         android:layout_height="150dp"
                         android:layout_gravity="fill"
@@ -75,7 +76,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/tutor_imagebutton"
+                        android:id="@+id/offers_imagebutton"
                         android:layout_width="fill_parent"
                         android:layout_height="150dp"
                         android:layout_gravity="fill"

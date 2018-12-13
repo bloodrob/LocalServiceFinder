@@ -7,23 +7,41 @@
     tools:context="com.dev.r19.localservicefinder.AfterSelectItem"
     android:background="@drawable/back0051">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Header">
+
+        <TextView
+            android:id="@+id/headtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="#b3093f"
+            android:textSize="20dp"
+            android:text="Result Matches your Search" />
+
+        <TextView
+            android:id="@+id/custsearch"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:textColor="#0d4ca4"
+            android:visibility="invisible"
+            android:text="@string/no_result"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/ItemRes"
         android:layout_width="320dp"
-        android:layout_height="400dp"
-        android:layout_below="@+id/textView17"
+        android:layout_height="420dp"
+        android:layout_below="@id/Header"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
+        android:layout_marginBottom="10dp"
         />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="38dp"
-        android:text="List of available Provider"
-        android:layout_alignParentTop="true"
-        android:textColor="#e40f52"
-        android:textSize="18dp"
-        android:layout_alignStart="@+id/ItemRes" />
 </RelativeLayout>

@@ -5,6 +5,7 @@ package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -31,7 +32,8 @@ import org.w3c.dom.Text;
 public class ClientHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth auth;
-
+    TextView loc;
+    //String myCity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,23 @@ public class ClientHome extends AppCompatActivity
 
 
         // Set Location
-        TextView loc =(TextView)findViewById(R.id.myLocation);
+        loc =(TextView)findViewById(R.id.myLocation);
         loc.setText(""+MainActivity.City);
+
+      /* loc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    MainActivity m = new MainActivity();
+                    myCity = m.getCity(MainActivity.userLocation);
+                    loc.setText(myCity);
+                }
+                catch (NullPointerException e)
+                {
+                    loc.setText("City Not Found");
+                }
+            }
+        });*/
 
         // ImageButton Works are here
         // Doctor ImageButton
@@ -67,10 +84,18 @@ public class ClientHome extends AppCompatActivity
         doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = getString(R.string.Prof_Doctor);
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Doctor);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
 
@@ -79,10 +104,18 @@ public class ClientHome extends AppCompatActivity
         lawyer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Lawyer";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Lawyer);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         // Imagebutton Tutor
@@ -90,10 +123,18 @@ public class ClientHome extends AppCompatActivity
         tutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = getString(R.string.Prof_Tutor);
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Tutor);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
 
@@ -102,10 +143,18 @@ public class ClientHome extends AppCompatActivity
         pharmacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this,AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Pharmacy";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Pharmacy);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
 
@@ -114,10 +163,18 @@ public class ClientHome extends AppCompatActivity
         travel_agent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Travel Agent";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Travel_Agent);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
 
@@ -126,10 +183,18 @@ public class ClientHome extends AppCompatActivity
         it_solution.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "IT Solutions";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_IT_Solutions);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //hospital
@@ -137,10 +202,18 @@ public class ClientHome extends AppCompatActivity
         hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Hospital";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Hospital);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Pathology lab
@@ -148,10 +221,38 @@ public class ClientHome extends AppCompatActivity
         pathology_lab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Pathology Lab";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Pathology_Lab);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
+            }
+        });
+
+        // Photography Image Button
+        ImageButton photography = (ImageButton)findViewById(R.id.photography_imagebutton);
+        photography.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Photography);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Insurance agent
@@ -159,10 +260,18 @@ public class ClientHome extends AppCompatActivity
         insurance_agent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Insurance Agent";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Photography);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Restaurant
@@ -170,10 +279,18 @@ public class ClientHome extends AppCompatActivity
         restaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Restaurant";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Restaurant);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Hotels
@@ -181,10 +298,18 @@ public class ClientHome extends AppCompatActivity
         hotels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Hotels";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Hotels);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //bar wine shop
@@ -192,10 +317,18 @@ public class ClientHome extends AppCompatActivity
         bar_wine_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Bar Wine Shops";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Bar_Wine_Shop);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Beauty Product
@@ -203,10 +336,18 @@ public class ClientHome extends AppCompatActivity
         beauty_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Beauty Products";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Beauty_Products);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Jewellery
@@ -214,10 +355,18 @@ public class ClientHome extends AppCompatActivity
         jewellery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Jewellery";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Beauty_Products);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Electrician
@@ -225,10 +374,18 @@ public class ClientHome extends AppCompatActivity
         electrician.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Electrician";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Electrician);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Plumber
@@ -236,10 +393,18 @@ public class ClientHome extends AppCompatActivity
         plumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Plumber";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Plumber);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
         //Carpenter
@@ -247,10 +412,18 @@ public class ClientHome extends AppCompatActivity
         carpenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                AfterSelectItem.Ser_name = "Carpenter";
-                AfterSelectItem.key ="ClientHome";
-                startActivity(intent);
+                if(MainActivity.userLocation==null)
+                {
+                    Toast.makeText(ClientHome.this,"Unable to fetch your Loction, Do Custom Search",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ClientHome.this,ServiceSearch.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
+                    AfterSelectItem.Ser_name = getString(R.string.Prof_Carpenter);
+                    AfterSelectItem.key = "ClientHome";
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -330,7 +503,23 @@ public class ClientHome extends AppCompatActivity
 
         else if (id == R.id.nav_share)
         {
-
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "Find Your Local Services or Advertise Yourself. Check Out this App.  https://play.google.com/store/apps/details?id=com.dev.r19.localservicefinder";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Local Service Finder");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
+        else if(id == R.id.nav_rate)
+        {
+            try
+            {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.dev.r19.localservicefinder")));
+            }
+            catch (android.content.ActivityNotFoundException e)
+            {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.dev.r19.localservicefinder")));
+            }
         }
 
         else if (id == R.id.nav_aboutus)

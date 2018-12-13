@@ -7,95 +7,122 @@
     tools:context="com.dev.r19.localservicefinder.ServiceSearch"
     android:background="@drawable/background5">
 
-    <EditText
-        android:id="@+id/cityname"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="157dp"
-        android:ems="10"
-        android:background="@drawable/txt_back"
-        android:inputType="textPersonName"
-        android:textColor="#ffffff"
-        android:textAlignment="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/headlinear"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cityname"
-        android:layout_alignBottom="@+id/cityname"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        android:textColor="#ffffff"
-        android:textSize="16dp"
-        android:text="Enter city name" />
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="cursive"
+            android:text="Search Entering Follwing 3 Fields"
+            android:textColor="#0c7815"
+            android:textSize="27dp" />
 
-    <Button
-        android:id="@+id/SearchSubmit"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Search"
-        android:background="@drawable/btn_back4"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:layout_marginBottom="88dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView13"
-        android:layout_below="@+id/cityname"
-        android:layout_marginTop="44dp"
-        android:textColor="#ffffff"
-        android:textSize="17dp"
-        android:text="District name" />
+    <LinearLayout
+        android:layout_below="@+id/headlinear"
+        android:id="@+id/firstlinear"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/textView13"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:text="Enter city name" />
 
-    <EditText
-        android:id="@+id/districtname"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignStart="@+id/cityname"
-        android:layout_below="@+id/cityname"
+        <EditText
+            android:id="@+id/cityname"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_height="40dp"
+            android:background="@drawable/txt_back"
+            android:inputType="textPersonName"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondlinear"
+        android:layout_below="@+id/firstlinear"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/textView39"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:text="District name" />
+
+        <EditText
+            android:paddingRight="3dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/districtname"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:background="@drawable/txt_back"
+            android:inputType="textPersonName"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/thirdlinear"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/secondlinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/textView48"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:text="Proffesion" />
+
+        <Spinner
+            android:layout_marginLeft="20dp"
+            android:id="@+id/proffesion"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_marginTop="30dp"
-        android:ems="10"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:background="@drawable/txt_back"
-        android:inputType="textPersonName"
-         />
+        android:orientation="horizontal"
+        android:layout_below="@+id/thirdlinear"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView48"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView39"
-        android:layout_below="@+id/districtname"
-        android:layout_marginTop="44dp"
-        android:textColor="#ffffff"
-        android:textSize="17dp"
-        android:text="Proffesion" />
-
-    <Spinner
-        android:id="@+id/proffesion"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView48"
-        android:layout_alignStart="@+id/districtname" />
-
-    <TextView
-        android:id="@+id/textView50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="62dp"
-        android:text="Make a Search for service provider. All Three details are required correctly"
-        android:textColor="#000000"
-        android:textSize="22dp"
-        android:layout_above="@+id/textView13"
-        android:layout_alignStart="@+id/textView13" />
+        <Button
+            android:gravity="center"
+            android:id="@+id/SearchSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Search"
+            android:background="@drawable/btn_back4"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </RelativeLayout>

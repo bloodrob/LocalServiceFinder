@@ -116,8 +116,8 @@
     </string>
 
     <string name="page2content">If you continue as client then you will be able to find address and contact information of
-    all the services you may frequently need, may it be a medical personnel, a good restaurant, your shopping destinations
-    Hotels, Institutes, Home Solutions and Many More... within your Surroundings. So give It a try and Know your surrounding
+    all the services you may frequently need, may it be a medical personnel, a good restaurant, your shopping destinations,
+    Hotels, Institutes, Home Solutions and Many More... available in your Surroundings. So give It a try and Know your surrounding
     better.
     </string>
 
@@ -125,6 +125,18 @@
         If you have any Bussiness, you can register as a Service Provider. We all want our Bussiness to grow. Nowadays, It is
         very important to advertise youself to online community. We understand your needs. So, thats why we bring to you this
         app. you can achieve more visibility to your potential customer without investing any money in the name of advertisement.
-        So, register yourself today and make yourself visible to your online potential online customer free of cost. TRY NOW.
+        So, register yourself today and make yourself visible to your online potential customer free of cost. TRY NOW.
     </string>
+
+    <string name="terms_ref"><b><u>Read Terms and Condition Carefully</u></b></string>
+    <string name="terms_string"><b><u>TERMS AND CONDITIONS</u></b></string>
+    <string name="terms_condition">
+        1. As you Know this app Displays your Contact Information and Address to its user. \n\n
+        2. We only provide platform between you and your customer.\n\n
+        3. Any Misuse of your phone number and Email address may occur from app user. \n\n
+        4. By Accepting Terms and Condition, You are giving your consent to show your Information to app users.\n\n
+        5. Developer of this app are not responsible for any misuse and spam on your mobile number and Email.
+    </string>
+
+    <string name="no_result"><b><u>Make Custom Search Instead</u></b></string>
 </resources>

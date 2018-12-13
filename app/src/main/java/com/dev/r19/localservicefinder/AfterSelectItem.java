@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -26,6 +28,8 @@ public class AfterSelectItem extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayAdapter<String> adaptor;
     List<String> listRes;
+    TextView headText;
+    TextView cusButton;
     String Serv_name,gotcity,gotdistrict,gotproffesion;
     static String Ser_name;
     static String getcity,getdistrict,getproffesion,key;
@@ -33,6 +37,10 @@ public class AfterSelectItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_select_item);
+
+        headText = (TextView)findViewById(R.id.headtext);
+        cusButton = (TextView) findViewById(R.id.custsearch);
+
         item2 = (ListView)findViewById(R.id.ItemRes);
         listRes = new ArrayList<>();
         //gating the selected item to the string i.e pass through intent from the home.java page
@@ -79,11 +87,22 @@ public class AfterSelectItem extends AppCompatActivity {
                    }); */
                    //end
                }
-               else {
-                   Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_SHORT).show();
+             /*  else {
+                 //  Toast.makeText(AfterSelectItem.this, "No provider is avaiable in your area", Toast.LENGTH_SHORT).show();
+                   headText.setText("No Result Matches Your Search");
+                   cusButton.setText("Make Custom Search Instead");
+                   cusButton.setVisibility(View.VISIBLE);
                    return;
-               }
-
+               }*/
+            if(listRes.isEmpty())
+            {
+                headText.setText("No Result Matches Your Search");
+                cusButton.setVisibility(View.VISIBLE);
+            }
+            else {
+                headText.setText("Results Matches Your Search");
+                cusButton.setVisibility(View.INVISIBLE);
+            }
 
            }
 
@@ -108,6 +127,15 @@ public class AfterSelectItem extends AppCompatActivity {
            }
        });
 
+       // Cust Textview
+       cusButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(AfterSelectItem.this,ServiceSearch.class);
+               startActivity(intent);
+           }
+       });
         //end of Firebase activity
     }
+
 }

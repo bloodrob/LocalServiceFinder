@@ -1,6 +1,8 @@
 package com.dev.r19.localservicefinder;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Address;
@@ -19,6 +21,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,6 +44,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference ref, ref1;
+    Dialog dialog;
 
     public static final String TAG = ServiceInfoInsert.class.getSimpleName();
     Button submit;
@@ -55,12 +59,15 @@ public class ServiceInfoInsert extends AppCompatActivity {
     double longitude, latitude;
     static Calendar myCalendar;
     static String DOB;
+    TextView term_ref;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_info_insert);
+
+        term_ref = (TextView)findViewById(R.id.terms_textview);
 
         submit = (Button)findViewById(R.id.SPsubmit);
         spemail = (EditText)findViewById(R.id.SPemail);
@@ -92,7 +99,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
-        database.getReference("app_name").setValue("Location based service provider");
+      //  database.getReference("app_name").setValue("Location based service provider");
 
 
 
@@ -181,7 +188,15 @@ public class ServiceInfoInsert extends AppCompatActivity {
             }
         });
 
-
+            dialog = new Dialog(this);
+        // Terms and condition
+        term_ref.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setContentView(R.layout.terms_popup);
+                dialog.show();
+            }
+        });
         // Ends here
 
         //end of search service node

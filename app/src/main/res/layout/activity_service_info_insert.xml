@@ -17,24 +17,14 @@ tools:context=".ServiceInfoInsert">
     android:id="@+id/frameLayout"
     android:background="@drawable/back_register">
     <TextView
-        android:layout_width="180dp"
-        android:layout_height="23dp"
-        android:text="SERVICE PROVIDER"
-        android:layout_marginLeft="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SERVICE PROVIDER ENTRY"
+        android:gravity="center"
         android:layout_marginTop="20dp"
         android:textColor="#000000"
         android:textSize="18dp"
         android:textStyle="bold"/>
-    <TextView
-        android:layout_width="80dp"
-        android:layout_height="23dp"
-        android:text="ENTRY"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="40dp"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
-
 
 
 </FrameLayout>
@@ -329,11 +319,19 @@ tools:context=".ServiceInfoInsert">
            <CheckBox
                android:id="@+id/checkbox"
                android:layout_width="240dp"
-               android:layout_height="40dp"
+               android:layout_height="60dp"
                android:layout_marginLeft="100dp"
-               android:layout_marginTop="820dp"
+               android:layout_marginTop="830dp"
                android:text="I accept the terms and conditons and want to continue and submit my details"
                />
+
+                <TextView
+                    android:id="@+id/terms_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="890dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="@string/terms_ref"/>
 
             <Button
                 android:id="@+id/SPsubmit"
@@ -341,7 +339,7 @@ tools:context=".ServiceInfoInsert">
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginLeft="120dp"
-                android:layout_marginTop="890dp"
+                android:layout_marginTop="920dp"
                 android:text="INSERT INFORMATION"
                 android:layout_marginBottom="20dp"
                 android:textStyle="bold" />

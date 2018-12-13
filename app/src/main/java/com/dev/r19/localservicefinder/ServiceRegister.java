@@ -70,7 +70,7 @@ public class ServiceRegister extends AppCompatActivity {
                 //end of email validation
                 //validating password
 
-                final String expression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
+                /*final String expression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
                 pattern = Pattern.compile(expression);
                 matcher = pattern.matcher(ServicePass);
 
@@ -82,6 +82,10 @@ public class ServiceRegister extends AppCompatActivity {
                 if (ServicePass.length()<8) {
                     Toast.makeText(ServiceRegister.this, "Password Length can't be less than 8", Toast.LENGTH_LONG).show();
                     return;
+                }*/
+                if(ServicePass.length()<4)
+                {
+                    Toast.makeText(ServiceRegister.this,"Password Length Must be 6 or More",Toast.LENGTH_LONG);
                 }
                 if (TextUtils.isEmpty(ServiceConPass)) {
                     Toast.makeText(ServiceRegister.this, "Retype Your Password", Toast.LENGTH_LONG).show();

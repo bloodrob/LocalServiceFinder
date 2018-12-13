@@ -1,6 +1,7 @@
 package com.dev.r19.localservicefinder;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -59,7 +60,7 @@ public class ProviderHome extends AppCompatActivity
                 GetServiceNameModel model = dataSnapshot.getValue(GetServiceNameModel.class);
                 if (sp_email.equals(model.SP_email) || sp_session_email.equals(model.SP_email)) {
                     toolbar.setTitle(model.SP_name);
-                    Toast.makeText(ProviderHome.this, "Welcome You "+model.SP_name, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProviderHome.this, "Welcome "+model.SP_name, Toast.LENGTH_LONG).show();
                     return;
                 }
             }
@@ -113,6 +114,21 @@ public class ProviderHome extends AppCompatActivity
             }
         });
 
+        ImageButton updatestatus = (ImageButton)findViewById(R.id.updatestatus_imagebutton);
+        updatestatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProviderHome.this,"This Features is Coming Soon",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ImageButton offers = (ImageButton)findViewById(R.id.offers_imagebutton);
+        offers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProviderHome.this,"This Features is Coming Soon",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -157,6 +173,8 @@ public class ProviderHome extends AppCompatActivity
         if (id == R.id.nav_ser_myprofile)
         {
             // Handle the camera action
+            Intent intent = new Intent(ProviderHome.this,ViewServiceProviderProfile.class);
+            startActivity(intent);
         }
 
         else if (id == R.id.nav_ser_feedback)
@@ -179,7 +197,23 @@ public class ProviderHome extends AppCompatActivity
         }
         else if (id == R.id.nav_share)
         {
-
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "Find Your Local Services or Advertise Yourself. Check Out this App.  https://play.google.com/store/apps/details?id=com.dev.r19.localservicefinder";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Local Service Finder");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
+        else if(id == R.id.nav_rate_ser)
+        {
+            try
+            {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.dev.r19.localservicefinder")));
+            }
+            catch (android.content.ActivityNotFoundException e)
+            {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.dev.r19.localservicefinder")));
+            }
         }
         else if (id == R.id.nav_aboutus)
         {

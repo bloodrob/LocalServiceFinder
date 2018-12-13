@@ -76,17 +76,17 @@ public class ClientRegister extends AppCompatActivity {
 
               //start of password validation
 
-                final String expression =  "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{8,}$";
+             /*   final String expression =  "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{8,}$";
                 pattern = Pattern.compile(expression);
                 matcher = pattern.matcher(ClientPassword);
                 if(!matcher.matches()) {
                     Toast.makeText(ClientRegister.this, "password must contain atleast one upper class, one lower class, one number and minimun 8", Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
 
-                if (ClientPassword.length()<8) {
-                    Toast.makeText(ClientRegister.this, "Password Can't be less than 8", Toast.LENGTH_LONG).show();
+                if (ClientPassword.length()<6) {
+                    Toast.makeText(ClientRegister.this, "Password Length Must be 6 or More", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (TextUtils.isEmpty(ClientConPassword)) {

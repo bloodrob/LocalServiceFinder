@@ -25,6 +25,11 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
             <item
+                android:id="@+id/nav_rate_ser"
+                android:title="Rate Us"
+                android:icon="@drawable/ic_rate_review"
+                />
+            <item
                 android:id="@+id/nav_aboutus"
                 android:icon="@drawable/ic_accessibility"
                 android:title="About Us" />

@@ -18,6 +18,9 @@
             android:padding="10dp"
             android:text="@string/page2content"
             android:textColor="#0e0bd4"
-            android:textSize="15dp" />
+            android:textStyle="italic"
+            android:textAlignment="gravity"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="19dp" />
     </RelativeLayout>
 </android.widget.RelativeLayout>
