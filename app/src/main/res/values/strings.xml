@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LocalServiceFinder</string>
+    <string name="app_name">Local Service Finder</string>
 
     <string name="Prof_Doctor">Doctor</string>
     <string name="Prof_Lawyer">Lawyer</string>

@@ -1,8 +1,5 @@
 package com.dev.r19.localservicefinder;
 
-import android.location.Address;
-import android.location.Location;
-
 /**
  * Created by R19 on 11/22/2018.
  */

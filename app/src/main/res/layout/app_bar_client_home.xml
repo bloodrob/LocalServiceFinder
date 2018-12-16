@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#123456"
-    tools:context=".ClientHome">
+    tools:context="com.dev.r19.localservicefinder.ClientHome">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

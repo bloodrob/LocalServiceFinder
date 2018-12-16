@@ -1,8 +1,5 @@
 package com.dev.r19.localservicefinder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by R19 on 11/23/2018.
  */

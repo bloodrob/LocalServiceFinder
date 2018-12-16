@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back0051"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ProviderHome"
+    tools:context="com.dev.r19.localservicefinder.ProviderHome"
     tools:showIn="@layout/app_bar_provider_home">
     <RelativeLayout
         android:id="@+id/rela"

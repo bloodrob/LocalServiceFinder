@@ -6,7 +6,7 @@
     android:id="@+id/rela"
     android:background="@drawable/background7"
     android:layout_height="match_parent"
-    tools:context=".Opener">
+    tools:context="com.dev.r19.localservicefinder.Opener">
 
     <ImageView
         android:layout_width="111dp"

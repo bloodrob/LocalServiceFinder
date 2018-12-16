@@ -2,7 +2,6 @@ package com.dev.r19.localservicefinder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.EventLogTags;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,7 +60,7 @@ public class ViewServiceProviderProfile extends AppCompatActivity {
                     description_tv.setText(""+model.Company_description);
                 }
 
-                if(!Getemail.equals(model.SP_email))
+                 /* if(!Getemail.equals(model.SP_email))
                 {
                     name_tv.setText("Please Update your Profile First");
                     email_tv.setText(" ");
@@ -76,7 +75,7 @@ public class ViewServiceProviderProfile extends AppCompatActivity {
                     profession_tv.setText(" ");
                     companyname_tv.setText(" ");
                     description_tv.setText(" ");
-                }
+                } */
             }
 
             @Override

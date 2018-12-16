@@ -1,7 +1,5 @@
 package com.dev.r19.localservicefinder;
 
-import java.lang.reflect.Modifier;
-
 /**
  * Created by akash on 11/30/2018.
  */

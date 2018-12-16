@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServiceRegister"
+    tools:context="com.dev.r19.localservicefinder.ServiceRegister"
     android:background="@drawable/background3">
 
     <EditText
