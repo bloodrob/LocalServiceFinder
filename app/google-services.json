@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "873332915487-jpt948sfpv7uftueqvnp5oi9uhm9uuju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dev.r19.localservicefinder",
+            "certificate_hash": "cef59e129c2239283da564ca972bf311a1846e02"
+          }
+        },
+        {
           "client_id": "873332915487-m3mg1e6gpjlgk4nvs60dg0jqep2375pe.apps.googleusercontent.com",
           "client_type": 3
         }
