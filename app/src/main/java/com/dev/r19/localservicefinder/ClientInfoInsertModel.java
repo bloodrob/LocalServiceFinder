@@ -5,7 +5,12 @@ package com.dev.r19.localservicefinder;
  */
 
 public class ClientInfoInsertModel {
-    String Client_id,Client_Name, Client_email, Gender, Mobile, Address;
+    String Client_id;
+    String Client_Name;
+    String Client_email;
+    String Gender;
+    String Mobile;
+    String Address;
 
     public ClientInfoInsertModel() {
     }

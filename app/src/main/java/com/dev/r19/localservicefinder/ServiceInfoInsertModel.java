@@ -6,7 +6,21 @@ package com.dev.r19.localservicefinder;
 
 public class ServiceInfoInsertModel {
 
-    String active_id, SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile,Proffession, Company_name, Company_description;
+    String active_id;
+    String SP_name;
+    String SP_email;
+    String Service_name;
+    String Gender;
+    String DOB;
+    String Address;
+    String City;
+    String District;
+    String State;
+    String Pin;
+    String Mobile;
+    String Proffession;
+    String Company_name;
+    String Company_description;
     double latitude;
     double longitude;
 

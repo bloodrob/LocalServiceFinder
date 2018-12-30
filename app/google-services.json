@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "873332915487-nkonipppt8al19eaeuihsnmcp0eg03d6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dev.r19.localservicefinder",
+            "certificate_hash": "2cb7b48329aa7260eeef601439ac57afa23bba60"
+          }
+        },
+        {
           "client_id": "873332915487-jcslgvum40np7au5l31dnkb19f6m13ot.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -23,7 +31,7 @@
           }
         },
         {
-          "client_id": "873332915487-jpt948sfpv7uftueqvnp5oi9uhm9uuju.apps.googleusercontent.com",
+          "client_id": "873332915487-m45lp4h1i6ncfho7tabh5khagjcun5c0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dev.r19.localservicefinder",

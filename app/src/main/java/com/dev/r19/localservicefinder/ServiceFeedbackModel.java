@@ -5,7 +5,11 @@ package com.dev.r19.localservicefinder;
  */
 
 public class ServiceFeedbackModel {
-    String SP_id, SP_name, SP_email, Subject, Message;
+    String SP_id;
+    String SP_name;
+    String SP_email;
+    String Subject;
+    String Message;
 
     public ServiceFeedbackModel() {
     }

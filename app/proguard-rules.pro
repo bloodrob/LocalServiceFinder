@@ -23,3 +23,12 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#Global rule
+-keepattributes Signature
+
+#Properly proguard all the model classes in the package . Modify to fit the structure of your app
+-keepclassmembers class com.dev.r19.localservicefinder.models.** {
+*;
+}
+
