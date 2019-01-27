@@ -24,11 +24,13 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+-keep class com.google.firebase.example.fireeats.java.model.** { *; }
+
 #Global rule
 -keepattributes Signature
 
 #Properly proguard all the model classes in the package . Modify to fit the structure of your app
--keepclassmembers class com.dev.r19.localservicefinder.models.** {
+-keepclassmembers class com.dev.r19.localservicefinder.GetServiceNameModel.** {
 *;
 }
 

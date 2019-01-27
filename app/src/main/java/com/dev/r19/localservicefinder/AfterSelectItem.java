@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -66,10 +67,10 @@ public class AfterSelectItem extends AppCompatActivity {
                loc.setLongitude(res.longitude);
                 //end of object work
                 // checking the required data retrieve condition
-               if ((res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) || (res.City.equals(getcity) && res.District.equals(gotdistrict) && res.Proffession.equals(getproffesion))) {
-                   listRes.add(res.SP_name + "\n" +res.Address + "\n" +res.City+ "\n" +res.District+ "\n"+res.Company_description+ "\n Mobile number :"+res.Mobile+ "\n E-mail :"+res.SP_email+ "\n\n");
-                   adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
-                   item2.setAdapter(adaptor);
+                    if ((res.Proffession.equals(Serv_name) && MainActivity.userLocation.distanceTo(loc)<50000) || (res.City.equals(getcity) && res.District.equals(gotdistrict) && res.Proffession.equals(getproffesion))) {
+                        listRes.add(res.SP_name + "\n" +res.Address + "\n" +res.City+ "\n" +res.District+ "\n"+res.Company_description+ "\n Mobile number :"+res.Mobile+ "\n E-mail :"+res.SP_email+ "\n\n");
+                        adaptor = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listRes);
+                        item2.setAdapter(adaptor);
                    //set a string for the selected item to be passed
                   /* item2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                        @Override

@@ -1,9 +1,11 @@
 package com.dev.r19.localservicefinder;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by akash on 11/30/2018.
  */
-
+@IgnoreExtraProperties
 public class ItemSelect {
     String SP_name, SP_email, Service_name, Address, City, District, Mobile, Proffession, Company_description;
     double latitude, longitude;
@@ -23,5 +25,49 @@ public class ItemSelect {
         this.Company_description = Company_description;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public String getSP_name() {
+        return SP_name;
+    }
+
+    public String getSP_email() {
+        return SP_email;
+    }
+
+    public String getService_name() {
+        return Service_name;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public String getDistrict() {
+        return District;
+    }
+
+    public String getMobile() {
+        return Mobile;
+    }
+
+    public String getProffession() {
+        return Proffession;
+    }
+
+    public String getCompany_description() {
+        return Company_description;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 }

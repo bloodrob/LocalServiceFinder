@@ -1,9 +1,11 @@
 package com.dev.r19.localservicefinder;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by R19 on 11/23/2018.
  */
-
+@IgnoreExtraProperties
 public class ServiceSearchModel {
 
   //  List<ArrayList<String>> Result ;
@@ -22,5 +24,13 @@ public class ServiceSearchModel {
 
        // Result = new ArrayList<>();
 
+    }
+
+    public String getService_name() {
+        return Service_name;
+    }
+
+    public String getSerial_no() {
+        return Serial_no;
     }
 }

@@ -1,14 +1,16 @@
 package com.dev.r19.localservicefinder;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by R19 on 12/5/2018.
  */
-
+@IgnoreExtraProperties
 public class ClientFeedbackModel {
     String Client_id;
     String Client_name;
     String Client_email;
-    private String Subject;
+    String Subject;
     String Message;
 
     public ClientFeedbackModel() {
@@ -19,5 +21,25 @@ public class ClientFeedbackModel {
         this.Client_email = Client_email;
         this.Subject = Subject;
         this.Message = Message;
+    }
+
+    public String getClient_id() {
+        return Client_id;
+    }
+
+    public String getClient_name() {
+        return Client_name;
+    }
+
+    public String getClient_email() {
+        return Client_email;
+    }
+
+    public String getSubject() {
+        return Subject;
+    }
+
+    public String getMessage() {
+        return Message;
     }
 }
