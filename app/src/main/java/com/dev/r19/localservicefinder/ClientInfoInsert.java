@@ -17,17 +17,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ClientInfoInsert extends AppCompatActivity {
+public class  ClientInfoInsert extends AppCompatActivity {
 
     public static final String TAG = ClientInfoInsertModel.class.getSimpleName();
     EditText name, email, mobile, address;
-  //  RadioGroup gender;
     Button submit;
-    String Gender;
-    String getid;
+    private String c_gender;
+    private String userID;
+    private String c_name;
+    private String c_email;
+    private String c_mobile;
+    private String c_address;
 
     FirebaseDatabase database;
     DatabaseReference ref;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,9 @@ public class ClientInfoInsert extends AppCompatActivity {
         address = (EditText)findViewById(R.id.clientAddress);
         submit = (Button)findViewById(R.id.submitClientInfo);
 
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth.getCurrentUser().getUid();
+
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Client_info");
 
@@ -48,47 +55,26 @@ public class ClientInfoInsert extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Client_Name = name.getText().toString().trim();
-                String Client_email = email.getText().toString().trim();
-                String Mobile = mobile.getText().toString().trim();
-                String Address = address.getText().toString().trim();
+                c_name = name.getText().toString().trim();
+                c_email = email.getText().toString().trim();
+                c_mobile = mobile.getText().toString().trim();
+                c_address = address.getText().toString().trim();
 
-                Entrydata(Client_Name, Client_email, Gender, Mobile, Address);
-
-            }
-        });
-    }
-
-    private void Entrydata(String Client_name, String Client_email, String Gender, String Mobile, String Address) {
-        ClientInfoInsertModel model = new ClientInfoInsertModel(Client_name, Client_email, Gender, Mobile, Address);
-        model.Client_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        getid = model.Client_id;
-        ref.child(getid).setValue(model);
-        addClientInfo();
-
-    }
-
-    private void addClientInfo() {
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ClientInfoInsertModel model = dataSnapshot.getValue(ClientInfoInsertModel.class);
-                if (model == null) {
-                    Log.e(TAG, "Data missing !!!");
+                ClientInfoInsertModel model = new ClientInfoInsertModel(c_name,c_email,c_gender,c_mobile,c_address);
+                try
+                {
+                    ref.child(userID).setValue(model);
+                    Toast.makeText(ClientInfoInsert.this,"Your Profile is Updated",Toast.LENGTH_SHORT).show();
                 }
-                Log.e(TAG, "Data is inserted"+model.Client_Name + "," +model.Client_email+ "," +model.Gender+ "," +model.Mobile+ "," +model.Address);
-                Toast.makeText(ClientInfoInsert.this, " Your Profile has been successfully updated.",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ClientInfoInsert.this, ClientHome.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                finally {
+                    Intent intent = new Intent(ClientInfoInsert.this,ClientHome.class);
+                    startActivity(intent);
+                }
 
             }
         });
     }
+
     // Radio Buttons
 
     public void onRadioButtonClicked(View view) {
@@ -99,12 +85,12 @@ public class ClientInfoInsert extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioMale:
                 if (checked)
-                    Gender = "Male";
+                    c_gender = "Male";
                 Toast.makeText(ClientInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
                 break;
             case R.id.radioFemale:
                 if (checked)
-                    Gender = "Female";
+                    c_gender = "Female";
                 Toast.makeText(ClientInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
                 break;
         }

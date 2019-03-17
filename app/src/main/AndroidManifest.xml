@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name=".ViewClientProfile"></activity>
+        <activity android:name=".CustomResults" />
+        <activity android:name=".Results" />
         <activity android:name=".Opener">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,9 +36,7 @@
         <activity android:name=".ServiceEntry" />
         <activity android:name=".ServiceSearch" />
         <activity android:name=".ServiceResultNotFound" />
-        <activity android:name=".AfterSelectItem" />
         <activity android:name=".ClientFeedback" />
-        <activity android:name=".SuccessFeedback" />
         <activity
             android:name=".ClientHome"
             android:label="@string/title_activity_client_home"
@@ -49,7 +50,7 @@
         <activity android:name=".UserGuide" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".ViewServiceProviderProfile"></activity>
+        <activity android:name=".ViewServiceProviderProfile" />
     </application>
 
 </manifest>

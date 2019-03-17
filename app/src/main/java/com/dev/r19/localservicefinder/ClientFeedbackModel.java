@@ -7,11 +7,10 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 @IgnoreExtraProperties
 public class ClientFeedbackModel {
-    String Client_id;
-    String Client_name;
-    String Client_email;
-    String Subject;
-    String Message;
+    private String Client_name;
+    private String Client_email;
+    private String Subject;
+    private String Message;
 
     public ClientFeedbackModel() {
     }
@@ -23,9 +22,6 @@ public class ClientFeedbackModel {
         this.Message = Message;
     }
 
-    public String getClient_id() {
-        return Client_id;
-    }
 
     public String getClient_name() {
         return Client_name;

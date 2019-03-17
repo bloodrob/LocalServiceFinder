@@ -41,19 +41,33 @@ import java.util.regex.Pattern;
 public class ServiceInfoInsert extends AppCompatActivity {
 
     FirebaseDatabase database;
-    DatabaseReference ref, ref1;
+    DatabaseReference ref;
     Dialog dialog;
 
     public static final String TAG = ServiceInfoInsert.class.getSimpleName();
     Button submit;
-    EditText spemail, spname, spservicename,  spdob, spaddress, spcity, spdistrict, spstate, sppin, spmobile,  spcompanyname, spcompanydescription;
+    private  EditText spemail, spname, spservicename,  spdob, spaddress, spcity, spdistrict, spstate, sppin, spmobile, spcompanyname, spcompanydescription;
     RadioButton spmale, spfemale;
     Spinner spproffession;
     CheckBox check;
-    List<String> namelist;
     String GetId;
-    String Proffession;
-    String Gender;
+
+    // Fields to be Added
+    private String sp_email;
+    private String sp_name;
+    private String sp_servicename;
+    private String sp_gender;
+    private String sp_mobile;
+    private String sp_address;
+    private String sp_city;
+    private String sp_district;
+    private String sp_state;
+    private String sp_pin;
+    private String sp_proffession;
+    private String sp_companyname;
+    private String sp_companydescription;
+
+
     double longitude, latitude;
     static Calendar myCalendar;
     static String DOB;
@@ -101,37 +115,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
 
 
-        // for search the Service node and retrive it and use it on the spinner
-        ref1 = database.getReference("Service_info");
-        namelist = new ArrayList<String>();
 
-       ref1.addChildEventListener(new ChildEventListener() {
-           @Override
-           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-               ServiceSearchModel service = dataSnapshot.getValue(ServiceSearchModel.class);
-               namelist.add(service.Service_name);
-           }
-
-           @Override
-           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-           }
-
-           @Override
-           public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-           }
-
-           @Override
-           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-           }
-
-           @Override
-           public void onCancelled(DatabaseError databaseError) {
-
-           }
-       });
 
 
         // Adding Items to the Spinner *** Pranjal Das
@@ -177,7 +161,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         spproffession.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Proffession = parent.getItemAtPosition(position).toString();
+                sp_proffession = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -205,9 +189,9 @@ public class ServiceInfoInsert extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String SP_name = spname.getText().toString().trim();
-                String SP_email = spemail.getText().toString().trim();
-                String Service_name = spservicename.getText().toString().trim();
+                sp_name = spname.getText().toString().trim();
+                sp_email = spemail.getText().toString().trim();
+                sp_servicename = spservicename.getText().toString().trim();
         /*        String Gender = null;
                 if(spmale.isSelected())
                 {
@@ -218,24 +202,24 @@ public class ServiceInfoInsert extends AppCompatActivity {
                     Gender = "Female";
                 } */
               //  String DOB = spdob.getText().toString().trim();
-                String Address = spaddress.getText().toString().trim();
-                String City = spcity.getText().toString().trim();
-                String District = spdistrict.getText().toString().trim();
-                String State = spstate.getText().toString().trim();
-                String Pin = sppin.getText().toString().trim();
-                String Mobile = spmobile.getText().toString().trim();
+                sp_address = spaddress.getText().toString().trim();
+                sp_city = spcity.getText().toString().trim();
+                sp_district = spdistrict.getText().toString().trim();
+                sp_state = spstate.getText().toString().trim();
+                sp_pin = sppin.getText().toString().trim();
+                sp_mobile = spmobile.getText().toString().trim();
                 //validating the mobile n o
                 Pattern pattern;
                 Matcher matcher;
                 String mobilePattern = "(0 |[0-9][0-9])?[0-9]{10}";
                 pattern = Pattern.compile(mobilePattern);
-                matcher = pattern.matcher(Mobile);
+                matcher = pattern.matcher(sp_mobile);
                 if (!matcher.matches()) {
                     spmobile.setText("Mobile no not valid");
                     return;
                 }
-                String Company_name = spcompanyname.getText().toString().trim();
-                String Company_description = spcompanydescription.getText().toString().trim();
+                sp_companyname = spcompanyname.getText().toString().trim();
+                sp_companydescription = spcompanydescription.getText().toString().trim();
                 if (!check.isChecked()) {
                     Toast.makeText(ServiceInfoInsert.this, "You must accept the terms and condiotion before you proceed.", Toast.LENGTH_LONG).show();
                     return;
@@ -244,68 +228,28 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 //Location A Edited By Pranjal Das
 
                 // Build a String for Location Geocoding
-                String geoString = City.concat(",").concat(District).concat(State);
-                Location A= new Location(LocationManager.NETWORK_PROVIDER);
-                Geocoder gc =  new Geocoder(ServiceInfoInsert.this,Locale.getDefault());
-                List<android.location.Address> adr;
-                try {
-                    adr=gc.getFromLocationName(geoString,1);
-                    if(adr==null)
-                    {
-                        Toast.makeText(ServiceInfoInsert.this,"No Address found",Toast.LENGTH_LONG).show();
-                    }
-                    Address x = adr.get(0);
-                    longitude = x.getLongitude();
-                    latitude = x.getLatitude();
+                String geoString = sp_city.concat(",").concat(sp_district).concat(",").concat(sp_state);
 
-                }
-                catch (Exception e)
+                List<android.location.Address> add = getAddress(geoString);
+                if(add !=null)
                 {
-                    Toast.makeText(ServiceInfoInsert.this,"Error",Toast.LENGTH_LONG).show();
+                    Address curadress = add.get(0);
+                    longitude = curadress.getLongitude();
+                    latitude = curadress.getLatitude();
                 }
 
+                // Edited By Pranjal Das on 17/03/2019
+                ServiceProviderModel model = new ServiceProviderModel(sp_email, sp_name, sp_servicename, sp_gender, DOB, sp_address,  sp_city, sp_district, sp_state, sp_pin, sp_mobile, sp_proffession, sp_companyname, sp_companydescription, latitude,longitude);
 
-                // Ends Here By Pranjal Das
+                GetId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+                ref.child(GetId).setValue(model);
 
-                EntryServiceInfo( SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description, latitude, longitude);
-            }
-        });
-    }
-    private void EntryServiceInfo(String SP_name, String SP_email, String Service_name, String Gender, String DOB, String Address, String City, String District, String State, String Pin, String Mobile, String Proffession, String Company_name, String Company_description, double latitude, double longitude) {
-        ServiceInfoInsertModel cinfo = new ServiceInfoInsertModel(SP_name, SP_email, Service_name, Gender, DOB, Address, City, District, State, Pin, Mobile, Proffession, Company_name, Company_description,latitude, longitude);
-
-        cinfo.active_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        GetId = cinfo.active_id;
-        ref.child(GetId).setValue(cinfo);
-        addServiceInfo();
-    }
-
-    private void addServiceInfo() {
-        ref.child(GetId).addListenerForSingleValueEvent(new ValueEventListener() {
-
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ServiceInfoInsertModel cinfo = dataSnapshot.getValue(ServiceInfoInsertModel.class);
-
-                if (cinfo == null) {
-                    Log.e(TAG, "Data is null");
-                    return;
-                }
-                Log.e(TAG, "DATA is inserted" +cinfo.SP_email + "," +cinfo.SP_name + "," +cinfo.Service_name + "," + cinfo.Gender + "," + cinfo.DOB + "," +cinfo.Address + "," + cinfo.City + "," + cinfo.State + "," + cinfo.Pin + "," +cinfo.Mobile + "," + cinfo.Proffession + "," + cinfo.Company_name + "," + cinfo.Company_description);
-              //  Intent intent = new Intent(ServiceInfoInsert.this, AddSuccess.class);
-                //startActivity(intent);
-                Toast.makeText(ServiceInfoInsert.this, " data is successfully submited", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ServiceInfoInsert.this, ProviderHome.class);
+                Intent intent = new Intent(ServiceInfoInsert.this,ProviderHome.class);
                 startActivity(intent);
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error is occured", databaseError.toException());
-                return;
 
+                               // Ends Here By Pranjal Das
             }
         });
     }
@@ -320,12 +264,12 @@ public class ServiceInfoInsert extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.maleRadio:
                 if (checked)
-                    Gender = "Male";
+                    sp_gender = "Male";
                     Toast.makeText(ServiceInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
                 break;
             case R.id.femaleRadio:
                 if (checked)
-                    Gender = "Female";
+                    sp_gender = "Female";
                     Toast.makeText(ServiceInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
                 break;
         }
@@ -350,4 +294,28 @@ public class ServiceInfoInsert extends AppCompatActivity {
         Toast.makeText(ServiceInfoInsert.this, "date is :"+DOB, Toast.LENGTH_SHORT).show();
     }
     //end of calendar activity
+
+    public List<android.location.Address> getAddress(String geoString)
+    {
+        Location A= new Location(LocationManager.NETWORK_PROVIDER);
+        Geocoder gc =  new Geocoder(ServiceInfoInsert.this,Locale.getDefault());
+        List<android.location.Address> adr=null;
+        try {
+            adr=gc.getFromLocationName(geoString,1);
+            if(adr==null)
+            {
+                Toast.makeText(ServiceInfoInsert.this,"No Address found",Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Toast.makeText(ServiceInfoInsert.this,"Sending address list",Toast.LENGTH_LONG).show();
+            }
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(ServiceInfoInsert.this,"Error",Toast.LENGTH_LONG).show();
+        }
+
+        return adr;
+    }
 }

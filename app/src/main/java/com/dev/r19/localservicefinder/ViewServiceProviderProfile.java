@@ -3,6 +3,7 @@ package com.dev.r19.localservicefinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -11,12 +12,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ViewServiceProviderProfile extends AppCompatActivity {
     TextView name_tv,email_tv,gender_tv,dob_tv,address_tv,city_tv,district_tv,state_tv,pin_tv,mobile_tv,profession_tv,companyname_tv,description_tv;
-    String Getemail;
     FirebaseDatabase firedata;
     DatabaseReference databaseReference;
+    String userID;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,59 +41,34 @@ public class ViewServiceProviderProfile extends AppCompatActivity {
 
         firedata = FirebaseDatabase.getInstance();
         databaseReference = firedata.getReference("Service_Provider_info");
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        Getemail = user.getEmail();
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                ServiceInfoInsertModel model = dataSnapshot.getValue(ServiceInfoInsertModel.class);
-                if(Getemail.equals(model.SP_email)) {
-                    name_tv.setText(""+model.SP_name);
-                    email_tv.setText(""+model.SP_email);
-                    gender_tv.setText(""+model.Gender);
-                    dob_tv.setText(""+model.DOB);
-                    address_tv.setText(""+model.Address);
-                    city_tv.setText(""+model.City);
-                    district_tv.setText(""+model.District);
-                    state_tv.setText(""+model.State);
-                    pin_tv.setText(""+model.Pin);
-                    mobile_tv.setText(""+model.Mobile);
-                    profession_tv.setText(""+model.Proffession);
-                    companyname_tv.setText(""+model.Company_name);
-                    description_tv.setText(""+model.Company_description);
-                }
 
-                 /* if(!Getemail.equals(model.SP_email))
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth.getCurrentUser().getUid();
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ServiceProviderModel model = dataSnapshot.child(userID).getValue(ServiceProviderModel.class);
+                try
                 {
-                    name_tv.setText("Please Update your Profile First");
-                    email_tv.setText(" ");
-                    gender_tv.setText(" ");
-                    dob_tv.setText(" ");
-                    address_tv.setText(" ");
-                    city_tv.setText(" ");
-                    district_tv.setText(" ");
-                    state_tv.setText(" ");
-                    pin_tv.setText(" ");
-                    mobile_tv.setText(" ");
-                    profession_tv.setText(" ");
-                    companyname_tv.setText(" ");
-                    description_tv.setText(" ");
-                } */
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
+                    name_tv.setText(""+model.getSp_name());
+                    mobile_tv.setText(""+model.getSp_mobile());
+                    email_tv.setText(""+model.getSp_email());
+                    gender_tv.setText(""+model.getSp_gender());
+                    dob_tv.setText(""+model.getSp_dob());
+                    address_tv.setText(""+model.getSp_address());
+                    city_tv.setText(""+model.getSp_city());
+                    district_tv.setText(""+model.getSp_district());
+                    state_tv.setText(""+model.getSp_state());
+                    pin_tv.setText(""+model.getSp_pin());
+                    profession_tv.setText(""+model.getSp_proffession());
+                    companyname_tv.setText(""+model.getSp_companyname());
+                    description_tv.setText(""+model.getSp_companydescription());
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(ViewServiceProviderProfile.this,"Update your Profile First",Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

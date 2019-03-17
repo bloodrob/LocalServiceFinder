@@ -9,9 +9,13 @@
             android:icon="@drawable/ic_search"
             android:title="Custom Search" />
         <item
-            android:id="@+id/nav_myprofile"
+            android:id="@+id/nav_update_profile"
             android:icon="@drawable/ic_myprofile"
-            android:title="My Profile" />
+            android:title="Update Profile" />
+        <item
+            android:id="@+id/nav_view_profile"
+            android:icon="@drawable/ic_remove_red_eye_black_24dp"
+            android:title="View Profile" />
         <item
             android:id="@+id/nav_feedback"
             android:icon="@drawable/ic_feedback"

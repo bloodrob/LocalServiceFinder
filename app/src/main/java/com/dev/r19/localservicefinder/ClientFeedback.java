@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,10 +29,12 @@ public class ClientFeedback extends AppCompatActivity {
     Spinner sub;
     Button submit;
     String cli_id;
-    String Subject;
+    String c_Subject,c_name,c_email,c_message;
+    String feedback_id;
     List<String > sublist;
 
     FirebaseDatabase database;
+    FirebaseAuth mAuth;
     DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class ClientFeedback extends AppCompatActivity {
         sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Subject = parent.getItemAtPosition(position).toString();
+                c_Subject = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -67,45 +70,33 @@ public class ClientFeedback extends AppCompatActivity {
 
         //end
 
+        // Edited By Pranjal Das on 17/03/2019
+
+        mAuth = FirebaseAuth.getInstance();
+        cli_id = mAuth.getCurrentUser().getUid();
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Client_Feedback");
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Client_name = name.getText().toString().trim();
-                String Client_email = email.getText().toString().trim();
-                String Message = message.getText().toString().trim();
+                c_name = name.getText().toString().trim();
+                c_email = email.getText().toString().trim();
+                c_message = message.getText().toString().trim();
 
-                GetIdOfUser(Client_name, Client_email,Subject, Message);
-            }
-        });
-    }
-    private void GetIdOfUser(String Client_name,String Client_email,String Subject, String Message) {
-        ClientFeedbackModel cont = new ClientFeedbackModel(Client_name, Client_email,Subject, Message);
-        cont.Client_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        cli_id = cont.Client_id;
-        ref.child(cli_id).setValue(cont);
-        InsertFeedback();
-    }
-    private void InsertFeedback() {
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                // Feedback_id is for Storing Feedback in New Node ( Without Overwriting Previous Feedback).. Keep History
+                feedback_id = ref.push().getKey();
 
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ClientFeedbackModel cont = dataSnapshot.getValue(ClientFeedbackModel.class);
-                if (cont == null) {
-                    Log.e(TAG,"Data is Null" );
-                    return;
+                ClientFeedbackModel model = new ClientFeedbackModel(c_name,c_email,c_Subject,c_message);
+                try
+                {
+                    ref.child(cli_id).child(feedback_id).setValue(model);
+                    Toast.makeText(ClientFeedback.this,"Thank you for your feedback",Toast.LENGTH_LONG).show();
                 }
-                Log.e(TAG, "Data is Inserted" +cont.Client_name + "," +cont.Client_email + "," +cont.Message);
-                Intent intent = new Intent(ClientFeedback.this, SuccessFeedback.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+                finally {
+                    Intent intent = new Intent(ClientFeedback.this,ClientHome.class);
+                    startActivity(intent);
+                }
             }
         });
     }

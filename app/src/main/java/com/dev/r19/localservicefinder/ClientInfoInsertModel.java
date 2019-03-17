@@ -7,45 +7,40 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 @IgnoreExtraProperties
 public class ClientInfoInsertModel {
-    String Client_id;
-    String Client_Name;
-    String Client_email;
-    String Gender;
-    String Mobile;
-    String Address;
+    private String c_name;
+    private String c_email;
+    private String c_gender;
+    private String c_mobile;
+    private String c_address;
 
     public ClientInfoInsertModel() {
     }
 
-    public ClientInfoInsertModel(String client_Name, String client_email, String gender, String mobile, String address) {
-        Client_Name = client_Name;
-        Client_email = client_email;
-        Gender = gender;
-        Mobile = mobile;
-        Address = address;
+    public ClientInfoInsertModel(String c_name, String c_email, String c_gender, String c_mobile, String c_address) {
+        this.c_name = c_name;
+        this.c_email = c_email;
+        this.c_gender = c_gender;
+        this.c_mobile = c_mobile;
+        this.c_address = c_address;
     }
 
-    public String getClient_id() {
-        return Client_id;
+    public String getC_name() {
+        return c_name;
     }
 
-    public String getClient_Name() {
-        return Client_Name;
+    public String getC_email() {
+        return c_email;
     }
 
-    public String getClient_email() {
-        return Client_email;
+    public String getC_gender() {
+        return c_gender;
     }
 
-    public String getGender() {
-        return Gender;
+    public String getC_mobile() {
+        return c_mobile;
     }
 
-    public String getMobile() {
-        return Mobile;
-    }
-
-    public String getAddress() {
-        return Address;
+    public String getC_address() {
+        return c_address;
     }
 }

@@ -84,9 +84,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Doctor);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Doctor);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -104,9 +104,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Lawyer);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Lawyer);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -123,9 +123,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Tutor);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Tutor);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -143,9 +143,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Pharmacy);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Pharmacy);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -163,9 +163,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Travel_Agent);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Travel_Agent);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -183,9 +183,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_IT_Solutions);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_IT_Solutions);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -202,9 +202,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Hospital);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Hospital);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -221,9 +221,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Pathology_Lab);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Pathology_Lab);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -241,9 +241,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Photography);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Photography);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -260,9 +260,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Photography);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Insurance_Agent);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -279,9 +279,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Restaurant);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Restaurant);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -298,9 +298,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Hotels);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Hotels);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -317,9 +317,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Bar_Wine_Shop);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Bar_Wine_Shop);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -336,9 +336,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Beauty_Products);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Beauty_Products);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -355,9 +355,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Beauty_Products);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Beauty_Products);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -374,9 +374,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Electrician);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Electrician);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -393,9 +393,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Plumber);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Plumber);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -412,9 +412,9 @@ public class ClientHome extends AppCompatActivity
                     startActivity(intent);
                 }
                 else {
-                    Intent intent = new Intent(ClientHome.this, AfterSelectItem.class);
-                    AfterSelectItem.Ser_name = getString(R.string.Prof_Carpenter);
-                    AfterSelectItem.key = "ClientHome";
+                    Intent intent = new Intent(ClientHome.this, Results.class);
+                    String info = getString(R.string.Prof_Carpenter);
+                    intent.putExtra("key",info);
                     startActivity(intent);
                 }
             }
@@ -428,6 +428,8 @@ public class ClientHome extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            Intent intent = new Intent(ClientHome.this,MainActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -466,9 +468,15 @@ public class ClientHome extends AppCompatActivity
             // Handle the camera action
         }
 
-        else if (id == R.id.nav_myprofile)
+        else if (id == R.id.nav_update_profile)
         {
             Intent intent = new Intent(ClientHome.this,ClientInfoInsert.class);
+            startActivity(intent);
+        }
+
+        else if(id == R.id.nav_view_profile)
+        {
+            Intent intent = new Intent(ClientHome.this,ViewClientProfile.class);
             startActivity(intent);
         }
 

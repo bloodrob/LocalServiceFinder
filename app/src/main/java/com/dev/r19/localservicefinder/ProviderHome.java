@@ -29,6 +29,7 @@ public class ProviderHome extends AppCompatActivity
     static String Service_email, Service_id;
     FirebaseDatabase database;
     DatabaseReference ref;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class ProviderHome extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         //database activity to get the Name of the Service Provider
         Intent intent = getIntent();
         final String sp_email = Service_email.toString().trim();
@@ -55,11 +58,16 @@ public class ProviderHome extends AppCompatActivity
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                GetServiceNameModel model = dataSnapshot.getValue(GetServiceNameModel.class);
-                if (sp_email.equals(model.SP_email) || sp_session_email.equals(model.SP_email)) {
-                    toolbar.setTitle(model.SP_name);
-                    Toast.makeText(ProviderHome.this, "Welcome "+model.SP_name, Toast.LENGTH_LONG).show();
+                ServiceProviderModel model = dataSnapshot.getValue(ServiceProviderModel.class);
+
+                if (model!=null) {
+                    toolbar.setTitle(model.getSp_name());
+                    Toast.makeText(ProviderHome.this, "Welcome "+model.getSp_name(), Toast.LENGTH_LONG).show();
                     return;
+                }
+                else
+                {
+                    toolbar.setTitle("Welcome User");
                 }
             }
 
@@ -137,6 +145,8 @@ public class ProviderHome extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            Intent intent = new Intent(ProviderHome.this,MainActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -223,4 +233,7 @@ public class ProviderHome extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
+
+

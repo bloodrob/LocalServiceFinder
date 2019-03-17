@@ -30,7 +30,7 @@ public class ServiceSearch extends AppCompatActivity {
     Spinner  proffessionName;
     ListView list;
     static List<String> namelist1;
-    String selectItem;
+    String selectItem,city,district;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,22 +101,15 @@ public class ServiceSearch extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            String info;
+            city = cityName.getText().toString().trim();
+            district = ditrictName.getText().toString().trim();
 
-             Intent intent = new Intent(ServiceSearch.this, AfterSelectItem.class);
-                //passing the string value to the customResultSearchList page
-                AfterSelectItem.key = "AfterSelectItem";
-                AfterSelectItem.getcity = cityName.getText().toString().trim();
-                if (TextUtils.isEmpty(AfterSelectItem.getcity)) {
-                    Toast.makeText(ServiceSearch.this, "City name required to find the provider", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                AfterSelectItem.getdistrict = ditrictName.getText().toString().trim();
-                if (TextUtils.isEmpty(AfterSelectItem.getdistrict)) {
-                    Toast.makeText(ServiceSearch.this, "District name is required to find the provider", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                AfterSelectItem.getproffesion = selectItem.toString().trim();
-                startActivity(intent);
+            info = city+"@@"+district+"@@"+selectItem;
+             Intent intent = new Intent(ServiceSearch.this, CustomResults.class);
+             intent.putExtra("key",info);
+             startActivity(intent);
+
             }
         });
 

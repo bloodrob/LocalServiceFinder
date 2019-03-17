@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,12 +28,14 @@ public class ServiceFeedback extends AppCompatActivity {
     EditText name, email, message;
     Spinner sub;
     Button submit;
-    String getid;
+    private String userID;
     List<String> sublist;
-    String Subject;
+    private String s_name,s_email,s_subject,s_message;
+    private String feedback_id;
 
     FirebaseDatabase database;
     DatabaseReference ref;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class ServiceFeedback extends AppCompatActivity {
         sub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Subject = parent.getItemAtPosition(position).toString();
+                s_subject = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -67,44 +70,33 @@ public class ServiceFeedback extends AppCompatActivity {
             }
         });
 
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth.getCurrentUser().getUid();
+
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_Feedback");
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String SP_name = name.getText().toString().trim();
-                String SP_email = email.getText().toString().trim();
+                s_name = name.getText().toString().trim();
+                s_email = email.getText().toString().trim();
+                s_message = message.getText().toString().trim();
 
-                String Message = message.getText().toString().trim();
+              // To Keep Previous Feedbacks
+                feedback_id = ref.push().getKey();
 
-                ServiceFeedbackEntry(SP_name, SP_email, Subject, Message);
-            }
-        });
-    }
-    private void ServiceFeedbackEntry(String SP_name, String SP_email, String Subject, String Message) {
-        ServiceFeedbackModel model = new ServiceFeedbackModel(SP_name, SP_email, Subject, Message);
-        model.SP_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        getid = model.SP_id;
-        ref.child(getid).setValue(model);
-        addServiceFeedback();
-    }
-    private void addServiceFeedback() {
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                ServiceFeedbackModel model = new ServiceFeedbackModel(s_name, s_email, s_subject, s_message);
 
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ServiceFeedbackModel model = dataSnapshot.getValue(ServiceFeedbackModel.class);
-                if (model == null) {
-                    Log.e(TAG, "Data mising !!!");
+                try
+                {
+                    ref.child(userID).child(feedback_id).setValue(model);
+                    Toast.makeText(ServiceFeedback.this,"Thank you for your feedback",Toast.LENGTH_LONG).show();
                 }
-                Log.e(TAG, "Data is Inserted"+model.SP_name+ "," +model.SP_email+ "," +model.Subject+ "," +model.Message);
-                Intent intent = new Intent(ServiceFeedback.this, SuccessFeedback.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                finally {
+                    Intent intent = new Intent(ServiceFeedback.this,ProviderHome.class);
+                    startActivity(intent);
+                }
 
             }
         });
