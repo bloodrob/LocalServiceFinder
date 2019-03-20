@@ -268,6 +268,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Location Found", Toast.LENGTH_LONG).show();
         }*/
 
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     public void getLocation() {
@@ -385,7 +393,7 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0]
                         == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
+                 //   Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this,
                             "Permission Denied",
@@ -400,7 +408,7 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0]
                         == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
+               //     Toast.makeText(this,"Permission Granted",Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this,
                             "Permission Denied",

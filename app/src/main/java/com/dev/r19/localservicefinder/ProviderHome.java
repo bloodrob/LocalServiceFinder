@@ -22,11 +22,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProviderHome extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseAuth auth;
-    static String Service_email, Service_id;
+    static String Service_email;
     FirebaseDatabase database;
     DatabaseReference ref;
     String userID;
@@ -55,19 +56,41 @@ public class ProviderHome extends AppCompatActivity
         final String sp_session_email = Service_email.toString().trim();
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("Service_Provider_info");
-        ref.addChildEventListener(new ChildEventListener() {
+
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                ServiceProviderModel model = dataSnapshot.getValue(ServiceProviderModel.class);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ServiceProviderModel model = dataSnapshot.child(userID).getValue(ServiceProviderModel.class);
 
                 if (model!=null) {
                     toolbar.setTitle(model.getSp_name());
-                    Toast.makeText(ProviderHome.this, "Welcome "+model.getSp_name(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(ProviderHome.this, "Welcome "+model.getSp_name(), Toast.LENGTH_LONG).show();
                     return;
                 }
                 else
                 {
-                    toolbar.setTitle("Welcome User");
+                      toolbar.setTitle("Welcome User");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        /*ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                ServiceProviderModel model = dataSnapshot.child(userID).getValue(ServiceProviderModel.class);
+
+                if (model!=null) {
+                    toolbar.setTitle(model.getSp_name());
+                    //Toast.makeText(ProviderHome.this, "Welcome "+model.getSp_name(), Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else
+                {
+                  //  toolbar.setTitle("Welcome User");
                 }
             }
 
@@ -90,7 +113,7 @@ public class ProviderHome extends AppCompatActivity
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
         //End of database activity for get the name
 
         // Button Works Here

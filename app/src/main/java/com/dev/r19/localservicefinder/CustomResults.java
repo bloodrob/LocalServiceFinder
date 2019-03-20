@@ -26,6 +26,7 @@ public class CustomResults extends AppCompatActivity {
     DatabaseReference ref;
     FirebaseDatabase database;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,10 +58,10 @@ public class CustomResults extends AppCompatActivity {
                         }
                         catch (Exception e)
                         {
-                            Toast.makeText(CustomResults.this, "No Result Found", Toast.LENGTH_SHORT).show();
+                          //  Toast.makeText(CustomResults.this, "No Result Found", Toast.LENGTH_SHORT).show();
                         }
                    } else {
-                        Toast.makeText(CustomResults.this, "No Result Found", Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(CustomResults.this, "No Result Found", Toast.LENGTH_SHORT).show();
                     }
 
 

@@ -1,348 +1,469 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:weightSum="10"
-tools:context="com.dev.r19.localservicefinder.ServiceInfoInsert">
-
-<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:id="@+id/frameLayout"
-    android:background="@drawable/back_register">
-    <TextView
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.dev.r19.localservicefinder.ServiceInfoInsert">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SERVICE PROVIDER ENTRY"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent"
+        android:id="@+id/main"
+        android:background="@drawable/newback1"
+        android:orientation="vertical">
 
-
-</FrameLayout>
+        <LinearLayout
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                android:textColor="#470B12"
+                android:textSize="30dp"
+                android:text="Service Provider Details"/>
+        </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/frameLayout"
-        android:background="@drawable/back0051">
+        android:paddingTop="25dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true">
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="53dp"
-                android:text="E-mail"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPemail"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="50dp"
-                android:textAlignment="center"
-                android:background="@drawable/txt_back"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="103dp"
-                android:text="Name"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPname"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="100dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="147dp"
-                android:text="Service Name"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPservicename"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="150dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="211dp"
-                android:text="Gender"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="150dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="115dp"
-                android:layout_marginTop="211dp"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/maleRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="Male" />
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Name"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
 
-                <RadioButton
-                    android:id="@+id/femaleRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClicked"
-                    android:text="Female" />
-            </RadioGroup>
+                <EditText
+                    android:id="@+id/sii_name"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
 
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="259dp"
-                android:text="DOB"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/SPdob"
-                android:focusable="false"
-                android:editable="false"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="250dp" />
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="309dp"
-                android:text="Address"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPaddress"
-                android:layout_width="240dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="300dp"
-                android:background="@drawable/txt_back"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="403dp"
-                android:text="City"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPcity"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="393dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="453dp"
-                android:text="District"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPdistrict"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="443dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="503dp"
-                android:text="State"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPstate"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="493dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="553dp"
-                android:text="Pin"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPpin"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="543dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="603dp"
-                android:text="Mobile"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPmobile"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="593dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="85dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="653dp"
-                android:text="Proffesion"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <Spinner
-                android:id="@+id/SPproffesion"
-                android:layout_width="240dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="643dp"
-                ></Spinner>
-
-            <TextView
-                android:layout_width="75dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="692dp"
-                android:text="Company Name"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPcompanyname"
-                android:layout_width="240dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="693dp"
-                android:background="@drawable/txt_back"
-                android:textAlignment="center"
-                android:textColor="#000000"/>
-
-            <TextView
-                android:layout_width="105dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="753dp"
-                android:text="Company Description"
-                android:textColor="#0000FF"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/SPcompanydescription"
-                android:layout_width="240dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="743dp"
-                android:background="@drawable/txt_back"
-                android:textColor="#000000"/>
-           <CheckBox
-               android:id="@+id/checkbox"
-               android:layout_width="240dp"
-               android:layout_height="60dp"
-               android:layout_marginLeft="100dp"
-               android:layout_marginTop="830dp"
-               android:text="I accept the terms and conditons and want to continue and submit my details"
-               />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/terms_textview"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="E-mail"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_email"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/txt_back"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Mobile"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_mobile"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Gender"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="60dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/sii_maleRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/sii_femaleRadio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Female" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="DOB"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_dob"
+                    android:focusable="false"
+                    android:editable="false"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Service Name"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_servicename"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Address"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_address"
+                    android:layout_width="240dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/txt_back"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="City"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_city"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="District"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_district"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="State"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_state"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Pin"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_pin"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Proffesion"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <Spinner
+                    android:id="@+id/sii_proffesion"
+                    android:layout_width="240dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    ></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Company Name"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_companyname"
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/txt_back"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="88dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Company Description"
+                    android:textColor="#0000FF"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/sii_companydescription"
+                    android:layout_width="240dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/txt_back"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:id="@+id/sii_checkbox"
+                    android:layout_width="240dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="80dp"
+                    android:text="I accept the terms and conditons and want to continue and submit my details"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/sii_terms_textview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="890dp"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="80dp"
                     android:text="@string/terms_ref"/>
 
-            <Button
-                android:id="@+id/SPsubmit"
-                android:background="@drawable/btn_back5"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginLeft="120dp"
-                android:layout_marginTop="920dp"
-                android:text="INSERT INFORMATION"
-                android:layout_marginBottom="20dp"
-                android:textStyle="bold" />
-        </FrameLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/sii_submit"
+                    android:background="@drawable/btn_back5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="120dp"
+                    android:text="INSERT INFORMATION"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </LinearLayout>
     </ScrollView>
-</RelativeLayout>
+    </LinearLayout>
+   </RelativeLayout>

@@ -9,7 +9,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,12 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,7 +33,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ServiceInfoInsert extends AppCompatActivity {
+public class   ServiceInfoInsert extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -79,16 +74,16 @@ public class ServiceInfoInsert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_info_insert);
 
-        term_ref = (TextView)findViewById(R.id.terms_textview);
+        term_ref = (TextView)findViewById(R.id.sii_terms_textview);
 
-        submit = (Button)findViewById(R.id.SPsubmit);
-        spemail = (EditText)findViewById(R.id.SPemail);
-        spname = (EditText)findViewById(R.id.SPname);
-        spservicename = (EditText)findViewById(R.id.SPservicename);
+        submit = (Button)findViewById(R.id.sii_submit);
+        spemail = (EditText)findViewById(R.id.sii_email);
+        spname = (EditText)findViewById(R.id.sii_name);
+        spservicename = (EditText)findViewById(R.id.sii_servicename);
       //  spmale = (RadioButton) findViewById(R.id.SPmale);
       //  spfemale = (RadioButton)findViewById(R.id.SPfemale);
         //for calendar
-        spdob = (EditText)findViewById(R.id.SPdob);
+        spdob = (EditText)findViewById(R.id.sii_dob);
         spdob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,16 +91,16 @@ public class ServiceInfoInsert extends AppCompatActivity {
             }
         });
 
-        spaddress = (EditText)findViewById(R.id.SPaddress);
-        spcity = (EditText)findViewById(R.id.SPcity);
-        spdistrict = (EditText)findViewById(R.id.SPdistrict);
-        spstate = (EditText)findViewById(R.id.SPstate);
-        sppin = (EditText)findViewById(R.id.SPpin);
-        spmobile = (EditText)findViewById(R.id.SPmobile);
-        spproffession = (Spinner)findViewById(R.id.SPproffesion);
-        spcompanyname = (EditText)findViewById(R.id.SPcompanyname);
-        spcompanydescription = (EditText)findViewById(R.id.SPcompanydescription);
-        check = (CheckBox)findViewById(R.id.checkbox);
+        spaddress = (EditText)findViewById(R.id.sii_address);
+        spcity = (EditText)findViewById(R.id.sii_city);
+        spdistrict = (EditText)findViewById(R.id.sii_district);
+        spstate = (EditText)findViewById(R.id.sii_state);
+        sppin = (EditText)findViewById(R.id.sii_pin);
+        spmobile = (EditText)findViewById(R.id.sii_mobile);
+        spproffession = (Spinner)findViewById(R.id.sii_proffesion);
+        spcompanyname = (EditText)findViewById(R.id.sii_companyname);
+        spcompanydescription = (EditText)findViewById(R.id.sii_companydescription);
+        check = (CheckBox)findViewById(R.id.sii_checkbox);
 
         myCalendar = Calendar.getInstance();
 
@@ -192,16 +187,6 @@ public class ServiceInfoInsert extends AppCompatActivity {
                 sp_name = spname.getText().toString().trim();
                 sp_email = spemail.getText().toString().trim();
                 sp_servicename = spservicename.getText().toString().trim();
-        /*        String Gender = null;
-                if(spmale.isSelected())
-                {
-                    Gender = "Male";
-                }
-                if(spfemale.isSelected())
-                {
-                    Gender = "Female";
-                } */
-              //  String DOB = spdob.getText().toString().trim();
                 sp_address = spaddress.getText().toString().trim();
                 sp_city = spcity.getText().toString().trim();
                 sp_district = spdistrict.getText().toString().trim();
@@ -243,7 +228,13 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
                 GetId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                ref.child(GetId).setValue(model);
+                try{
+                    ref.child(GetId).setValue(model);
+                    Toast.makeText(ServiceInfoInsert.this,"Your Profile is Updated",Toast.LENGTH_SHORT).show();
+                }catch (Exception e)
+                {
+                    Toast.makeText(ServiceInfoInsert.this,"Error Entering your Profile",Toast.LENGTH_SHORT).show();
+                }
 
                 Intent intent = new Intent(ServiceInfoInsert.this,ProviderHome.class);
                 startActivity(intent);
@@ -262,15 +253,15 @@ public class ServiceInfoInsert extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.maleRadio:
+            case R.id.sii_maleRadio:
                 if (checked)
                     sp_gender = "Male";
-                    Toast.makeText(ServiceInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
+                  //  Toast.makeText(ServiceInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
                 break;
-            case R.id.femaleRadio:
+            case R.id.sii_femaleRadio:
                 if (checked)
                     sp_gender = "Female";
-                    Toast.makeText(ServiceInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
+                    //Toast.makeText(ServiceInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
                 break;
         }
     }
@@ -291,7 +282,7 @@ public class ServiceInfoInsert extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myDateFormat, Locale.ENGLISH);
         spdob.setText(sdf.format(myCalendar.getTime()));
         DOB = spdob.getText().toString().trim();
-        Toast.makeText(ServiceInfoInsert.this, "date is :"+DOB, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(ServiceInfoInsert.this, "date is :"+DOB, Toast.LENGTH_SHORT).show();
     }
     //end of calendar activity
 
@@ -308,12 +299,12 @@ public class ServiceInfoInsert extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(ServiceInfoInsert.this,"Sending address list",Toast.LENGTH_LONG).show();
+         //       Toast.makeText(ServiceInfoInsert.this,"Sending address list",Toast.LENGTH_LONG).show();
             }
         }
         catch (Exception e)
         {
-            Toast.makeText(ServiceInfoInsert.this,"Error",Toast.LENGTH_LONG).show();
+            Toast.makeText(ServiceInfoInsert.this,"Error Finding Exact Location",Toast.LENGTH_LONG).show();
         }
 
         return adr;

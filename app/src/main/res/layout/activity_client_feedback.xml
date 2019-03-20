@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.com.dev.r19.localservice.ClientFeedback"
+    tools:context="com.dev.r19.localservicefinder.ClientFeedback"
     android:background="@drawable/background3">
 
     <TextView

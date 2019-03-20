@@ -63,7 +63,7 @@ public class Results extends AppCompatActivity {
                             }
                             catch (Exception e)
                             {
-                                Toast.makeText(Results.this,"No Results Found",Toast.LENGTH_SHORT).show();
+                              //  Toast.makeText(Results.this,"No Results Found",Toast.LENGTH_SHORT).show();
                             }
                         }
                         else {
