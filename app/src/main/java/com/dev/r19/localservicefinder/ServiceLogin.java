@@ -19,7 +19,7 @@ public class ServiceLogin extends AppCompatActivity {
 
     FirebaseAuth auth;
 
-    Button submit, ToReg;
+    Button submit, ToReg,forgot;
     EditText email, pass;
     String SerLogEmail;
 
@@ -32,6 +32,7 @@ public class ServiceLogin extends AppCompatActivity {
 
         submit = (Button)findViewById(R.id.ServiceLogIn);
         ToReg = (Button)findViewById(R.id.BackReg);
+        forgot = (Button)findViewById(R.id.forgot_pass_ser);
         email = (EditText)findViewById(R.id.SerLogEmail);
         pass = (EditText)findViewById(R.id.SerLogPass);
 
@@ -64,7 +65,7 @@ public class ServiceLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(ServiceLogin.this, "You Are logged in", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(ServiceLogin.this, "Logged in", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(ServiceLogin.this, ProviderHome.class);
                                     ProviderHome.Service_email = SerLogEmail;
                                     startActivity(intent);
@@ -75,6 +76,14 @@ public class ServiceLogin extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ServiceLogin.this, ClientForgotPassword.class);
+                startActivity(intent);
             }
         });
     }

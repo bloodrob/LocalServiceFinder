@@ -19,7 +19,7 @@ public class ClientEmailSend extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ClientEmailSend.this, ClientLogin.class);
+                Intent intent = new Intent(ClientEmailSend.this, MainActivity.class);
                 startActivity(intent);
             }
         });

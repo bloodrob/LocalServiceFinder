@@ -5,90 +5,163 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dev.r19.localservicefinder.ServiceLogin"
-    android:background="@drawable/background4">
-    <TextView
+    android:background="@drawable/background8">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="40dp"
-        android:textColor="#000000"
-        android:textSize="28dp"
-        android:fontFamily="cursive"
-        android:text="Continuing as Service Provider"
-        android:textStyle="italic"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/SerLogEmail"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginLeft="110dp"
-        android:textColor="#000000"
-        android:textAlignment="center"
-        android:background="@drawable/txt_back"
-        android:inputType="textEmailAddress"
-         />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service Login"
+                android:textAlignment="center"
+                android:fontFamily="cursive"
+                android:textSize="40dp"
+                android:background="#11515C"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/SerLogPass"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/SerLogEmail"
-        android:layout_marginTop="30dp"
-        android:textAlignment="center"
-        android:layout_marginLeft="110dp"
-        android:background="@drawable/txt_back"
-        android:textColor="#000000"
-        android:inputType="textPassword" />
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/ServiceLogIn"
-        android:layout_width="160dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="59dp"
-        android:text="Log In"
-        android:layout_marginLeft="90dp"
-        android:background="@drawable/btn_back2"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/SerLogPass"
-        android:layout_toEndOf="@+id/textView10"
-        android:layout_marginStart="11dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_below="@+id/ServiceLogIn"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="140dp"
-        android:textColor="#481010"
-        android:text="Don't have an account"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:textColor="#ffffff"/>
 
-    <Button
-        android:id="@+id/BackReg"
-        android:layout_width="160dp"
-        android:layout_height="45dp"
-        android:layout_alignStart="@+id/ServiceLogIn"
-        android:layout_below="@+id/ServiceLogIn"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/btn_back2"
-        android:textColor="#ffffff"
-        android:text="Register" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/SerLogEmail"
-        android:layout_marginStart="24dp"
-        android:text="E-mail"
-        android:textColor="#000000"/>
+            <EditText
+                android:id="@+id/SerLogEmail"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#d85b0322"
+                android:textAlignment="center"
+                android:background="@drawable/txt_back"
+                android:inputType="textEmailAddress"
+                />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_alignTop="@+id/SerLogPass"
-        android:text="Password"
-        android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:id="@+id/SerLogPass"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/txt_back"
+                android:textColor="#d85b0322"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ServiceLogIn"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:text="Log In"
+                android:layout_marginLeft="85dp"
+                android:background="@drawable/btn_back7"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textSize="15dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="85dp"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/BackReg"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="85dp"
+                android:background="@drawable/btn_back5"
+                android:textColor="#ffffff"
+                android:text="Register" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="Forgot your Password"
+                android:textStyle="bold"
+                android:fontFamily="cursive"
+                android:textSize="15dp"
+                android:layout_marginLeft="85dp"
+                android:textColor="#ffffff"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/forgot_pass_ser"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_back5"
+                android:layout_marginLeft="85dp"
+                android:textColor="#ffffff"
+                android:text="Reset Password"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

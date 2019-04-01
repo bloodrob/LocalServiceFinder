@@ -3,9 +3,12 @@
  */
 package com.dev.r19.localservicefinder;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -26,17 +29,30 @@ public class CustomResults extends AppCompatActivity {
     DatabaseReference ref;
     FirebaseDatabase database;
 
+    private TextView tv,header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+        tv = (TextView)findViewById(R.id.no_result);
+        header = (TextView)findViewById(R.id.head);
+
         String info = getIntent().getExtras().getString("key");
         String[] infoarray = info.split("@@");
         city = infoarray[0];
         district = infoarray[1];
         profession = infoarray[2];
+
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CustomResults.this,ClientHome.class);
+                startActivity(intent);
+            }
+        });
 
         listView = (ListView)findViewById(R.id.listview);
         list = new ArrayList<ServiceProviderModel>();
@@ -66,6 +82,14 @@ public class CustomResults extends AppCompatActivity {
 
 
                 }
+
+                if(list.isEmpty())
+                {
+                    header.setText("No Match Found");
+                    tv.setText("Click Here for Home");
+                    tv.setVisibility(View.VISIBLE);
+                }
+
             }
 
             @Override

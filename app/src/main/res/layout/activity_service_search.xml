@@ -4,125 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dev.r19.localservicefinder.com.dev.r19.localservice.ServiceSearch"
-    android:background="@drawable/background5">
+    tools:context="com.dev.r19.localservicefinder.ServiceSearch"
+    android:background="@drawable/background8">
 
     <LinearLayout
-        android:id="@+id/headlinear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:id="@+id/textView50"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:fontFamily="cursive"
+                android:text="Custom Search"
+                android:background="#11515C"
+                android:textColor="#ffffff"
+                android:textSize="37dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="150dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="cursive"
-            android:text="Search Entering Follwing 3 Fields"
-            android:textColor="#0c7815"
-            android:textSize="27dp" />
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:text="City name" />
 
-    <LinearLayout
-        android:layout_below="@+id/headlinear"
-        android:id="@+id/firstlinear"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:paddingLeft="10dp"
-            android:id="@+id/textView13"
-            android:layout_width="150dp"
+            <EditText
+                android:id="@+id/cityname"
+                android:layout_marginLeft="20dp"
+                android:layout_width="230dp"
+                android:textAlignment="center"
+                android:layout_height="40dp"
+                android:background="@drawable/txt_back"
+                android:inputType="textPersonName"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="16dp"
-            android:text="Enter city name" />
+            android:orientation="horizontal">
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:text="District name" />
 
-        <EditText
-            android:id="@+id/cityname"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:textAlignment="center"
-            android:layout_height="40dp"
-            android:background="@drawable/txt_back"
-            android:inputType="textPersonName"
-            android:textColor="#ffffff" />
+            <EditText
+                android:paddingRight="3dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/districtname"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:background="@drawable/txt_back"
+                android:inputType="textPersonName"
+                />
+        </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/secondlinear"
-        android:layout_below="@+id/firstlinear"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:paddingLeft="10dp"
-            android:id="@+id/textView39"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="17dp"
-            android:text="District name" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:paddingRight="3dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/districtname"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:background="@drawable/txt_back"
-            android:inputType="textPersonName"
-            />
 
-    </LinearLayout>
+            <TextView
+                android:paddingLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:text="Proffesion" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/thirdlinear"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/secondlinear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <Spinner
+                android:layout_marginLeft="20dp"
+                android:id="@+id/proffesion"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:paddingLeft="10dp"
-            android:id="@+id/textView48"
-            android:layout_width="150dp"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="17dp"
-            android:text="Proffesion" />
+            android:orientation="vertical">
 
-        <Spinner
-            android:layout_marginLeft="20dp"
-            android:id="@+id/proffesion"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/thirdlinear"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:gravity="center"
-            android:id="@+id/SearchSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="Search"
-            android:background="@drawable/btn_back4"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/SearchSubmit"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:text="Search"
+                android:background="@drawable/btn_back7"
+                android:layout_marginLeft="120dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

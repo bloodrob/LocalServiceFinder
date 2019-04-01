@@ -7,167 +7,188 @@
     tools:context="com.dev.r19.localservicefinder.ClientInfoInsert"
     android:background="@drawable/back0051">
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="48dp"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:text="Update your profile for future reference" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView16"
-        android:layout_marginStart="33dp"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:layout_marginTop="70dp"
-        android:text="E-mail" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/clientEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginLeft="130dp"
-        android:layout_below="@+id/textView16"
-        android:layout_marginTop="55dp"
-        android:textColor="#740404"
-        android:textAlignment="center"
-        android:background="@drawable/txt_back"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="40dp"
+                android:fontFamily="cursive"
+                android:background="#11515C"
+                android:textColor="#ffffff"
+                android:textAlignment="center"
+                android:text="Update Profile" />
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView33"
-        android:layout_below="@+id/clientEmail"
-        android:layout_marginTop="44dp"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:text="Name" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/clientName"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignStart="@+id/clientEmail"
-        android:layout_below="@+id/clientEmail"
-        android:layout_marginTop="28dp"
-        android:textColor="#740404"
-        android:textAlignment="center"
-        android:ems="10"
-        android:background="@drawable/txt_back"
-        android:inputType="textPersonName"
-      />
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:layout_below="@+id/textView34"
-        android:layout_marginTop="36dp"
-        android:layout_alignStart="@+id/textView34" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:text="Name" />
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:id="@+id/radioGender"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/clientName"
-        android:layout_alignStart="@+id/clientName">
+            <EditText
+                android:layout_marginLeft="30dp"
+                android:id="@+id/clientName"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:textColor="#740404"
+                android:textAlignment="center"
+                android:ems="10"
+                android:background="@drawable/txt_back"
+                />
+        </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioMale"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="1dp"
-            android:onClick="onRadioButtonClicked"
-            android:text="Male" />
-
-        <RadioButton
-            android:id="@+id/radioFemale"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_alignStart="@+id/radioGroup"
-            android:layout_alignEnd="@+id/radioMale"
-            android:layout_marginEnd="1dp"
-            android:onClick="onRadioButtonClicked"
-            android:layout_marginLeft="150dp"
-            android:text="Female" />
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
-    </RadioGroup>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:text="E-mail" />
 
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView35"
-        android:layout_below="@+id/radioGender"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:layout_marginTop="44dp"
-        android:text="Mobile" />
+            <EditText
+                android:id="@+id/clientEmail"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:textColor="#740404"
+                android:textAlignment="center"
+                android:background="@drawable/txt_back"
+                android:ems="10"/>
 
-    <EditText
-        android:id="@+id/clientPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignStart="@+id/radioGender"
-        android:layout_below="@+id/radioGender"
-        android:layout_marginTop="31dp"
-        android:textColor="#740404"
-        android:textAlignment="center"
-        android:background="@drawable/txt_back"
-        android:ems="10"
-        android:inputType="phone" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView36"
-        android:layout_below="@+id/clientPhone"
-        android:layout_marginTop="32dp"
-        android:textColor="#740404"
-        android:textSize="17dp"
-        android:text="Address" />
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/clientAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_alignStart="@+id/clientPhone"
-        android:layout_below="@+id/clientPhone"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:background="@drawable/txt_back"
-        android:inputType="textPostalAddress" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textColor="#ffffff"
+                android:textSize="17dp" />
 
-    <Button
-        android:id="@+id/submitClientInfo"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/clientAddress"
-        android:layout_alignStart="@+id/clientAddress"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/btn_back8"
-        android:text="Submit your info"
-        android:textColor="#740404"
-        android:textStyle="bold"/>
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:id="@+id/radioGender"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="1dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="1dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:text="Mobile" />
+
+            <EditText
+                android:id="@+id/clientPhone"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:textColor="#740404"
+                android:textAlignment="center"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/txt_back"
+                android:ems="10"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:text="Address" />
+
+            <EditText
+                android:layout_marginLeft="30dp"
+                android:id="@+id/clientAddress"
+                android:layout_width="230dp"
+                android:layout_height="80dp"
+                android:ems="10"
+                android:background="@drawable/txt_back"
+                android:inputType="textPostalAddress" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:layout_marginLeft="110dp"
+                android:id="@+id/submitClientInfo"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_back5"
+                android:text="Submit your info"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

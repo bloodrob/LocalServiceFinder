@@ -5,118 +5,148 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dev.r19.localservicefinder.ClientFeedback"
-    android:background="@drawable/background3">
+    android:background="@drawable/background8">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:text="Hello friend, Please give us a feedback to our system. Your one valuable feedback can help us to improve our system as the better place for you all to be used"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="38dp"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+         <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_below="@+id/textView25"
-        android:layout_marginTop="70dp"
-        android:text="Name"
-        android:textSize="17dp"
-        android:textColor="#000000"/>
+              <TextView
+                  android:padding="5dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Client Feedback"
+                  android:textAlignment="center"
+                  android:fontFamily="cursive"
+                  android:textSize="40dp"
+                  android:background="#11515C"
+                  android:textColor="#ffffff"/>
+         </LinearLayout>
 
-    <EditText
-        android:id="@+id/cliname"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignEnd="@+id/textView25"
-        android:layout_alignTop="@+id/textView26"
-        android:layout_marginEnd="18dp"
-        android:ems="10"
-        android:textAlignment="center"
-        android:background="@drawable/txt_back"
-        android:inputType="textPersonName"
-        android:textColor="#000000"/>
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/textView26"
-        android:layout_below="@+id/textView26"
-        android:layout_marginTop="40dp"
-        android:text="E-mail"
-        android:textColor="#000000"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="17dp"
+                android:textColor="#ffffff"/>
 
-    <EditText
-        android:id="@+id/cliemail"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/cliname"
-        android:layout_alignStart="@+id/cliname"
-        android:background="@drawable/txt_back"
-        android:layout_marginTop="30dp"
-        android:textAlignment="center"
-        android:inputType="textEmailAddress"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/textView27"
-        android:layout_alignStart="@+id/textView26"
-        android:layout_marginTop="40dp"
-        android:text="Subject"
-        android:textColor="#000000"
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/cliname"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:background="@drawable/txt_back"
+                android:inputType="textPersonName"
+                android:textColor="#000000"/>
 
-        />
+        </LinearLayout>
 
-    <Spinner
-        android:id="@+id/clisubject"
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/cliemail"
-        android:layout_marginTop="30dp"
-        android:layout_alignStart="@+id/cliemail"
-        />
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="70dp"
-        android:layout_height="35dp"
-        android:layout_alignEnd="@+id/textView29"
-        android:layout_below="@+id/clisubject"
-        android:layout_marginTop="47dp"
-        android:text="Message"
-        android:textColor="#000000"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="E-mail"
+                android:textColor="#ffffff"/>
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/cliemail"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:background="@drawable/txt_back"
+                android:textAlignment="center"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Subject"
+                android:textColor="#ffffff"
+
+                />
+
+            <Spinner
+                android:layout_marginLeft="20dp"
+                android:id="@+id/clisubject"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
 
-    <EditText
-        android:id="@+id/climessage"
-        android:layout_width="231dp"
-        android:layout_height="100dp"
-        android:layout_alignStart="@+id/clisubject"
-        android:layout_below="@+id/clisubject"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/txt_back"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#000000" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textColor="#ffffff"/>
 
-    <Button
-        android:id="@+id/feedbacksubmit"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/climessage"
-       android:layout_marginTop="30dp"
-        android:textColor="#ffffff"
-        android:text="Submit"
-        android:layout_alignStart="@+id/climessage"
-        android:textStyle="bold"
-        android:background="@drawable/btn_back1"/>
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/climessage"
+                android:layout_width="230dp"
+                android:layout_height="100dp"
+                android:background="@drawable/txt_back"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/feedbacksubmit"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="100dp"
+                android:textColor="#ffffff"
+                android:text="Submit"
+                android:textStyle="bold"
+                android:background="@drawable/btn_back7" />
+
+        </LinearLayout>
+    </LinearLayout>
+
 </RelativeLayout>

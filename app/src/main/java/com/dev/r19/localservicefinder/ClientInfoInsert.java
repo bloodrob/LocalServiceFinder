@@ -86,12 +86,12 @@ public class  ClientInfoInsert extends AppCompatActivity {
             case R.id.radioMale:
                 if (checked)
                     c_gender = "Male";
-                Toast.makeText(ClientInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
+           //     Toast.makeText(ClientInfoInsert.this,"Selected Male",Toast.LENGTH_LONG ).show();
                 break;
             case R.id.radioFemale:
                 if (checked)
                     c_gender = "Female";
-                Toast.makeText(ClientInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
+            //    Toast.makeText(ClientInfoInsert.this,"Selected Female",Toast.LENGTH_LONG ).show();
                 break;
         }
     }

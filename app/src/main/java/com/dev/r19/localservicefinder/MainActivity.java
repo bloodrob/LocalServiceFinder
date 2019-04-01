@@ -272,11 +272,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton("No", null)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.super.onBackPressed();
+                        quit();
+                    }
+                }).create().show();
     }
+
+
 
     public void getLocation() {
         locationManager = (LocationManager) getSystemService(MainActivity.LOCATION_SERVICE);
@@ -439,6 +452,15 @@ public class MainActivity extends AppCompatActivity {
             city = "City Not Found";
         }
         return city;
+    }
+
+    // Quit the main Activity
+    public void quit() {
+        Intent start = new Intent(Intent.ACTION_MAIN);
+        start.addCategory(Intent.CATEGORY_HOME);
+        start.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        start.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(start);
     }
 }
 

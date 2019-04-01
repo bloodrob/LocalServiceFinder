@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background6"
+    android:background="@drawable/background8"
     tools:context="com.dev.r19.localservicefinder.MainActivity">
 
     <LinearLayout
@@ -94,7 +94,8 @@
             android:layout_height="25dp"
             android:fontFamily="cursive"
             android:text="PROCEED AS"
-            android:textColor="#8ccf48"
+            android:textColor="#220469"
+            android:textStyle="bold"
             android:gravity="center"
             android:textSize="20dp" />
 

@@ -3,6 +3,7 @@ package com.dev.r19.localservicefinder;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class Opener extends AppCompatActivity {
 
@@ -12,13 +13,17 @@ public class Opener extends AppCompatActivity {
         setContentView(R.layout.activity_opener);
 
 
+
         Thread mythread = new Thread(){
 
             @Override
             public void run() {
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
+
+                try{
+                    sleep(2000);
+                }
+                catch (InterruptedException e)
+                {
                     e.printStackTrace();
                 }
 

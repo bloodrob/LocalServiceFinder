@@ -103,7 +103,18 @@ public class ServiceSearch extends AppCompatActivity {
             public void onClick(View v) {
             String info;
             city = cityName.getText().toString().trim();
+            if(city==null)
+            {
+                Toast.makeText(ServiceSearch.this,"City Name Can't be Empty",Toast.LENGTH_SHORT).show();
+                return;
+            }
             district = ditrictName.getText().toString().trim();
+
+            if(district==null)
+            {
+                Toast.makeText(ServiceSearch.this,"District Name Can't be Empty",Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             info = city+"@@"+district+"@@"+selectItem;
              Intent intent = new Intent(ServiceSearch.this, CustomResults.class);

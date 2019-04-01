@@ -7,25 +7,60 @@
     tools:context="com.dev.r19.localservicefinder.ClientEmailSend"
     android:background="@drawable/background1">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="120dp"
-        android:text="A password reset link has been sent to your registered e-mail. Please check your emai and click the link on it. After reseting your password go to your Log in page and try to login again."
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="13dp"
-        android:textColor="#ffffff"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/Blogin"
-        android:layout_width="160dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp"
-        android:textColor="#000000"
-        android:text="Back To Log In Page"
-        android:background="@drawable/btn_back5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email Sent"
+                android:textAlignment="center"
+                android:fontFamily="cursive"
+                android:textSize="40dp"
+                android:background="#11515C"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A password reset link has been sent to your registered e-mail. Please check your emai and click the link on it. After reseting your password go to your Log in page and try to login again."
+                android:textSize="20dp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/Blogin"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:text="Back To Home"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_back5"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>

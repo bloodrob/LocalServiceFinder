@@ -35,6 +35,8 @@ public class CustomViewAdapter extends ArrayAdapter<ServiceProviderModel> {
         TextView tvcity = (TextView) convertView.findViewById(R.id.city);
         TextView tvaddress = (TextView) convertView.findViewById(R.id.address);
         TextView tvdistrict = (TextView) convertView.findViewById(R.id.district);
+        TextView tvcompany =  (TextView) convertView.findViewById(R.id.company);
+        TextView tvdescription = (TextView) convertView.findViewById(R.id.description);
 
 
         tvname.setText(model.getSp_name().toString());
@@ -43,6 +45,8 @@ public class CustomViewAdapter extends ArrayAdapter<ServiceProviderModel> {
         tvcity.setText(model.getSp_city().toString());
         tvaddress.setText(model.getSp_address().toString());
         tvdistrict.setText(model.getSp_district().toString());
+        tvcompany.setText(model.getSp_companyname().toString());
+        tvdescription.setText(model.getSp_companydescription().toString());
 
 
         return convertView;
